@@ -13,17 +13,28 @@ firmware/
   common/        모든 단계가 공유하는 모듈
     pedd.c/h       PEDD 방전 시간 측정 코어
     uart.c/h       UART 송신 (레지스터 직접 제어)
+    classify.c/h   보정 · 정규화 · 최근접 중심점 분류   [Phase 4]
+    store.c/h      EEPROM 중심점 저장 (EECR 직접 제어)  [Phase 4]
+    i2c.c/h        TWI 마스터                          [Phase 4]
+    ssd1306.c/h    OLED 텍스트 출력                     [Phase 4]
+    font6x8.h      폰트 테이블 (tools/gen_font.py 생성)  [Phase 4]
+    button.c/h     스위치 디바운스                      [Phase 4]
   01_blink/      툴체인 검증용 LED 점멸
   02_phase1/     Phase 1 단일 채널 측정
   03_phase2/     Phase 2 RGB 다파장 스캔
+  04_phase4/     Phase 4 최종 시스템 (버튼 + OLED + 온칩 분류)
 ```
 
-단계별로 **`main.c`만 교체**하면 됩니다. `common/`은 그대로 둡니다.
+각 단계는 별도 프로젝트입니다. `common/`은 공유하므로 그대로 둡니다.
+
+> `classify`는 하드웨어에 의존하지 않는 순수 계산 모듈이라 PC에서 단위
+> 테스트합니다. `sh tools/run_host_tests.sh` 로 실행하며, **`<avr/io.h>`를
+> 넣으면 이 테스트가 깨지니 주의하세요.**
 
 ## 1. Microchip Studio 프로젝트 열기
 
 **프로젝트 파일은 이미 준비되어 있습니다.** `firmware/PEDD.atsln`을 더블클릭하면
-blink · phase1 · phase2 세 프로젝트가 한 번에 열리고, 아래 설정이 모두
+blink · phase1 · phase2 · phase4 네 프로젝트가 한 번에 열리고, 아래 설정이 모두
 들어가 있는 상태입니다. 빌드 검증도 마쳤습니다(2026-09-03).
 
 | 프로젝트 | 폴더 | Flash | SRAM |
@@ -31,6 +42,7 @@ blink · phase1 · phase2 세 프로젝트가 한 번에 열리고, 아래 설�
 | blink | `01_blink` | 176 B (0.5%) | 0 B (0.0%) |
 | phase1 | `02_phase1` | 1,430 B (4.4%) | 89 B (4.3%) |
 | phase2 | `03_phase2` | 1,360 B (4.2%) | 121 B (5.9%) |
+| **phase4** | `04_phase4` | **6,634 B (20.2%)** | **90 B (4.4%)** |
 
 빌드하려면 Solution Explorer에서 원하는 프로젝트를 우클릭 →
 `Set as StartUp Project` → `F7`. 결과물은 `<폴더>\Debug\<이름>.hex` 입니다.
@@ -90,9 +102,13 @@ Windows에서 자동으로 안 잡히면 "CH340 driver"로 검색해 설치하�
 장치 관리자의 `포트(COM & LPT)`에 `USB-SERIAL CH340 (COM3)` 형태로
 잡히면 성공입니다. **이 COM 번호를 기억해두세요.**
 
-**avrdude** — Microchip Studio에는 포함되어 있지 않습니다.
-`avrdudes/avrdude` GitHub 릴리스에서 Windows용 zip을 받아 압축만 풀면
-됩니다. 설치 과정은 없습니다.
+**avrdude** — Microchip Studio에는 포함되어 있지 않은 별도 도구지만,
+**이 PC에는 이미 설치되어 있습니다** (winget `AVRDudes.AVRDUDE` 8.2, 2026-09-03).
+새 터미널에서는 `avrdude` 로 바로 호출되고, 전체 경로는 아래와 같습니다.
+
+```
+C:\Users\hwali\AppData\Local\Microsoft\WinGet\Packages\AVRDudes.AVRDUDE_Microsoft.Winget.Source_8wekyb3d8bbwe\avrdude.exe
+```
 
 ### 2-2. Microchip Studio에 업로드 버튼 만들기
 
@@ -142,6 +158,26 @@ COM 포트 번호나 F_CPU 설정입니다.
 분석 스크립트가 이 seq를 이용해 광학 지문 벡터를 재구성하고,
 **R → RG → RGB 순으로 채널을 늘렸을 때 시료군 분리도가 개선되는지**를
 계산합니다. 계획서 4.2.4절의 성공 기준이 이것입니다.
+
+### 04_phase4 — 최종 시스템
+
+**PC 없이 동작합니다.** 배선은 phase2에 스위치(D2)와 OLED(A4/A5)를 더한 것입니다.
+
+| 조작 | 동작 |
+|---|---|
+| 짧게 누름 | 측정 후 판정 |
+| 2초 길게 누름 | 학습 모드 — 3종을 순서대로 측정해 EEPROM에 저장 |
+
+처음 켜면 `NOT TRAINED`가 뜹니다. **길게 눌러 학습을 먼저 해야 판정이
+됩니다.** 학습 도중 길게 누르면 취소되고 기존 학습 데이터가 보존됩니다.
+
+측정값은 OLED와 UART로 동시에 나갑니다. **OLED가 없거나 배선이 틀려도
+UART 로깅은 계속됩니다.** 실험 중 디스플레이 문제로 데이터 수집이 멈추면
+안 되기 때문입니다.
+
+부품 도착 후 연결 순서는
+`docs/superpowers/plans/2026-09-03-phase4-bringup.md` 체크리스트를 따르세요.
+한 번에 다 연결하면 어디가 문제인지 알 수 없습니다.
 
 ## 3-1. 배선표 (회로도 → 우노 보드)
 
