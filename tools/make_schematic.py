@@ -12,7 +12,7 @@ make_schematic.py — 회로도 SVG 생성기
 import io
 import os
 
-W, H = 1480, 1200
+W, H = 1480, 1250
 FONT = "'Malgun Gothic','맑은 고딕','Noto Sans KR',sans-serif"
 INK = "#1e293b"
 
@@ -200,8 +200,9 @@ LEFT_PINS = [("VCC", 7, 250), ("AVCC", 20, 285), ("AREF", 21, 320),
              ("RESET", 1, 380), ("XTAL1", 9, 460), ("XTAL2", 10, 500),
              ("GND", 8, 770), ("GND", 22, 800)]
 RIGHT_PINS = [("PB0", 14, 250), ("PB1", 15, 345), ("PB2", 16, 440),
-              ("PD7", 13, 535), ("PD2", 4, 620), ("PD0", 2, 685),
-              ("PD1", 3, 721), ("PC4", 27, 767), ("PC5", 28, 803)]
+              ("PD7", 13, 535), ("PB5", 19, 578), ("PD2", 4, 620),
+              ("PD0", 2, 685), ("PD1", 3, 721), ("PC4", 27, 767),
+              ("PC5", 28, 803)]
 
 for name, pin, y in LEFT_PINS:
     wire((MX0 - 60, y), (MX0, y))
@@ -299,6 +300,14 @@ gnd(1230, 620)
 for y, nm in ((685, "RXD"), (721, "TXD"), (767, "SDA"), (803, "SCL")):
     netflag(MX1 + 60, y, nm)
 
+# ---- TP1 사이클 시간 측정용 테스트 포인트 ----
+# 계획서 4.4.3절의 "1회 측정·분류 사이클 처리 시간"을 오실로스코프로 읽는 지점.
+wire((MX1 + 60, 578), (952, 578))
+dot(952, 578)
+add('<circle cx="952" cy="578" r="7" fill="none" stroke="%s" stroke-width="2"/>' % INK)
+txt(968, 570, "TP1", 12.5, "start", "700")
+txt(968, 587, "사이클 타이밍", 11.5, "start", "400", "#64748b")
+
 # ---- 커넥터 ----
 box(1010, 890, 190, 116, "#f8fafc")
 txt(1105, 913, "J1  UART 헤더", 13, "middle", "700")
@@ -314,7 +323,7 @@ for i, nm in enumerate(("+5V", "GND", "SDA", "SCL")):
     txt(1248, y + 5, str(i + 1), 11.5, "start", "400", "#64748b")
     txt(1270, y + 5, nm, 12.5, "start", "600")
 # ---- 주석 ----
-box(40, 872, 940, 310, "#fffbeb", "#a16207", 1.6, 6)
+box(40, 872, 940, 352, "#fffbeb", "#a16207", 1.6, 6)
 txt(58, 898, "주석", 14, "start", "700", "#713f12")
 
 NOTES = [
@@ -332,21 +341,25 @@ NOTES = [
     ("7.", "J1·J2의 핀 이름은 U1 측 네트 라벨과 동일한 네트를 가리킨다.", False),
     ("8.", "시제품은 Arduino Uno 보드로 구현하였다. U1·Y1·C1~C5·R4·J1은 보드에 실장되어", False),
     ("", "있으므로, 브레드보드에 실제로 배선하는 부품은 R1~R3, D1~D4, SW1, J2뿐이다.", False),
+    ("9.", "TP1(PB5)은 측정 구간에만 HIGH가 되는 타이밍 출력이다. 채널마다 펄스가 하나씩", False),
+    ("", "나오며, 오실로스코프로 4개 펄스 폭을 합산해 사이클 처리 시간을 구한다.", False),
+    ("10.", "PD0(RXD)은 헤더 배선만 존재하고 펌웨어는 송신(TXD)만 활성화한다. 최종 시스템의", False),
+    ("", "출력은 J2 OLED이며, UART는 개발·실험 단계의 데이터 로깅 용도다.", False),
 ]
-yy = 922
+yy = 918
 for num, body, warn in NOTES:
     col = "#b91c1c" if warn else "#3f3f46"
     weight = "700" if warn else "400"
     if num:
         txt(58, yy, num, 12.5, "start", "700", col)
     txt(80, yy, body, 12.5, "start", weight, col)
-    yy += 19
+    yy += 17
 
 # Uno 핀 대응표
 txt(640, 922, "Arduino Uno 핀 대응 (보드 실크스크린 표기)", 12.5, "start", "700", "#713f12")
 MAPPING = [("PB0", "8"), ("PB1", "9"), ("PB2", "10"), ("PD7", "7"),
-           ("PD2", "2"), ("PD0", "0 (RX)"), ("PD1", "1 (TX)"),
-           ("PC4", "A4"), ("PC5", "A5")]
+           ("PB5", "13 (내장 LED)"), ("PD2", "2"), ("PD0", "0 (RX)"),
+           ("PD1", "1 (TX)"), ("PC4", "A4"), ("PC5", "A5")]
 for i, (a, b) in enumerate(MAPPING):
     yy2 = 944 + i * 19
     txt(640, yy2, a, 12.5, "start", "600", "#3f3f46")
@@ -357,7 +370,7 @@ for i, (a, b) in enumerate(MAPPING):
 for i, w in enumerate(("※ 도면의 D1~D4는 LED 부품기호이고,",
                        "위 숫자는 보드의 디지털 핀 번호다.",
                        "(예: D2는 녹색 LED, 핀 2는 SW1)")):
-    txt(640, 1122 + i * 18, w, 12, "start", "700", "#b91c1c")
+    txt(640, 1145 + i * 18, w, 12, "start", "700", "#b91c1c")
 
 # ---- 표제란 ----
 box(1010, 1042, 410, 128)
