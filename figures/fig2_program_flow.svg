@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 1140" width="840" height="1140" font-family="'Malgun Gothic','맑은 고딕','Noto Sans KR',sans-serif">
+  <defs>
+    <marker id="a2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/>
+    </marker>
+  </defs>
+  <rect width="840" height="1140" fill="#ffffff"/>
+
+  <!-- 시작 -->
+  <rect x="250" y="30" width="200" height="42" rx="21" fill="#e2e8f0" stroke="#475569" stroke-width="1.8"/>
+  <text x="350" y="57" text-anchor="middle" font-size="14" font-weight="700" fill="#1e293b">시작 (전원 투입)</text>
+
+  <!-- 초기화 -->
+  <rect x="200" y="102" width="300" height="76" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/>
+  <text x="350" y="126" text-anchor="middle" font-size="13.5" font-weight="700" fill="#1e3a8a">초기화</text>
+  <text x="350" y="147" text-anchor="middle" font-size="11.5" fill="#1e3a8a">GPIO 방향 · Analog Comparator</text>
+  <text x="350" y="165" text-anchor="middle" font-size="11.5" fill="#1e3a8a">Timer1 · UART  (ACBG=1, ACIC=1, CS11=1)</text>
+
+  <!-- EEPROM 로드 -->
+  <rect x="200" y="206" width="300" height="52" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/>
+  <text x="350" y="228" text-anchor="middle" font-size="13" font-weight="600" fill="#1e3a8a">EEPROM에서 기준 중심점 로드</text>
+  <text x="350" y="247" text-anchor="middle" font-size="11.5" fill="#1d4ed8">시료군 수 × 3채널 × 4바이트</text>
+
+  <!-- 버튼 대기 -->
+  <path d="M 350 286 L 500 322 L 350 358 L 200 322 Z" fill="#fef3c7" stroke="#d97706" stroke-width="1.8"/>
+  <text x="350" y="320" text-anchor="middle" font-size="12.5" font-weight="600" fill="#78350f">측정 시작 버튼</text>
+  <text x="350" y="338" text-anchor="middle" font-size="12.5" font-weight="600" fill="#78350f">눌렸는가?</text>
+  <text x="516" y="317" font-size="11.5" fill="#b45309">아니오</text>
+
+  <!-- 암조건 측정 -->
+  <rect x="200" y="386" width="300" height="52" rx="6" fill="#f1f5f9" stroke="#475569" stroke-width="1.8"/>
+  <text x="350" y="408" text-anchor="middle" font-size="13" font-weight="600" fill="#1e293b">암조건 측정</text>
+  <text x="350" y="427" text-anchor="middle" font-size="11.5" fill="#475569">발광 LED 전체 소등 → 환경광 성분 취득</text>
+
+  <!-- 파장 루프 박스 -->
+  <rect x="120" y="466" width="520" height="286" rx="10" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="7 5"/>
+  <text x="136" y="490" font-size="12.5" font-weight="700" fill="#475569">파장 루프  (Red → Green → Blue)</text>
+
+  <rect x="200" y="502" width="300" height="46" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="1.8"/>
+  <text x="350" y="530" text-anchor="middle" font-size="12.5" fill="#78350f">해당 발광 LED 1개 점등</text>
+
+  <rect x="200" y="568" width="300" height="46" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.8"/>
+  <text x="350" y="588" text-anchor="middle" font-size="12.5" fill="#14532d">검출 LED 충전 (PD7 출력 HIGH)</text>
+  <text x="350" y="606" text-anchor="middle" font-size="11.5" fill="#166534">→ High-Z 전환 → Timer1 기동</text>
+
+  <rect x="200" y="634" width="300" height="52" rx="6" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.8"/>
+  <text x="350" y="655" text-anchor="middle" font-size="12.5" fill="#312e81">캡처 인터럽트 대기</text>
+  <text x="350" y="674" text-anchor="middle" font-size="11.5" fill="#4338ca">오버플로우 누적 · Timeout 감시</text>
+
+  <rect x="200" y="706" width="300" height="34" rx="6" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.8"/>
+  <text x="350" y="728" text-anchor="middle" font-size="12" fill="#312e81">방전 시간 산출 · 저장 → LED 소등</text>
+
+  <!-- 벡터 완성 -->
+  <rect x="200" y="778" width="300" height="46" rx="6" fill="#f1f5f9" stroke="#475569" stroke-width="1.8"/>
+  <text x="350" y="806" text-anchor="middle" font-size="12.5" font-weight="600" fill="#1e293b">광학 지문 벡터 [R, G, B] 완성</text>
+
+  <!-- 보정 -->
+  <rect x="200" y="852" width="300" height="60" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/>
+  <text x="350" y="874" text-anchor="middle" font-size="13" font-weight="600" fill="#1e3a8a">보정 적용</text>
+  <text x="350" y="893" text-anchor="middle" font-size="11.5" fill="#1e3a8a">암전류 오프셋 차감 · 개체차 스케일링</text>
+  <text x="350" y="907" text-anchor="middle" font-size="11.5" fill="#1d4ed8">· 환경광 차분</text>
+
+  <!-- 분류 -->
+  <rect x="200" y="940" width="300" height="52" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/>
+  <text x="350" y="962" text-anchor="middle" font-size="13" font-weight="600" fill="#1e3a8a">최근접 중심점 분류</text>
+  <text x="350" y="981" text-anchor="middle" font-size="11.5" fill="#1d4ed8">각 중심점과의 제곱 거리 비교 (√ 생략)</text>
+
+  <!-- 출력 -->
+  <rect x="200" y="1020" width="300" height="46" rx="6" fill="#fce7f3" stroke="#db2777" stroke-width="1.8"/>
+  <text x="350" y="1048" text-anchor="middle" font-size="12.5" font-weight="600" fill="#831843">결과 출력 — UART 전송 · OLED 표시</text>
+
+  <!-- 화살표 (세로 흐름) -->
+  <line x1="350" y1="72"   x2="350" y2="95"  stroke="#334155" stroke-width="2" marker-end="url(#a2)"/>
+  <line x1="350" y1="178"  x2="350" y2="199" stroke="#334155" stroke-width="2" marker-end="url(#a2)"/>
+  <line x1="350" y1="258"  x2="350" y2="279" stroke="#334155" stroke-width="2" marker-end="url(#a2)"/>
+  <line x1="350" y1="358"  x2="350" y2="379" stroke="#334155" stroke-width="2" marker-end="url(#a2)"/>
+  <line x1="350" y1="438"  x2="350" y2="495" stroke="#334155" stroke-width="2" marker-end="url(#a2)"/>
+  <line x1="350" y1="548"  x2="350" y2="561" stroke="#334155" stroke-width="2" marker-end="url(#a2)"/>
+  <line x1="350" y1="614"  x2="350" y2="627" stroke="#334155" stroke-width="2" marker-end="url(#a2)"/>
+  <line x1="350" y1="686"  x2="350" y2="699" stroke="#334155" stroke-width="2" marker-end="url(#a2)"/>
+  <line x1="350" y1="752"  x2="350" y2="771" stroke="#334155" stroke-width="2" marker-end="url(#a2)"/>
+  <line x1="350" y1="824"  x2="350" y2="845" stroke="#334155" stroke-width="2" marker-end="url(#a2)"/>
+  <line x1="350" y1="912"  x2="350" y2="933" stroke="#334155" stroke-width="2" marker-end="url(#a2)"/>
+  <line x1="350" y1="992"  x2="350" y2="1013" stroke="#334155" stroke-width="2" marker-end="url(#a2)"/>
+
+  <!-- 버튼 대기 루프 (아니오) -->
+  <polyline points="500,322 570,322 570,268 356,268" fill="none" stroke="#d97706" stroke-width="1.8" marker-end="url(#a2)"/>
+
+  <!-- 파장 루프 되돌림 -->
+  <polyline points="200,723 160,723 160,525 193,525" fill="none" stroke="#94a3b8" stroke-width="1.8" marker-end="url(#a2)"/>
+  <text x="128" y="620" font-size="11.5" fill="#64748b" transform="rotate(-90 128 620)">다음 파장</text>
+
+  <!-- 대기 상태 복귀 -->
+  <polyline points="500,1043 770,1043 770,322 508,322" fill="none" stroke="#334155" stroke-width="1.8" stroke-dasharray="6 4" marker-end="url(#a2)"/>
+  <text x="790" y="690" font-size="12" fill="#334155" transform="rotate(-90 790 690)">대기 상태로 복귀</text>
+
+  <!-- Timeout 분기 주석 -->
+  <line x1="500" y1="660" x2="560" y2="660" stroke="#dc2626" stroke-width="1.8" marker-end="url(#a2)"/>
+  <text x="566" y="655" font-size="11.5" fill="#dc2626">Timeout 초과 시</text>
+  <text x="566" y="671" font-size="11.5" fill="#dc2626">TIMEOUT 반환</text>
+</svg>

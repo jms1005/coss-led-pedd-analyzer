@@ -1,0 +1,20 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>회로도 인쇄용 — LED PEDD 액체 광학 분석기</title>
+<style>
+  /* 제출용 회로도 PDF를 만들기 위한 인쇄 래퍼.
+     브라우저에서 이 파일을 열고 Ctrl+P → 대상을 "PDF로 저장"으로 선택한다.
+     용지는 A3 가로, 여백 없음으로 자동 설정된다. */
+  @page { size: A3 landscape; margin: 6mm; }
+  html, body { margin: 0; padding: 0; background: #fff; }
+  img { display: block; width: 100%; height: auto; }
+  .hint { font: 14px/1.6 'Malgun Gothic', sans-serif; padding: 16px; color: #334155; }
+  @media print { .hint { display: none; } }
+</style>
+<div class="hint">
+  <b>PDF로 저장하는 방법</b><br>
+  Ctrl+P → 대상 <b>"PDF로 저장"</b> → 용지 <b>A3</b>, 방향 <b>가로</b> →
+  더보기 설정에서 <b>"배경 그래픽"</b> 체크 → 저장.<br>
+  이 안내 문구는 인쇄물에는 나오지 않습니다.
+</div>
+<img src="fig3_schematic.svg" alt="회로도">

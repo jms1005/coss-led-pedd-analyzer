@@ -1,0 +1,7 @@
+*/Debug/
+*/Release/
+.vs/
+*.exe
+*.o
+*.elf
+tools/test_classify.exe

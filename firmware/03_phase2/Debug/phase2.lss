@@ -1,0 +1,951 @@
+
+phase2.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000072  00800100  000004de  00000572  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         000004de  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          00000007  00800172  00800172  000005e4  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  000005e4  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00000614  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 00000098  00000000  00000000  00000654  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   000010be  00000000  00000000  000006ec  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 00000aba  00000000  00000000  000017aa  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   0000078c  00000000  00000000  00002264  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  00000170  00000000  00000000  000029f0  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    0000056d  00000000  00000000  00002b60  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    0000069f  00000000  00000000  000030cd  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 00000080  00000000  00000000  0000376c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 34 00 	jmp	0x68	; 0x68 <__ctors_end>
+   4:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+   8:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+   c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  10:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  14:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  18:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  1c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  20:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  24:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  28:	0c 94 d7 00 	jmp	0x1ae	; 0x1ae <__vector_10>
+  2c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  30:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  34:	0c 94 00 01 	jmp	0x200	; 0x200 <__vector_13>
+  38:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  3c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  40:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  44:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  48:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  4c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  50:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  54:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  58:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  5c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  60:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  64:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+
+00000068 <__ctors_end>:
+  68:	11 24       	eor	r1, r1
+  6a:	1f be       	out	0x3f, r1	; 63
+  6c:	cf ef       	ldi	r28, 0xFF	; 255
+  6e:	d8 e0       	ldi	r29, 0x08	; 8
+  70:	de bf       	out	0x3e, r29	; 62
+  72:	cd bf       	out	0x3d, r28	; 61
+
+00000074 <__do_copy_data>:
+  74:	11 e0       	ldi	r17, 0x01	; 1
+  76:	a0 e0       	ldi	r26, 0x00	; 0
+  78:	b1 e0       	ldi	r27, 0x01	; 1
+  7a:	ee ed       	ldi	r30, 0xDE	; 222
+  7c:	f4 e0       	ldi	r31, 0x04	; 4
+  7e:	02 c0       	rjmp	.+4      	; 0x84 <__do_copy_data+0x10>
+  80:	05 90       	lpm	r0, Z+
+  82:	0d 92       	st	X+, r0
+  84:	a2 37       	cpi	r26, 0x72	; 114
+  86:	b1 07       	cpc	r27, r17
+  88:	d9 f7       	brne	.-10     	; 0x80 <__do_copy_data+0xc>
+
+0000008a <__do_clear_bss>:
+  8a:	21 e0       	ldi	r18, 0x01	; 1
+  8c:	a2 e7       	ldi	r26, 0x72	; 114
+  8e:	b1 e0       	ldi	r27, 0x01	; 1
+  90:	01 c0       	rjmp	.+2      	; 0x94 <.do_clear_bss_start>
+
+00000092 <.do_clear_bss_loop>:
+  92:	1d 92       	st	X+, r1
+
+00000094 <.do_clear_bss_start>:
+  94:	a9 37       	cpi	r26, 0x79	; 121
+  96:	b2 07       	cpc	r27, r18
+  98:	e1 f7       	brne	.-8      	; 0x92 <.do_clear_bss_loop>
+  9a:	0e 94 53 00 	call	0xa6	; 0xa6 <main>
+  9e:	0c 94 6d 02 	jmp	0x4da	; 0x4da <_exit>
+
+000000a2 <__bad_interrupt>:
+  a2:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000a6 <main>:
+  uart_putc(',');
+  uart_put_u32(r.overflows);
+  uart_newline();
+}
+
+int main(void) {
+  a6:	cf 93       	push	r28
+  a8:	df 93       	push	r29
+  aa:	cd b7       	in	r28, 0x3d	; 61
+  ac:	de b7       	in	r29, 0x3e	; 62
+  ae:	28 97       	sbiw	r28, 0x08	; 8
+  b0:	0f b6       	in	r0, 0x3f	; 63
+  b2:	f8 94       	cli
+  b4:	de bf       	out	0x3e, r29	; 62
+  b6:	0f be       	out	0x3f, r0	; 63
+  b8:	cd bf       	out	0x3d, r28	; 61
+  uint32_t seq = 0;
+
+  uart_init();
+  ba:	0e 94 c3 01 	call	0x386	; 0x386 <uart_init>
+  pedd_init();
+  be:	0e 94 17 01 	call	0x22e	; 0x22e <pedd_init>
+  sei();
+  c2:	78 94       	sei
+
+  uart_newline();
+  c4:	0e 94 45 02 	call	0x48a	; 0x48a <uart_newline>
+  uart_puts("# PEDD Phase 2 log / 1 tick = 500ns / scan: DARK,R,G,B");
+  c8:	8b e0       	ldi	r24, 0x0B	; 11
+  ca:	91 e0       	ldi	r25, 0x01	; 1
+  cc:	0e 94 d6 01 	call	0x3ac	; 0x3ac <uart_puts>
+  uart_newline();
+  d0:	0e 94 45 02 	call	0x48a	; 0x48a <uart_newline>
+  uart_puts("seq,ch,status,ticks,us,ovf");
+  d4:	82 e4       	ldi	r24, 0x42	; 66
+  d6:	91 e0       	ldi	r25, 0x01	; 1
+  d8:	0e 94 d6 01 	call	0x3ac	; 0x3ac <uart_puts>
+  uart_newline();
+  dc:	0e 94 45 02 	call	0x48a	; 0x48a <uart_newline>
+  uart_put_u32(r.overflows);
+  uart_newline();
+}
+
+int main(void) {
+  uint32_t seq = 0;
+  e0:	41 2c       	mov	r4, r1
+  e2:	51 2c       	mov	r5, r1
+  e4:	32 01       	movw	r6, r4
+  e6:	3e e6       	ldi	r19, 0x6E	; 110
+  e8:	83 2e       	mov	r8, r19
+  ea:	31 e0       	ldi	r19, 0x01	; 1
+  ec:	93 2e       	mov	r9, r19
+  ee:	06 e6       	ldi	r16, 0x66	; 102
+  f0:	11 e0       	ldi	r17, 0x01	; 1
+  while (1) {
+    uint8_t i;
+
+    /* 한 사이클 = 광학 지문 벡터 1개분 */
+    for (i = 0; i < SCAN_COUNT; i++) {
+      pedd_result_t r = pedd_measure(SCAN_ORDER[i]);
+  f2:	f4 01       	movw	r30, r8
+  f4:	81 91       	ld	r24, Z+
+  f6:	4f 01       	movw	r8, r30
+  f8:	0e 94 39 01 	call	0x272	; 0x272 <pedd_measure>
+  fc:	28 87       	std	Y+8, r18	; 0x08
+  fe:	29 83       	std	Y+1, r18	; 0x01
+ 100:	3a 83       	std	Y+2, r19	; 0x02
+ 102:	4b 83       	std	Y+3, r20	; 0x03
+ 104:	5c 83       	std	Y+4, r21	; 0x04
+ 106:	6d 83       	std	Y+5, r22	; 0x05
+ 108:	7e 83       	std	Y+6, r23	; 0x06
+ 10a:	8f 83       	std	Y+7, r24	; 0x07
+      log_result(seq, SCAN_NAME[i], r);
+ 10c:	f8 01       	movw	r30, r16
+ 10e:	a1 90       	ld	r10, Z+
+ 110:	b1 90       	ld	r11, Z+
+ 112:	8f 01       	movw	r16, r30
+ 114:	ca 80       	ldd	r12, Y+2	; 0x02
+ 116:	db 80       	ldd	r13, Y+3	; 0x03
+ 118:	ec 80       	ldd	r14, Y+4	; 0x04
+ 11a:	fd 80       	ldd	r15, Y+5	; 0x05
+ 11c:	2e 80       	ldd	r2, Y+6	; 0x06
+ 11e:	3f 80       	ldd	r3, Y+7	; 0x07
+};
+
+#define SCAN_COUNT (sizeof(SCAN_ORDER) / sizeof(SCAN_ORDER[0]))
+
+static void log_result(uint32_t seq, const char *ch_name, pedd_result_t r) {
+  uart_put_u32(seq);
+ 120:	c3 01       	movw	r24, r6
+ 122:	b2 01       	movw	r22, r4
+ 124:	0e 94 e2 01 	call	0x3c4	; 0x3c4 <uart_put_u32>
+  uart_putc(',');
+ 128:	8c e2       	ldi	r24, 0x2C	; 44
+ 12a:	0e 94 cf 01 	call	0x39e	; 0x39e <uart_putc>
+  uart_puts(ch_name);
+ 12e:	c5 01       	movw	r24, r10
+ 130:	0e 94 d6 01 	call	0x3ac	; 0x3ac <uart_puts>
+  uart_putc(',');
+ 134:	8c e2       	ldi	r24, 0x2C	; 44
+ 136:	0e 94 cf 01 	call	0x39e	; 0x39e <uart_putc>
+  uart_puts(r.status == PEDD_OK ? "OK" : "TIMEOUT");
+ 13a:	f8 85       	ldd	r31, Y+8	; 0x08
+ 13c:	ff 23       	and	r31, r31
+ 13e:	19 f0       	breq	.+6      	; 0x146 <main+0xa0>
+ 140:	83 e0       	ldi	r24, 0x03	; 3
+ 142:	91 e0       	ldi	r25, 0x01	; 1
+ 144:	02 c0       	rjmp	.+4      	; 0x14a <main+0xa4>
+ 146:	80 e0       	ldi	r24, 0x00	; 0
+ 148:	91 e0       	ldi	r25, 0x01	; 1
+ 14a:	0e 94 d6 01 	call	0x3ac	; 0x3ac <uart_puts>
+  uart_putc(',');
+ 14e:	8c e2       	ldi	r24, 0x2C	; 44
+ 150:	0e 94 cf 01 	call	0x39e	; 0x39e <uart_putc>
+  uart_put_u32(r.ticks);
+ 154:	c7 01       	movw	r24, r14
+ 156:	b6 01       	movw	r22, r12
+ 158:	0e 94 e2 01 	call	0x3c4	; 0x3c4 <uart_put_u32>
+  uart_putc(',');
+ 15c:	8c e2       	ldi	r24, 0x2C	; 44
+ 15e:	0e 94 cf 01 	call	0x39e	; 0x39e <uart_putc>
+  uart_put_u32(pedd_ticks_to_us(r.ticks));
+ 162:	c7 01       	movw	r24, r14
+ 164:	b6 01       	movw	r22, r12
+ 166:	96 95       	lsr	r25
+ 168:	87 95       	ror	r24
+ 16a:	77 95       	ror	r23
+ 16c:	67 95       	ror	r22
+ 16e:	0e 94 e2 01 	call	0x3c4	; 0x3c4 <uart_put_u32>
+  uart_putc(',');
+ 172:	8c e2       	ldi	r24, 0x2C	; 44
+ 174:	0e 94 cf 01 	call	0x39e	; 0x39e <uart_putc>
+  uart_put_u32(r.overflows);
+ 178:	b1 01       	movw	r22, r2
+ 17a:	80 e0       	ldi	r24, 0x00	; 0
+ 17c:	90 e0       	ldi	r25, 0x00	; 0
+ 17e:	0e 94 e2 01 	call	0x3c4	; 0x3c4 <uart_put_u32>
+  uart_newline();
+ 182:	0e 94 45 02 	call	0x48a	; 0x48a <uart_newline>
+
+  while (1) {
+    uint8_t i;
+
+    /* 한 사이클 = 광학 지문 벡터 1개분 */
+    for (i = 0; i < SCAN_COUNT; i++) {
+ 186:	21 e0       	ldi	r18, 0x01	; 1
+ 188:	0e 36       	cpi	r16, 0x6E	; 110
+ 18a:	12 07       	cpc	r17, r18
+ 18c:	09 f0       	breq	.+2      	; 0x190 <main+0xea>
+ 18e:	b1 cf       	rjmp	.-158    	; 0xf2 <main+0x4c>
+      pedd_result_t r = pedd_measure(SCAN_ORDER[i]);
+      log_result(seq, SCAN_NAME[i], r);
+    }
+
+    seq++;
+ 190:	8f ef       	ldi	r24, 0xFF	; 255
+ 192:	48 1a       	sub	r4, r24
+ 194:	58 0a       	sbc	r5, r24
+ 196:	68 0a       	sbc	r6, r24
+ 198:	78 0a       	sbc	r7, r24
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 19a:	9f ef       	ldi	r25, 0xFF	; 255
+ 19c:	e3 ed       	ldi	r30, 0xD3	; 211
+ 19e:	f0 e3       	ldi	r31, 0x30	; 48
+ 1a0:	91 50       	subi	r25, 0x01	; 1
+ 1a2:	e0 40       	sbci	r30, 0x00	; 0
+ 1a4:	f0 40       	sbci	r31, 0x00	; 0
+ 1a6:	e1 f7       	brne	.-8      	; 0x1a0 <main+0xfa>
+ 1a8:	00 c0       	rjmp	.+0      	; 0x1aa <main+0x104>
+ 1aa:	00 00       	nop
+ 1ac:	9c cf       	rjmp	.-200    	; 0xe6 <main+0x40>
+
+000001ae <__vector_10>:
+
+/*
+ * Timer1 Input Capture 인터럽트.
+ * 계획서 3.7절대로 ISR에서는 시각 기록만 하고 연산은 하지 않는다.
+ */
+ISR(TIMER1_CAPT_vect) {
+ 1ae:	1f 92       	push	r1
+ 1b0:	0f 92       	push	r0
+ 1b2:	0f b6       	in	r0, 0x3f	; 63
+ 1b4:	0f 92       	push	r0
+ 1b6:	11 24       	eor	r1, r1
+ 1b8:	2f 93       	push	r18
+ 1ba:	3f 93       	push	r19
+ 1bc:	8f 93       	push	r24
+ 1be:	9f 93       	push	r25
+  uint16_t icr = ICR1;
+ 1c0:	20 91 86 00 	lds	r18, 0x0086	; 0x800086 <__TEXT_REGION_LENGTH__+0x7f8086>
+ 1c4:	30 91 87 00 	lds	r19, 0x0087	; 0x800087 <__TEXT_REGION_LENGTH__+0x7f8087>
+  uint16_t ovf = g_ovf;
+ 1c8:	80 91 77 01 	lds	r24, 0x0177	; 0x800177 <g_ovf>
+ 1cc:	90 91 78 01 	lds	r25, 0x0178	; 0x800178 <g_ovf+0x1>
+   * 높으므로, 오버플로우가 먼저 일어났는데 그 ISR이 아직 실행되지 않은
+   * 상태에서 여기로 진입할 수 있다. 그 경우 TOV1 플래그가 아직 세워져 있고
+   * ICR1 값은 매우 작다. 이때 오버플로우를 1 더해주지 않으면 32.768ms
+   * 단위의 이상값이 간헐적으로 섞여 변동계수 통계가 왜곡된다.
+   */
+  if ((TIFR1 & (1 << TOV1)) && (icr < 0x8000)) {
+ 1d0:	b0 9b       	sbis	0x16, 0	; 22
+ 1d2:	02 c0       	rjmp	.+4      	; 0x1d8 <__vector_10+0x2a>
+ 1d4:	37 ff       	sbrs	r19, 7
+    ovf++;
+ 1d6:	01 96       	adiw	r24, 0x01	; 1
+  }
+
+  g_capture = icr;
+ 1d8:	30 93 76 01 	sts	0x0176, r19	; 0x800176 <g_capture+0x1>
+ 1dc:	20 93 75 01 	sts	0x0175, r18	; 0x800175 <g_capture>
+  g_cap_ovf = ovf;
+ 1e0:	90 93 74 01 	sts	0x0174, r25	; 0x800174 <g_cap_ovf+0x1>
+ 1e4:	80 93 73 01 	sts	0x0173, r24	; 0x800173 <g_cap_ovf>
+  g_done = 1;
+ 1e8:	81 e0       	ldi	r24, 0x01	; 1
+ 1ea:	80 93 72 01 	sts	0x0172, r24	; 0x800172 <__data_end>
+}
+ 1ee:	9f 91       	pop	r25
+ 1f0:	8f 91       	pop	r24
+ 1f2:	3f 91       	pop	r19
+ 1f4:	2f 91       	pop	r18
+ 1f6:	0f 90       	pop	r0
+ 1f8:	0f be       	out	0x3f, r0	; 63
+ 1fa:	0f 90       	pop	r0
+ 1fc:	1f 90       	pop	r1
+ 1fe:	18 95       	reti
+
+00000200 <__vector_13>:
+
+/* Timer1 오버플로우 인터럽트 — 16비트 카운터의 측정 범위를 확장한다. */
+ISR(TIMER1_OVF_vect) {
+ 200:	1f 92       	push	r1
+ 202:	0f 92       	push	r0
+ 204:	0f b6       	in	r0, 0x3f	; 63
+ 206:	0f 92       	push	r0
+ 208:	11 24       	eor	r1, r1
+ 20a:	8f 93       	push	r24
+ 20c:	9f 93       	push	r25
+  g_ovf++;
+ 20e:	80 91 77 01 	lds	r24, 0x0177	; 0x800177 <g_ovf>
+ 212:	90 91 78 01 	lds	r25, 0x0178	; 0x800178 <g_ovf+0x1>
+ 216:	01 96       	adiw	r24, 0x01	; 1
+ 218:	90 93 78 01 	sts	0x0178, r25	; 0x800178 <g_ovf+0x1>
+ 21c:	80 93 77 01 	sts	0x0177, r24	; 0x800177 <g_ovf>
+}
+ 220:	9f 91       	pop	r25
+ 222:	8f 91       	pop	r24
+ 224:	0f 90       	pop	r0
+ 226:	0f be       	out	0x3f, r0	; 63
+ 228:	0f 90       	pop	r0
+ 22a:	1f 90       	pop	r1
+ 22c:	18 95       	reti
+
+0000022e <pedd_init>:
+  }
+}
+
+void pedd_init(void) {
+  /* 발광부: 출력으로 설정하고 소등 상태에서 시작 */
+  EMIT_DDR |= (1 << EMIT_R) | (1 << EMIT_G) | (1 << EMIT_B);
+ 22e:	84 b1       	in	r24, 0x04	; 4
+ 230:	87 60       	ori	r24, 0x07	; 7
+ 232:	84 b9       	out	0x04, r24	; 4
+  g_ovf++;
+}
+
+/* 발광 LED 전체 소등 */
+static void emitters_off(void) {
+  EMIT_PORT &= ~((1 << EMIT_R) | (1 << EMIT_G) | (1 << EMIT_B));
+ 234:	85 b1       	in	r24, 0x05	; 5
+ 236:	88 7f       	andi	r24, 0xF8	; 248
+ 238:	85 b9       	out	0x05, r24	; 5
+  /* 발광부: 출력으로 설정하고 소등 상태에서 시작 */
+  EMIT_DDR |= (1 << EMIT_R) | (1 << EMIT_G) | (1 << EMIT_B);
+  emitters_off();
+
+  /* 검출부: 입력(하이 임피던스), 내부 풀업 해제 */
+  DET_DDR  &= ~(1 << DET_BIT);
+ 23a:	57 98       	cbi	0x0a, 7	; 10
+  DET_PORT &= ~(1 << DET_BIT);
+ 23c:	5f 98       	cbi	0x0b, 7	; 11
+  /*
+   * DIDR1의 AIN1D=1 — PD7의 디지털 입력 버퍼를 차단한다.
+   * 버퍼가 켜져 있으면 누설 전류가 광전류와 경쟁해 저광량 측정을 왜곡한다.
+   * (계획서 6.2절, 8.2절)
+   */
+  DIDR1 |= (1 << AIN1D);
+ 23e:	ef e7       	ldi	r30, 0x7F	; 127
+ 240:	f0 e0       	ldi	r31, 0x00	; 0
+ 242:	80 81       	ld	r24, Z
+ 244:	82 60       	ori	r24, 0x02	; 2
+ 246:	80 83       	st	Z, r24
+
+  /*
+   * ADCSRB의 ACME=0 — AIN1(PD7)을 비교기 음극 입력으로 유지한다.
+   * 리셋 기본값이 0이지만, 의도를 코드에 남기기 위해 명시적으로 지운다.
+   */
+  ADCSRB &= ~(1 << ACME);
+ 248:	eb e7       	ldi	r30, 0x7B	; 123
+ 24a:	f0 e0       	ldi	r31, 0x00	; 0
+ 24c:	80 81       	ld	r24, Z
+ 24e:	8f 7b       	andi	r24, 0xBF	; 191
+ 250:	80 83       	st	Z, r24
+   *              (전원 전압과 온도에 따라 흔들리는 논리 문턱값 대신 사용)
+   *   ACIC = 1 : 비교기 출력을 Timer1 Input Capture에 연결
+   *              이 비트가 0이면 캡처가 아예 발생하지 않는다.
+   *   ACIE = 0 : 비교기 자체 인터럽트는 쓰지 않는다 (캡처 인터럽트만 사용)
+   */
+  ACSR = (1 << ACBG) | (1 << ACIC);
+ 252:	84 e4       	ldi	r24, 0x44	; 68
+ 254:	80 bf       	out	0x30, r24	; 48
+ 256:	8f e3       	ldi	r24, 0x3F	; 63
+ 258:	9c e9       	ldi	r25, 0x9C	; 156
+ 25a:	01 97       	sbiw	r24, 0x01	; 1
+ 25c:	f1 f7       	brne	.-4      	; 0x25a <pedd_init+0x2c>
+ 25e:	00 c0       	rjmp	.+0      	; 0x260 <pedd_init+0x32>
+ 260:	00 00       	nop
+   * 켜고 끄지 않고 초기화 시 한 번 켜서 유지한다. (계획서 6.2절)
+   */
+  _delay_ms(10);
+
+  /* Timer1: 노멀 모드. 시작은 pedd_measure()에서 한다. */
+  TCCR1A = 0;
+ 262:	10 92 80 00 	sts	0x0080, r1	; 0x800080 <__TEXT_REGION_LENGTH__+0x7f8080>
+  TCCR1B = 0;
+ 266:	10 92 81 00 	sts	0x0081, r1	; 0x800081 <__TEXT_REGION_LENGTH__+0x7f8081>
+
+  /* 입력 캡처 + 오버플로우 인터럽트 활성화 */
+  TIMSK1 = (1 << ICIE1) | (1 << TOIE1);
+ 26a:	81 e2       	ldi	r24, 0x21	; 33
+ 26c:	80 93 6f 00 	sts	0x006F, r24	; 0x80006f <__TEXT_REGION_LENGTH__+0x7f806f>
+ 270:	08 95       	ret
+
+00000272 <pedd_measure>:
+}
+
+pedd_result_t pedd_measure(pedd_channel_t ch) {
+ 272:	cf 93       	push	r28
+ 274:	df 93       	push	r29
+ 276:	cd b7       	in	r28, 0x3d	; 61
+ 278:	de b7       	in	r29, 0x3e	; 62
+ 27a:	27 97       	sbiw	r28, 0x07	; 7
+ 27c:	0f b6       	in	r0, 0x3f	; 63
+ 27e:	f8 94       	cli
+ 280:	de bf       	out	0x3e, r29	; 62
+ 282:	0f be       	out	0x3f, r0	; 63
+ 284:	cd bf       	out	0x3d, r28	; 61
+  g_ovf++;
+}
+
+/* 발광 LED 전체 소등 */
+static void emitters_off(void) {
+  EMIT_PORT &= ~((1 << EMIT_R) | (1 << EMIT_G) | (1 << EMIT_B));
+ 286:	95 b1       	in	r25, 0x05	; 5
+ 288:	98 7f       	andi	r25, 0xF8	; 248
+ 28a:	95 b9       	out	0x05, r25	; 5
+}
+
+/* 지정한 발광 LED 하나만 점등 (계획서 3.1절: 한 번에 하나만) */
+static void emitter_on(pedd_channel_t ch) {
+  emitters_off();
+  switch (ch) {
+ 28c:	82 30       	cpi	r24, 0x02	; 2
+ 28e:	31 f0       	breq	.+12     	; 0x29c <pedd_measure+0x2a>
+ 290:	83 30       	cpi	r24, 0x03	; 3
+ 292:	31 f0       	breq	.+12     	; 0x2a0 <pedd_measure+0x2e>
+ 294:	81 30       	cpi	r24, 0x01	; 1
+ 296:	29 f4       	brne	.+10     	; 0x2a2 <pedd_measure+0x30>
+    case PEDD_CH_R: EMIT_PORT |= (1 << EMIT_R); break;
+ 298:	28 9a       	sbi	0x05, 0	; 5
+ 29a:	03 c0       	rjmp	.+6      	; 0x2a2 <pedd_measure+0x30>
+    case PEDD_CH_G: EMIT_PORT |= (1 << EMIT_G); break;
+ 29c:	29 9a       	sbi	0x05, 1	; 5
+ 29e:	01 c0       	rjmp	.+2      	; 0x2a2 <pedd_measure+0x30>
+    case PEDD_CH_B: EMIT_PORT |= (1 << EMIT_B); break;
+ 2a0:	2a 9a       	sbi	0x05, 2	; 5
+ 2a2:	8f e1       	ldi	r24, 0x1F	; 31
+ 2a4:	9e e4       	ldi	r25, 0x4E	; 78
+ 2a6:	01 97       	sbiw	r24, 0x01	; 1
+ 2a8:	f1 f7       	brne	.-4      	; 0x2a6 <pedd_measure+0x34>
+ 2aa:	00 c0       	rjmp	.+0      	; 0x2ac <pedd_measure+0x3a>
+ 2ac:	00 00       	nop
+  /* ① 파장 선택 — 해당 LED 1개만 점등 */
+  emitter_on(ch);
+  _delay_ms(SETTLE_MS);
+
+  /* ② 충전 — PD7을 출력 HIGH로 구동해 역방향 바이어스를 건다 */
+  DET_PORT |= (1 << DET_BIT);
+ 2ae:	5f 9a       	sbi	0x0b, 7	; 11
+  DET_DDR  |= (1 << DET_BIT);
+ 2b0:	57 9a       	sbi	0x0a, 7	; 10
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 2b2:	8f e8       	ldi	r24, 0x8F	; 143
+ 2b4:	91 e0       	ldi	r25, 0x01	; 1
+ 2b6:	01 97       	sbiw	r24, 0x01	; 1
+ 2b8:	f1 f7       	brne	.-4      	; 0x2b6 <pedd_measure+0x44>
+ 2ba:	00 c0       	rjmp	.+0      	; 0x2bc <pedd_measure+0x4a>
+ 2bc:	00 00       	nop
+  _delay_us(CHARGE_US);
+
+  /* ③ 방전 개시 — 타이머 시작과 핀 해제 사이에 인터럽트가 끼지 않게 막는다 */
+  cli();
+ 2be:	f8 94       	cli
+
+  g_ovf = 0;
+ 2c0:	10 92 78 01 	sts	0x0178, r1	; 0x800178 <g_ovf+0x1>
+ 2c4:	10 92 77 01 	sts	0x0177, r1	; 0x800177 <g_ovf>
+  g_done = 0;
+ 2c8:	10 92 72 01 	sts	0x0172, r1	; 0x800172 <__data_end>
+  TCNT1 = 0;
+ 2cc:	10 92 85 00 	sts	0x0085, r1	; 0x800085 <__TEXT_REGION_LENGTH__+0x7f8085>
+ 2d0:	10 92 84 00 	sts	0x0084, r1	; 0x800084 <__TEXT_REGION_LENGTH__+0x7f8084>
+   * [구현 메모 - 계획서 3.7절] 측정 시작 전 플래그 클리어.
+   * AVR에서는 해당 비트에 1을 "기록"해야 클리어된다. 이전 측정의 캡처
+   * 플래그가 남아 있으면 타이머 시작 즉시 트리거되어 방전 시간이 0으로
+   * 기록된다.
+   */
+  TIFR1 = (1 << ICF1) | (1 << TOV1);
+ 2d4:	81 e2       	ldi	r24, 0x21	; 33
+ 2d6:	86 bb       	out	0x16, r24	; 22
+   *               방전으로 1.1V 아래로 내려가면 ACO가 0->1로 전이한다.
+   *               따라서 상승 에지가 맞다. (계획서 6.2절 — 실제 구현 시
+   *               오실로스코프로 방전 파형과 캡처 시점을 함께 확인할 것)
+   *   CS11  = 1 : 프리스케일러 /8 → 2MHz → 500ns 분해능
+   */
+  TCCR1B = (1 << ICES1) | (1 << CS11);
+ 2d8:	82 e4       	ldi	r24, 0x42	; 66
+ 2da:	80 93 81 00 	sts	0x0081, r24	; 0x800081 <__TEXT_REGION_LENGTH__+0x7f8081>
+
+  /* 핀을 하이 임피던스로 전환 → 이 순간부터 광전류로 방전이 진행된다.
+     타이머를 먼저 켰으므로 몇 클럭(약 125ns)의 고정 오프셋이 생기지만,
+     모든 측정에 동일하게 적용되는 상수라 상대 비교에는 영향이 없다. */
+  DET_DDR  &= ~(1 << DET_BIT);
+ 2de:	57 98       	cbi	0x0a, 7	; 10
+  DET_PORT &= ~(1 << DET_BIT);
+ 2e0:	5f 98       	cbi	0x0b, 7	; 11
+
+  sei();
+ 2e2:	78 94       	sei
+
+  /* ④ 캡처 완료 또는 Timeout 대기 */
+  for (;;) {
+    if (g_done) {
+ 2e4:	80 91 72 01 	lds	r24, 0x0172	; 0x800172 <__data_end>
+ 2e8:	88 23       	and	r24, r24
+ 2ea:	21 f1       	breq	.+72     	; 0x334 <pedd_measure+0xc2>
+      break;
+    }
+  }
+
+  /* ⑤ 종료 — 타이머 정지, 발광 LED 소등 */
+  TCCR1B = 0;
+ 2ec:	10 92 81 00 	sts	0x0081, r1	; 0x800081 <__TEXT_REGION_LENGTH__+0x7f8081>
+  g_ovf++;
+}
+
+/* 발광 LED 전체 소등 */
+static void emitters_off(void) {
+  EMIT_PORT &= ~((1 << EMIT_R) | (1 << EMIT_G) | (1 << EMIT_B));
+ 2f0:	85 b1       	in	r24, 0x05	; 5
+ 2f2:	88 7f       	andi	r24, 0xF8	; 248
+ 2f4:	85 b9       	out	0x05, r24	; 5
+  /* ⑤ 종료 — 타이머 정지, 발광 LED 소등 */
+  TCCR1B = 0;
+  emitters_off();
+
+  /* ⑥ 결과 산출. 총 계수 = 캡처값 + (오버플로우 횟수 x 65536) */
+  ATOMIC_BLOCK(ATOMIC_RESTORESTATE) {
+ 2f6:	3f b7       	in	r19, 0x3f	; 63
+    return 1;
+}
+
+static __inline__ uint8_t __iCliRetVal(void)
+{
+    cli();
+ 2f8:	f8 94       	cli
+    if (g_done) {
+ 2fa:	80 91 72 01 	lds	r24, 0x0172	; 0x800172 <__data_end>
+ 2fe:	88 23       	and	r24, r24
+ 300:	19 f1       	breq	.+70     	; 0x348 <pedd_measure+0xd6>
+      r.status    = PEDD_OK;
+      r.overflows = g_cap_ovf;
+ 302:	e0 91 73 01 	lds	r30, 0x0173	; 0x800173 <g_cap_ovf>
+ 306:	f0 91 74 01 	lds	r31, 0x0174	; 0x800174 <g_cap_ovf+0x1>
+      r.ticks     = ((uint32_t)g_cap_ovf << 16) | g_capture;
+ 30a:	80 91 73 01 	lds	r24, 0x0173	; 0x800173 <g_cap_ovf>
+ 30e:	90 91 74 01 	lds	r25, 0x0174	; 0x800174 <g_cap_ovf+0x1>
+ 312:	40 91 75 01 	lds	r20, 0x0175	; 0x800175 <g_capture>
+ 316:	50 91 76 01 	lds	r21, 0x0176	; 0x800176 <g_capture+0x1>
+ 31a:	a0 e0       	ldi	r26, 0x00	; 0
+ 31c:	b0 e0       	ldi	r27, 0x00	; 0
+ 31e:	dc 01       	movw	r26, r24
+ 320:	99 27       	eor	r25, r25
+ 322:	88 27       	eor	r24, r24
+ 324:	60 e0       	ldi	r22, 0x00	; 0
+ 326:	70 e0       	ldi	r23, 0x00	; 0
+ 328:	84 2b       	or	r24, r20
+ 32a:	95 2b       	or	r25, r21
+ 32c:	a6 2b       	or	r26, r22
+ 32e:	b7 2b       	or	r27, r23
+  emitters_off();
+
+  /* ⑥ 결과 산출. 총 계수 = 캡처값 + (오버플로우 횟수 x 65536) */
+  ATOMIC_BLOCK(ATOMIC_RESTORESTATE) {
+    if (g_done) {
+      r.status    = PEDD_OK;
+ 330:	20 e0       	ldi	r18, 0x00	; 0
+ 332:	12 c0       	rjmp	.+36     	; 0x358 <pedd_measure+0xe6>
+  /* ④ 캡처 완료 또는 Timeout 대기 */
+  for (;;) {
+    if (g_done) {
+      break;
+    }
+    ATOMIC_BLOCK(ATOMIC_RESTORESTATE) {
+ 334:	2f b7       	in	r18, 0x3f	; 63
+ 336:	f8 94       	cli
+      ovf_now = g_ovf;
+ 338:	80 91 77 01 	lds	r24, 0x0177	; 0x800177 <g_ovf>
+ 33c:	90 91 78 01 	lds	r25, 0x0178	; 0x800178 <g_ovf+0x1>
+    (void)__s;
+}
+
+static __inline__ void __iRestore(const  uint8_t *__s)
+{
+    SREG = *__s;
+ 340:	2f bf       	out	0x3f, r18	; 63
+    }
+    if (ovf_now >= TIMEOUT_OVF) {
+ 342:	cd 97       	sbiw	r24, 0x3d	; 61
+ 344:	78 f2       	brcs	.-98     	; 0x2e4 <pedd_measure+0x72>
+ 346:	d2 cf       	rjmp	.-92     	; 0x2ec <pedd_measure+0x7a>
+      r.status    = PEDD_OK;
+      r.overflows = g_cap_ovf;
+      r.ticks     = ((uint32_t)g_cap_ovf << 16) | g_capture;
+    } else {
+      r.status    = PEDD_TIMEOUT;
+      r.overflows = g_ovf;
+ 348:	e0 91 77 01 	lds	r30, 0x0177	; 0x800177 <g_ovf>
+ 34c:	f0 91 78 01 	lds	r31, 0x0178	; 0x800178 <g_ovf+0x1>
+      r.ticks     = 0;
+ 350:	80 e0       	ldi	r24, 0x00	; 0
+ 352:	90 e0       	ldi	r25, 0x00	; 0
+ 354:	dc 01       	movw	r26, r24
+    if (g_done) {
+      r.status    = PEDD_OK;
+      r.overflows = g_cap_ovf;
+      r.ticks     = ((uint32_t)g_cap_ovf << 16) | g_capture;
+    } else {
+      r.status    = PEDD_TIMEOUT;
+ 356:	21 e0       	ldi	r18, 0x01	; 1
+ 358:	3f bf       	out	0x3f, r19	; 63
+      r.overflows = g_ovf;
+      r.ticks     = 0;
+    }
+  }
+
+  return r;
+ 35a:	8a 83       	std	Y+2, r24	; 0x02
+ 35c:	9b 83       	std	Y+3, r25	; 0x03
+ 35e:	ac 83       	std	Y+4, r26	; 0x04
+ 360:	bd 83       	std	Y+5, r27	; 0x05
+ 362:	ff 83       	std	Y+7, r31	; 0x07
+ 364:	ee 83       	std	Y+6, r30	; 0x06
+ 366:	38 2f       	mov	r19, r24
+ 368:	4b 81       	ldd	r20, Y+3	; 0x03
+ 36a:	5c 81       	ldd	r21, Y+4	; 0x04
+ 36c:	6d 81       	ldd	r22, Y+5	; 0x05
+ 36e:	7e 2f       	mov	r23, r30
+}
+ 370:	8f 81       	ldd	r24, Y+7	; 0x07
+ 372:	90 e0       	ldi	r25, 0x00	; 0
+ 374:	27 96       	adiw	r28, 0x07	; 7
+ 376:	0f b6       	in	r0, 0x3f	; 63
+ 378:	f8 94       	cli
+ 37a:	de bf       	out	0x3e, r29	; 62
+ 37c:	0f be       	out	0x3f, r0	; 63
+ 37e:	cd bf       	out	0x3d, r28	; 61
+ 380:	df 91       	pop	r29
+ 382:	cf 91       	pop	r28
+ 384:	08 95       	ret
+
+00000386 <uart_init>:
+#define UART_BAUD 38400UL
+#define UART_UBRR ((F_CPU / (16UL * UART_BAUD)) - 1)
+
+void uart_init(void) {
+  /* 통신 속도 설정 — 상위 바이트를 먼저 쓴다 */
+  UBRR0H = (uint8_t)(UART_UBRR >> 8);
+ 386:	10 92 c5 00 	sts	0x00C5, r1	; 0x8000c5 <__TEXT_REGION_LENGTH__+0x7f80c5>
+  UBRR0L = (uint8_t)(UART_UBRR);
+ 38a:	89 e1       	ldi	r24, 0x19	; 25
+ 38c:	80 93 c4 00 	sts	0x00C4, r24	; 0x8000c4 <__TEXT_REGION_LENGTH__+0x7f80c4>
+
+  /* 송신부만 활성화. 수신은 쓰지 않으므로 RXEN0를 켜지 않는다. */
+  UCSR0B = (1 << TXEN0);
+ 390:	88 e0       	ldi	r24, 0x08	; 8
+ 392:	80 93 c1 00 	sts	0x00C1, r24	; 0x8000c1 <__TEXT_REGION_LENGTH__+0x7f80c1>
+
+  /* 8비트 데이터, 패리티 없음, 정지 비트 1 (8N1) */
+  UCSR0C = (1 << UCSZ01) | (1 << UCSZ00);
+ 396:	86 e0       	ldi	r24, 0x06	; 6
+ 398:	80 93 c2 00 	sts	0x00C2, r24	; 0x8000c2 <__TEXT_REGION_LENGTH__+0x7f80c2>
+ 39c:	08 95       	ret
+
+0000039e <uart_putc>:
+}
+
+void uart_putc(char c) {
+  /* UDRE0가 1이 될 때까지 대기 — 송신 버퍼가 비어야 다음 문자를 넣을 수 있다 */
+  while (!(UCSR0A & (1 << UDRE0))) {
+ 39e:	90 91 c0 00 	lds	r25, 0x00C0	; 0x8000c0 <__TEXT_REGION_LENGTH__+0x7f80c0>
+ 3a2:	95 ff       	sbrs	r25, 5
+ 3a4:	fc cf       	rjmp	.-8      	; 0x39e <uart_putc>
+    ;
+  }
+  UDR0 = c;
+ 3a6:	80 93 c6 00 	sts	0x00C6, r24	; 0x8000c6 <__TEXT_REGION_LENGTH__+0x7f80c6>
+ 3aa:	08 95       	ret
+
+000003ac <uart_puts>:
+}
+
+void uart_puts(const char *s) {
+ 3ac:	cf 93       	push	r28
+ 3ae:	df 93       	push	r29
+ 3b0:	ec 01       	movw	r28, r24
+  while (*s) {
+ 3b2:	89 91       	ld	r24, Y+
+ 3b4:	88 23       	and	r24, r24
+ 3b6:	19 f0       	breq	.+6      	; 0x3be <uart_puts+0x12>
+    uart_putc(*s++);
+ 3b8:	0e 94 cf 01 	call	0x39e	; 0x39e <uart_putc>
+ 3bc:	fa cf       	rjmp	.-12     	; 0x3b2 <uart_puts+0x6>
+  }
+}
+ 3be:	df 91       	pop	r29
+ 3c0:	cf 91       	pop	r28
+ 3c2:	08 95       	ret
+
+000003c4 <uart_put_u32>:
+
+void uart_put_u32(uint32_t v) {
+ 3c4:	8f 92       	push	r8
+ 3c6:	9f 92       	push	r9
+ 3c8:	af 92       	push	r10
+ 3ca:	bf 92       	push	r11
+ 3cc:	ef 92       	push	r14
+ 3ce:	ff 92       	push	r15
+ 3d0:	1f 93       	push	r17
+ 3d2:	cf 93       	push	r28
+ 3d4:	df 93       	push	r29
+ 3d6:	cd b7       	in	r28, 0x3d	; 61
+ 3d8:	de b7       	in	r29, 0x3e	; 62
+ 3da:	2b 97       	sbiw	r28, 0x0b	; 11
+ 3dc:	0f b6       	in	r0, 0x3f	; 63
+ 3de:	f8 94       	cli
+ 3e0:	de bf       	out	0x3e, r29	; 62
+ 3e2:	0f be       	out	0x3f, r0	; 63
+ 3e4:	cd bf       	out	0x3d, r28	; 61
+  /* 32비트 부호 없는 정수의 최대 자릿수는 10자리 */
+  char buf[11];
+  uint8_t i = 0;
+
+  if (v == 0) {
+ 3e6:	61 15       	cp	r22, r1
+ 3e8:	71 05       	cpc	r23, r1
+ 3ea:	81 05       	cpc	r24, r1
+ 3ec:	91 05       	cpc	r25, r1
+ 3ee:	91 f4       	brne	.+36     	; 0x414 <__EEPROM_REGION_LENGTH__+0x14>
+    uart_putc('0');
+ 3f0:	80 e3       	ldi	r24, 0x30	; 48
+    v /= 10;
+  }
+  while (i > 0) {
+    uart_putc(buf[--i]);
+  }
+}
+ 3f2:	2b 96       	adiw	r28, 0x0b	; 11
+ 3f4:	0f b6       	in	r0, 0x3f	; 63
+ 3f6:	f8 94       	cli
+ 3f8:	de bf       	out	0x3e, r29	; 62
+ 3fa:	0f be       	out	0x3f, r0	; 63
+ 3fc:	cd bf       	out	0x3d, r28	; 61
+ 3fe:	df 91       	pop	r29
+ 400:	cf 91       	pop	r28
+ 402:	1f 91       	pop	r17
+ 404:	ff 90       	pop	r15
+ 406:	ef 90       	pop	r14
+ 408:	bf 90       	pop	r11
+ 40a:	af 90       	pop	r10
+ 40c:	9f 90       	pop	r9
+ 40e:	8f 90       	pop	r8
+  /* 32비트 부호 없는 정수의 최대 자릿수는 10자리 */
+  char buf[11];
+  uint8_t i = 0;
+
+  if (v == 0) {
+    uart_putc('0');
+ 410:	0c 94 cf 01 	jmp	0x39e	; 0x39e <uart_putc>
+ 414:	20 e0       	ldi	r18, 0x00	; 0
+    return;
+  }
+
+  /* 낮은 자리부터 추출되므로 역순으로 담았다가 뒤집어 출력한다 */
+  while (v > 0) {
+    buf[i++] = (char)('0' + (v % 10));
+ 416:	4a e0       	ldi	r20, 0x0A	; 10
+ 418:	84 2e       	mov	r8, r20
+ 41a:	91 2c       	mov	r9, r1
+ 41c:	a1 2c       	mov	r10, r1
+ 41e:	b1 2c       	mov	r11, r1
+ 420:	11 e0       	ldi	r17, 0x01	; 1
+ 422:	12 0f       	add	r17, r18
+ 424:	ee 24       	eor	r14, r14
+ 426:	e3 94       	inc	r14
+ 428:	f1 2c       	mov	r15, r1
+ 42a:	ec 0e       	add	r14, r28
+ 42c:	fd 1e       	adc	r15, r29
+ 42e:	e2 0e       	add	r14, r18
+ 430:	f1 1c       	adc	r15, r1
+ 432:	a5 01       	movw	r20, r10
+ 434:	94 01       	movw	r18, r8
+ 436:	0e 94 4b 02 	call	0x496	; 0x496 <__udivmodsi4>
+ 43a:	60 5d       	subi	r22, 0xD0	; 208
+ 43c:	f7 01       	movw	r30, r14
+ 43e:	60 83       	st	Z, r22
+    v /= 10;
+ 440:	b9 01       	movw	r22, r18
+ 442:	ca 01       	movw	r24, r20
+    return;
+  }
+
+  /* 낮은 자리부터 추출되므로 역순으로 담았다가 뒤집어 출력한다 */
+  while (v > 0) {
+    buf[i++] = (char)('0' + (v % 10));
+ 444:	21 2f       	mov	r18, r17
+    uart_putc('0');
+    return;
+  }
+
+  /* 낮은 자리부터 추출되므로 역순으로 담았다가 뒤집어 출력한다 */
+  while (v > 0) {
+ 446:	61 15       	cp	r22, r1
+ 448:	71 05       	cpc	r23, r1
+ 44a:	81 05       	cpc	r24, r1
+ 44c:	91 05       	cpc	r25, r1
+ 44e:	41 f7       	brne	.-48     	; 0x420 <__EEPROM_REGION_LENGTH__+0x20>
+    buf[i++] = (char)('0' + (v % 10));
+    v /= 10;
+  }
+  while (i > 0) {
+ 450:	11 23       	and	r17, r17
+ 452:	59 f0       	breq	.+22     	; 0x46a <__EEPROM_REGION_LENGTH__+0x6a>
+    uart_putc(buf[--i]);
+ 454:	11 50       	subi	r17, 0x01	; 1
+ 456:	e1 e0       	ldi	r30, 0x01	; 1
+ 458:	f0 e0       	ldi	r31, 0x00	; 0
+ 45a:	ec 0f       	add	r30, r28
+ 45c:	fd 1f       	adc	r31, r29
+ 45e:	e1 0f       	add	r30, r17
+ 460:	f1 1d       	adc	r31, r1
+ 462:	80 81       	ld	r24, Z
+ 464:	0e 94 cf 01 	call	0x39e	; 0x39e <uart_putc>
+ 468:	f3 cf       	rjmp	.-26     	; 0x450 <__EEPROM_REGION_LENGTH__+0x50>
+  }
+}
+ 46a:	2b 96       	adiw	r28, 0x0b	; 11
+ 46c:	0f b6       	in	r0, 0x3f	; 63
+ 46e:	f8 94       	cli
+ 470:	de bf       	out	0x3e, r29	; 62
+ 472:	0f be       	out	0x3f, r0	; 63
+ 474:	cd bf       	out	0x3d, r28	; 61
+ 476:	df 91       	pop	r29
+ 478:	cf 91       	pop	r28
+ 47a:	1f 91       	pop	r17
+ 47c:	ff 90       	pop	r15
+ 47e:	ef 90       	pop	r14
+ 480:	bf 90       	pop	r11
+ 482:	af 90       	pop	r10
+ 484:	9f 90       	pop	r9
+ 486:	8f 90       	pop	r8
+ 488:	08 95       	ret
+
+0000048a <uart_newline>:
+
+void uart_newline(void) {
+  uart_putc('\r');
+ 48a:	8d e0       	ldi	r24, 0x0D	; 13
+ 48c:	0e 94 cf 01 	call	0x39e	; 0x39e <uart_putc>
+  uart_putc('\n');
+ 490:	8a e0       	ldi	r24, 0x0A	; 10
+ 492:	0c 94 cf 01 	jmp	0x39e	; 0x39e <uart_putc>
+
+00000496 <__udivmodsi4>:
+ 496:	a1 e2       	ldi	r26, 0x21	; 33
+ 498:	1a 2e       	mov	r1, r26
+ 49a:	aa 1b       	sub	r26, r26
+ 49c:	bb 1b       	sub	r27, r27
+ 49e:	fd 01       	movw	r30, r26
+ 4a0:	0d c0       	rjmp	.+26     	; 0x4bc <__udivmodsi4_ep>
+
+000004a2 <__udivmodsi4_loop>:
+ 4a2:	aa 1f       	adc	r26, r26
+ 4a4:	bb 1f       	adc	r27, r27
+ 4a6:	ee 1f       	adc	r30, r30
+ 4a8:	ff 1f       	adc	r31, r31
+ 4aa:	a2 17       	cp	r26, r18
+ 4ac:	b3 07       	cpc	r27, r19
+ 4ae:	e4 07       	cpc	r30, r20
+ 4b0:	f5 07       	cpc	r31, r21
+ 4b2:	20 f0       	brcs	.+8      	; 0x4bc <__udivmodsi4_ep>
+ 4b4:	a2 1b       	sub	r26, r18
+ 4b6:	b3 0b       	sbc	r27, r19
+ 4b8:	e4 0b       	sbc	r30, r20
+ 4ba:	f5 0b       	sbc	r31, r21
+
+000004bc <__udivmodsi4_ep>:
+ 4bc:	66 1f       	adc	r22, r22
+ 4be:	77 1f       	adc	r23, r23
+ 4c0:	88 1f       	adc	r24, r24
+ 4c2:	99 1f       	adc	r25, r25
+ 4c4:	1a 94       	dec	r1
+ 4c6:	69 f7       	brne	.-38     	; 0x4a2 <__udivmodsi4_loop>
+ 4c8:	60 95       	com	r22
+ 4ca:	70 95       	com	r23
+ 4cc:	80 95       	com	r24
+ 4ce:	90 95       	com	r25
+ 4d0:	9b 01       	movw	r18, r22
+ 4d2:	ac 01       	movw	r20, r24
+ 4d4:	bd 01       	movw	r22, r26
+ 4d6:	cf 01       	movw	r24, r30
+ 4d8:	08 95       	ret
+
+000004da <_exit>:
+ 4da:	f8 94       	cli
+
+000004dc <__stop_program>:
+ 4dc:	ff cf       	rjmp	.-2      	; 0x4dc <__stop_program>

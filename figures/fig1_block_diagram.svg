@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 520" width="980" height="520" font-family="'Malgun Gothic','맑은 고딕','Noto Sans KR',sans-serif">
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/>
+    </marker>
+  </defs>
+
+  <rect width="980" height="520" fill="#ffffff"/>
+
+  <!-- MCU 경계 -->
+  <rect x="336" y="284" width="546" height="176" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="7 5"/>
+  <text x="872" y="452" text-anchor="end" font-size="13" font-weight="600" fill="#2563eb">ATmega328P 내부</text>
+
+  <!-- ② RGB 발광부 -->
+  <rect x="100" y="90" width="210" height="104" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1.8"/>
+  <text x="205" y="118" text-anchor="middle" font-size="15" font-weight="700" fill="#78350f">② RGB 발광부</text>
+  <text x="205" y="142" text-anchor="middle" font-size="12.5" fill="#78350f">Red / Green / Blue LED</text>
+  <text x="205" y="161" text-anchor="middle" font-size="12.5" fill="#78350f">PB0 · PB1 · PB2</text>
+  <text x="205" y="180" text-anchor="middle" font-size="12" fill="#92400e">한 번에 1개만 점등</text>
+
+  <!-- ③ 광학 경로 -->
+  <rect x="385" y="90" width="210" height="104" rx="8" fill="#f1f5f9" stroke="#475569" stroke-width="1.8"/>
+  <text x="490" y="118" text-anchor="middle" font-size="15" font-weight="700" fill="#1e293b">③ 광학 경로</text>
+  <text x="490" y="142" text-anchor="middle" font-size="12.5" fill="#1e293b">차광 챔버 + 큐벳</text>
+  <text x="490" y="161" text-anchor="middle" font-size="12.5" fill="#1e293b">액체 시료</text>
+  <text x="490" y="180" text-anchor="middle" font-size="12" fill="#475569">투과(transmission) 배치</text>
+
+  <!-- ④ 검출부 -->
+  <rect x="670" y="90" width="210" height="104" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="1.8"/>
+  <text x="775" y="118" text-anchor="middle" font-size="15" font-weight="700" fill="#14532d">④ 검출부</text>
+  <text x="775" y="142" text-anchor="middle" font-size="12.5" fill="#14532d">검출 LED (역방향 바이어스)</text>
+  <text x="775" y="161" text-anchor="middle" font-size="12.5" fill="#14532d">캐소드 → PD7 (AIN1)</text>
+  <text x="775" y="180" text-anchor="middle" font-size="12" fill="#166534">접합 용량 충전 → 방전</text>
+
+  <!-- ⑤ 신호 처리부 -->
+  <rect x="670" y="322" width="196" height="112" rx="8" fill="#e0e7ff" stroke="#4f46e5" stroke-width="1.8"/>
+  <text x="768" y="350" text-anchor="middle" font-size="15" font-weight="700" fill="#312e81">⑤ 신호 처리부</text>
+  <text x="768" y="373" text-anchor="middle" font-size="12" fill="#312e81">Analog Comparator</text>
+  <text x="768" y="391" text-anchor="middle" font-size="12" fill="#312e81">(내부 1.1 V 밴드갭 기준)</text>
+  <text x="768" y="411" text-anchor="middle" font-size="12" fill="#312e81">→ Timer1 Input Capture</text>
+  <text x="768" y="428" text-anchor="middle" font-size="11.5" fill="#4338ca">방전 시간 하드웨어 기록</text>
+
+  <!-- ① MCU 코어 -->
+  <rect x="352" y="322" width="196" height="112" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/>
+  <text x="450" y="350" text-anchor="middle" font-size="15" font-weight="700" fill="#1e3a8a">① MCU 코어</text>
+  <text x="450" y="373" text-anchor="middle" font-size="12" fill="#1e3a8a">암전류 보정 · 정규화</text>
+  <text x="450" y="393" text-anchor="middle" font-size="12" fill="#1e3a8a">최근접 중심점 분류</text>
+  <text x="450" y="413" text-anchor="middle" font-size="11.5" fill="#1d4ed8">고정소수점 제곱거리 비교</text>
+  <text x="450" y="429" text-anchor="middle" font-size="11.5" fill="#1d4ed8">발광 채널 순차 제어</text>
+
+  <!-- ⑥ 출력부 -->
+  <rect x="100" y="322" width="196" height="112" rx="8" fill="#fce7f3" stroke="#db2777" stroke-width="1.8"/>
+  <text x="198" y="350" text-anchor="middle" font-size="15" font-weight="700" fill="#831843">⑥ 출력부</text>
+  <text x="198" y="376" text-anchor="middle" font-size="12" fill="#831843">UART 38400 bps</text>
+  <text x="198" y="394" text-anchor="middle" font-size="11.5" fill="#9d174d">(개발 · 실험용 로깅)</text>
+  <text x="198" y="416" text-anchor="middle" font-size="12" fill="#831843">I²C OLED</text>
+  <text x="198" y="431" text-anchor="middle" font-size="11.5" fill="#9d174d">(최종 시연용)</text>
+
+  <!-- 흐름 화살표 -->
+  <line x1="310" y1="142" x2="378" y2="142" stroke="#334155" stroke-width="2" marker-end="url(#ah)"/>
+  <text x="344" y="133" text-anchor="middle" font-size="11.5" fill="#334155">광</text>
+
+  <line x1="595" y1="142" x2="663" y2="142" stroke="#334155" stroke-width="2" marker-end="url(#ah)"/>
+  <text x="629" y="133" text-anchor="middle" font-size="11.5" fill="#334155">투과광</text>
+
+  <line x1="775" y1="194" x2="775" y2="315" stroke="#334155" stroke-width="2" marker-end="url(#ah)"/>
+  <text x="785" y="252" font-size="11.5" fill="#334155">PD7 전압 강하</text>
+
+  <line x1="663" y1="378" x2="555" y2="378" stroke="#334155" stroke-width="2" marker-end="url(#ah)"/>
+  <text x="609" y="369" text-anchor="middle" font-size="11.5" fill="#334155">ICR1</text>
+
+  <line x1="345" y1="378" x2="303" y2="378" stroke="#334155" stroke-width="2" marker-end="url(#ah)"/>
+  <text x="324" y="366" text-anchor="middle" font-size="11.5" fill="#334155">판정</text>
+
+  <!-- ① → ② 발광 제어 (좌측 우회) -->
+  <polyline points="370,315 370,250 55,250 55,142 93,142" fill="none" stroke="#d97706" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#ah)"/>
+  <text x="65" y="215" font-size="11.5" fill="#b45309">점등 제어</text>
+  <text x="65" y="232" font-size="11.5" fill="#b45309">(R→G→B)</text>
+
+  <!-- 측정 사이클 주석 -->
+  <text x="490" y="482" text-anchor="middle" font-size="12" fill="#64748b">파장 하나마다 ②→③→④→⑤ 를 1회 수행하여 광학 지문 벡터 [R, G, B] 를 구성한다</text>
+</svg>

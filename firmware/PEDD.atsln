@@ -1,0 +1,33 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Atmel Studio Solution File, Format Version 11.00
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "blink", "01_blink\blink.cproj", "{5DB2EB5A-8687-4742-84BD-DD4E20746DF5}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "phase1", "02_phase1\phase1.cproj", "{18AB69C5-EEA0-4A6F-9F76-C97DB05E0E7E}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "phase2", "03_phase2\phase2.cproj", "{E9193E77-C0EF-43D2-BF69-60E1CBDFB616}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5DB2EB5A-8687-4742-84BD-DD4E20746DF5}.Debug|AVR.ActiveCfg = Debug|AVR
+		{5DB2EB5A-8687-4742-84BD-DD4E20746DF5}.Debug|AVR.Build.0 = Debug|AVR
+		{5DB2EB5A-8687-4742-84BD-DD4E20746DF5}.Release|AVR.ActiveCfg = Release|AVR
+		{5DB2EB5A-8687-4742-84BD-DD4E20746DF5}.Release|AVR.Build.0 = Release|AVR
+		{18AB69C5-EEA0-4A6F-9F76-C97DB05E0E7E}.Debug|AVR.ActiveCfg = Debug|AVR
+		{18AB69C5-EEA0-4A6F-9F76-C97DB05E0E7E}.Debug|AVR.Build.0 = Debug|AVR
+		{18AB69C5-EEA0-4A6F-9F76-C97DB05E0E7E}.Release|AVR.ActiveCfg = Release|AVR
+		{18AB69C5-EEA0-4A6F-9F76-C97DB05E0E7E}.Release|AVR.Build.0 = Release|AVR
+		{E9193E77-C0EF-43D2-BF69-60E1CBDFB616}.Debug|AVR.ActiveCfg = Debug|AVR
+		{E9193E77-C0EF-43D2-BF69-60E1CBDFB616}.Debug|AVR.Build.0 = Debug|AVR
+		{E9193E77-C0EF-43D2-BF69-60E1CBDFB616}.Release|AVR.ActiveCfg = Release|AVR
+		{E9193E77-C0EF-43D2-BF69-60E1CBDFB616}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
