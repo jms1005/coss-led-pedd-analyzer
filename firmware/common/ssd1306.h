@@ -23,4 +23,11 @@ void ssd1306_clear(void);
 /* page 0~7, col 0~20 (문자 단위). 화면 밖은 잘린다. */
 void ssd1306_puts(uint8_t page, uint8_t col, const char *s);
 
+/*
+ * PSTR() 로 감싼 Flash 상주 문자열을 출력한다.
+ * AVR 은 일반 문자열 리터럴을 부팅 시 SRAM 으로 복사하므로, 화면 문구처럼
+ * 개수가 많은 상수는 반드시 이쪽을 써야 한다. SRAM 2KB 가 금방 찬다.
+ */
+void ssd1306_puts_p(uint8_t page, uint8_t col, const char *s);
+
 #endif /* SSD1306_H */

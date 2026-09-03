@@ -102,7 +102,11 @@ uint8_t ssd1306_init(void) {
   return 1;
 }
 
-void ssd1306_puts(uint8_t page, uint8_t col, const char *s) {
+/*
+ * 문자열 출력 공통 구현.
+ * from_pgm 이 1이면 s 는 Flash(PROGMEM) 주소, 0이면 SRAM 주소다.
+ */
+static void puts_impl(uint8_t page, uint8_t col, const char *s, uint8_t from_pgm) {
   uint8_t x;
 
   if (!g_ready || page >= SSD1306_PAGES) {
@@ -119,9 +123,13 @@ void ssd1306_puts(uint8_t page, uint8_t col, const char *s) {
     i2c_stop();
     return;
   }
-  while (*s != '\0' && (uint16_t)(x + FONT_WIDTH) <= SSD1306_COLS) {
-    uint8_t c = (uint8_t)*s++;
+  while ((uint16_t)(x + FONT_WIDTH) <= SSD1306_COLS) {
+    uint8_t c = from_pgm ? (uint8_t)pgm_read_byte(s) : (uint8_t)*s;
     uint8_t i;
+    if (c == 0) {
+      break;
+    }
+    s++;
     /* 폰트 범위 밖(소문자 등)은 공백으로 대체한다. */
     if (c < FONT_FIRST_CHAR || c > FONT_LAST_CHAR) {
       c = ' ';
@@ -135,4 +143,12 @@ void ssd1306_puts(uint8_t page, uint8_t col, const char *s) {
     x = (uint8_t)(x + FONT_WIDTH);
   }
   i2c_stop();
+}
+
+void ssd1306_puts(uint8_t page, uint8_t col, const char *s) {
+  puts_impl(page, col, s, 0);
+}
+
+void ssd1306_puts_p(uint8_t page, uint8_t col, const char *s) {
+  puts_impl(page, col, s, 1);
 }
