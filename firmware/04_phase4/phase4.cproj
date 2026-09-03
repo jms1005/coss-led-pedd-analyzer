@@ -139,6 +139,42 @@
       <SubType>compile</SubType>
       <Link>classify.h</Link>
     </Compile>
+    <Compile Include="..\common\store.c">
+      <SubType>compile</SubType>
+      <Link>store.c</Link>
+    </Compile>
+    <Compile Include="..\common\store.h">
+      <SubType>compile</SubType>
+      <Link>store.h</Link>
+    </Compile>
+    <Compile Include="..\common\i2c.c">
+      <SubType>compile</SubType>
+      <Link>i2c.c</Link>
+    </Compile>
+    <Compile Include="..\common\i2c.h">
+      <SubType>compile</SubType>
+      <Link>i2c.h</Link>
+    </Compile>
+    <Compile Include="..\common\ssd1306.c">
+      <SubType>compile</SubType>
+      <Link>ssd1306.c</Link>
+    </Compile>
+    <Compile Include="..\common\ssd1306.h">
+      <SubType>compile</SubType>
+      <Link>ssd1306.h</Link>
+    </Compile>
+    <Compile Include="..\common\font6x8.h">
+      <SubType>compile</SubType>
+      <Link>font6x8.h</Link>
+    </Compile>
+    <Compile Include="..\common\button.c">
+      <SubType>compile</SubType>
+      <Link>button.c</Link>
+    </Compile>
+    <Compile Include="..\common\button.h">
+      <SubType>compile</SubType>
+      <Link>button.h</Link>
+    </Compile>
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
 </Project>
