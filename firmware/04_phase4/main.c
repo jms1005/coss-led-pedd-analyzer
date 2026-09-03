@@ -183,9 +183,18 @@ static void fmt_u32(char *buf, uint8_t width, uint32_t v) {
   }
 }
 
-static void log_uart(void) {
+/*
+ * CSV 헤더. 부팅 시 한 번만 내보낸다.
+ * 측정마다 반복하면 터미널로 받은 로그 파일에 헤더가 섞여 분석이 깨진다.
+ */
+static void log_uart_header(void) {
+  uart_puts_p(PSTR("# LED PEDD ANALYZER PHASE4"));
+  uart_newline();
   uart_puts_p(PSTR("DARK,R,G,B,n0,n1,n2,cls,d2"));
   uart_newline();
+}
+
+static void log_uart(void) {
   uart_put_u32(g_ticks[0]); uart_putc(',');
   uart_put_u32(g_ticks[1]); uart_putc(',');
   uart_put_u32(g_ticks[2]); uart_putc(',');
@@ -308,6 +317,8 @@ int main(void) {
   button_init();
   ssd1306_init();   /* 실패해도 계속 진행한다. UART 로깅은 살아 있어야 한다. */
   sei();
+
+  log_uart_header();
 
   g_trained = store_load(g_centroids, &g_threshold);
   if (!g_trained) {
