@@ -1,0 +1,260 @@
+/* slides.css — 예선 보고서 슬라이드 디자인
+ *
+ * 테마는 CSS 변수 한 벌로만 갈린다. 마크업은 두 테마가 완전히 같으므로
+ * 최종 결정 후 쓰지 않는 테마 블록만 지우면 된다.
+ *
+ *   .theme-dark   계기판  — 어두운 배경, 수치 강조
+ *   .theme-paper  논문    — 흰 배경, 가는 괘선
+ *
+ * 슬라이드는 1280x720 으로 짜고 렌더할 때 scale(2) 로 2560x1440 을 만든다.
+ * 배율을 CSS 값에 섞지 않으므로 치수를 눈으로 읽을 수 있다.
+ */
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: #555; }
+
+/* 렌더용 — 2배 확대. 레이아웃은 그대로 두고 래스터만 2배가 된다. */
+body.x2 { width: 2560px; height: 1440px; overflow: hidden; }
+body.x2 .slide { transform: scale(2); transform-origin: top left; }
+
+/* 흑백 인쇄 확인용 */
+body.gray .slide { filter: grayscale(1); }
+
+.slide {
+  position: relative;
+  width: 1280px;
+  height: 720px;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "맑은 고딕", "Malgun Gothic", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------------- 제목 띠 ---------------- */
+
+.bar {
+  height: 96px;
+  padding: 0 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bar-bg);
+  border-bottom: 3px solid var(--accent);
+}
+
+.bar h1 {
+  margin: 0;
+  font-size: 33px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  color: var(--head);
+}
+
+.bar .tag {
+  flex: none;
+  margin-left: 28px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.pageno {
+  position: absolute;
+  right: 56px;
+  bottom: 22px;
+  font-family: Consolas, monospace;
+  font-size: 15px;
+  color: var(--muted);
+}
+
+main { padding: 32px 56px 0; }
+
+/* ---------------- 불릿 ---------------- */
+
+ul.bul { margin: 0; padding: 0; list-style: none; }
+
+ul.bul .lv0 {
+  margin-top: 22px;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--head);
+  padding-left: 18px;
+  border-left: 4px solid var(--accent);
+  line-height: 1.25;
+}
+
+ul.bul .lv0:first-child { margin-top: 2px; }
+
+ul.bul .lv1 {
+  margin: 9px 0 0 34px;
+  font-size: 20px;
+  line-height: 1.45;
+  color: var(--ink);
+}
+
+ul.bul .lv0.hi {
+  border-left-color: var(--hi);
+  color: var(--hi);
+  font-size: 25px;
+}
+
+/* ---------------- 표 ---------------- */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 17.5px;
+}
+
+th {
+  background: var(--th-bg);
+  color: var(--th-ink);
+  text-align: left;
+  font-weight: 700;
+  padding: 12px 15px;
+}
+
+td {
+  padding: 11px 15px;
+  border-bottom: 1px solid var(--rule);
+  color: var(--ink);
+  line-height: 1.35;
+}
+
+tbody tr:nth-child(even) td { background: var(--zebra); }
+
+td.hi { color: var(--hi); font-weight: 700; }
+
+/* ---------------- 도면 ---------------- */
+
+.fig {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+}
+
+.fig img { max-width: 100%; max-height: 100%; display: block; }
+
+/* 도면 PNG 는 흰 바탕이다. 어두운 테마에서는 흰 판 위에 올려 의도된
+   구성으로 보이게 한다. 색을 반전하면 회로 기호의 의미가 깨진다. */
+.theme-dark .fig img {
+  background: #fff;
+  padding: 18px;
+  border-radius: 6px;
+}
+
+/* ---------------- 주석 상자 ---------------- */
+
+.note {
+  position: absolute;
+  left: 56px;
+  right: 56px;
+  bottom: 52px;
+  padding: 14px 18px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--note-ink);
+  background: var(--note-bg);
+  border-left: 4px solid var(--note-line);
+}
+
+.note div:first-child { font-weight: 700; }
+
+/* ---------------- 표지 ---------------- */
+
+.cover { position: absolute; inset: 0; padding: 92px 88px 0; }
+
+.cover .kicker {
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--accent);
+}
+
+.cover h1 {
+  margin: 26px 0 0;
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 1.28;
+  letter-spacing: -1px;
+  color: var(--head);
+}
+
+.cover .rule {
+  width: 96px;
+  height: 5px;
+  margin: 34px 0 26px;
+  background: var(--accent);
+}
+
+.cover .lede { font-size: 22px; color: var(--hi); }
+
+.cover .meta {
+  position: absolute;
+  left: 88px;
+  bottom: 74px;
+  font-size: 16.5px;
+  line-height: 1.95;
+  color: var(--muted);
+}
+
+.cover .meta b {
+  display: inline-block;
+  width: 92px;
+  font-weight: 700;
+  color: var(--meta-key);
+}
+
+/* ================= 테마 ① 계기판 ================= */
+
+.theme-dark {
+  --bg: #0E1420;
+  --bar-bg: #131D2E;
+  --head: #FFFFFF;
+  --ink: #C8D5E8;
+  --muted: #7E90AD;
+  --meta-key: #A9BAD3;
+  --accent: #F97316;
+  --hi: #5EEAD4;
+  --rule: rgba(255, 255, 255, 0.10);
+  --th-bg: #22314A;
+  --th-ink: #EAF1FB;
+  --zebra: rgba(255, 255, 255, 0.035);
+  --note-bg: rgba(249, 115, 22, 0.10);
+  --note-line: #F97316;
+  --note-ink: #EFC9AC;
+}
+
+/* 표지는 띠 없이 전면 배경 */
+.theme-dark .cover { background: #0B111C; }
+
+/* ================= 테마 ② 논문 ================= */
+
+.theme-paper {
+  --bg: #FFFFFF;
+  --bar-bg: #F6F8FC;
+  --head: #0F2A5B;
+  --ink: #1B2635;
+  --muted: #5B6B82;
+  --meta-key: #33405A;
+  --accent: #1D4ED8;
+  --hi: #B45309;
+  --rule: #DCE3EC;
+  --th-bg: #334155;
+  --th-ink: #FFFFFF;
+  --zebra: #F3F6FA;
+  --note-bg: #FFFBEB;
+  --note-line: #A16207;
+  --note-ink: #713F12;
+}
+
+.theme-paper .bar { border-bottom-width: 2px; }
+
+.theme-paper .cover h1 {
+  font-family: "바탕", Batang, serif;
+  letter-spacing: -1.5px;
+}
+
+.theme-paper .cover { border-top: 10px solid var(--accent); }

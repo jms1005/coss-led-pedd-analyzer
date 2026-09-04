@@ -4,6 +4,6 @@ Release/
 *.exe
 *.o
 *.elf
-tools/test_classify.exe
+tools/hosttest/
 __pycache__/
 *.pyc

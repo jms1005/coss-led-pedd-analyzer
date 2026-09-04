@@ -16,6 +16,10 @@ make_ppt.py — 예선 보고서 PPT 초안 생성기
 """
 
 import os
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import slide_content
 
 from pptx import Presentation
 from pptx.util import Inches, Pt
@@ -340,20 +344,12 @@ def build():
         "analyze.py 3번 항목이 이 값을 자동 계산한다.",
     ], y=1.55, h=4.4)
 
-    s = new_slide(prs, "시행착오와 해결", "4. 설계·실험 과정 〔4-가-3〕", num())
-    table(s,
-          ["문제", "원인", "해결"],
-          [["프로젝트가 열리지 않음", "componentinfo.xml 누락으로 디바이스 팩 경로가 비었음",
-            "*파일 추가 후 정상 로딩"],
-           ["SRAM 23.6% 점유", "AVR이 문자열 리터럴을 부팅 시 SRAM으로 복사",
-            "*PROGMEM 이전 → 4.4%"],
-           ["정규화 값 붕괴", "합이 작을 때 정수 나눗셈이 잘려 지문이 깨짐",
-            "*곱셈 전 우측 시프트로 변경"],
-           ["로그 파일 헤더 혼입", "측정마다 CSV 헤더를 재출력", "*부팅 시 1회만 출력"]],
-          y=1.5, fs=13, h=2.9)
-    note_box(s, ["★ 실험 중 발생한 하드웨어 문제를 여기에 추가할 것 (계획서 4.5절 실패 대응표 참조)",
-                 "요강 1-나가 명시한 항목이다. 문제를 겪지 않은 척하는 것보다 해결 과정을 보이는 편이 유리하다."],
-             y=4.65, h=1.1)
+    # 내용은 tools/slide_content.py 에 있다. 초안 pptx 와 HTML 슬라이드가
+    # 같은 출처를 보게 해 두 곳이 어긋나지 않게 한다.
+    d = slide_content.TRIAL
+    s = new_slide(prs, d["title"], d["tag"], num())
+    table(s, d["headers"], d["rows"], y=1.5, fs=13)
+    note_box(s, d["note"], y=4.78, h=1.15)
 
     s = new_slide(prs, "예외 상황 대비", "4. 설계·실험 과정 〔4-가-3〕", num())
     bullets(s, [
@@ -437,21 +433,10 @@ def build():
     ], size=15)
 
     # ---- 6. 해결하지 못한 부분 ----
-    s = new_slide(prs, "해결하지 못한 부분", "6. 미해결 〔4-가-5〕", num())
-    bullets(s, [
-        ("실험을 통해서만 확정되는 항목", 0, True),
-        ("분류 임계값, 최소 신호 하한, 반복 측정 횟수는 현재 임시값이다.", 1, False),
-        ("같은 시료를 반복 측정했을 때의 분산을 봐야 정할 수 있어 상수로 분리해두었다.", 1, False),
-        ("하드웨어 검증이 남은 부분", 0, True),
-        ("I2C·OLED·EEPROM·버튼 드라이버는 컴파일 검증까지만 되어 있다.", 1, False),
-        ("분류 로직은 PC 단위 테스트 24개 항목으로 검증했으나, 드라이버는 실물이 필요하다.", 1, False),
-        ("설계상 남은 한계", 0, True),
-        ("검출 LED의 개체차 보정은 같은 로트 소자로 완화했을 뿐 완전히 제거하지 못했다.", 1, False),
-        ("온도 드리프트 보정 미구현 — 세션 시작·종료 시 증류수 재측정 절차로 대응한다.", 1, False),
-        ("적외선(940nm) 채널은 구매한 소자가 가시광 차단 패키지여서 이번 범위에서 제외했다.", 1, False),
-    ], size=15)
-    note_box(s, ["요강이 명시적으로 요구하는 항목이다. 비워두지 말 것.",
-                 "계획서 7장: '미완료 부분을 명시하는 것이 누락하는 것보다 유리하다'"])
+    d = slide_content.UNSOLVED
+    s = new_slide(prs, d["title"], d["tag"], num())
+    bullets(s, d["items"], size=14)
+    note_box(s, d["note"], y=5.85, h=0.95)
 
     # ---- 7. 메모리 사용량 ----
     s = new_slide(prs, "메모리 사용량", "7. 메모리 〔4-가-6〕", num())

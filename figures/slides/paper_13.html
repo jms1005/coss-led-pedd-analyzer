@@ -1,0 +1,22 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<link rel="stylesheet" href="slides.css"></head>
+<body class="x2">
+<div class="slide theme-paper">
+  <header class="bar"><h1>시행착오와 해결</h1><span class="tag">4. 설계·실험 과정 〔4-가-3〕</span></header>
+  <main>
+    <table>
+      <thead><tr><th>문제</th><th>원인</th><th>해결</th></tr></thead>
+      <tbody>
+      <tr><td>프로젝트 로딩 실패</td><td>componentinfo.xml 누락으로 디바이스 팩 경로가 비었음</td><td class="hi">파일 추가 후 정상 로딩</td></tr>
+      <tr><td>SRAM 23.6% 점유</td><td>AVR이 문자열 리터럴을 부팅 시 SRAM으로 복사</td><td class="hi">PROGMEM 이전 — 4.4%</td></tr>
+      <tr><td>정규화 값 붕괴</td><td>합이 작을 때 정수 나눗셈이 잘려 지문이 깨짐</td><td class="hi">곱셈 전 우측 시프트로 변경</td></tr>
+      <tr><td>로그 파일 헤더 혼입</td><td>측정마다 CSV 헤더를 재출력</td><td class="hi">부팅 시 1회만 출력</td></tr>
+      <tr><td>회로도에 PB5가 없음</td><td>펌웨어가 쓰는 타이밍 출력 핀이 도면에 빠짐. 핀 수가 채점 항목이다</td><td class="hi">펌웨어를 단일 출처로 삼아 TP1 추가</td></tr>
+      <tr><td>큐벳 용량 스펙 모순</td><td>내부 10×10×45mm 면 4.5mL 인데 스펙은 1.6mL</td><td class="hi">세미마이크로로 판단 — 광축 방향 통일</td></tr>
+      </tbody>
+    </table>
+  </main>
+  <div class="note"><div>재발 방지: 도면 생성기에 check_geometry() 를 넣어 치수 모순을 매번 자체 점검한다.</div><div>간격을 잘못된 값으로 되돌리면 생성이 실패하는 것까지 확인했다.</div><div>★ 실험 중 발생한 하드웨어 문제를 여기에 추가할 것 (계획서 4.5절 실패 대응표)</div></div>
+  <div class="pageno">13</div>
+</div>
+</body></html>
