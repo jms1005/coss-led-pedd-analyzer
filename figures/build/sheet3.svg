@@ -53,16 +53,16 @@
 <text x="128.50" y="59.80" font-size="3.80" text-anchor="middle" font-weight="700" fill="#ffffff">5</text>
 <text x="134.00" y="58.00" font-size="3.60" text-anchor="start" font-weight="700" fill="#1e293b">우벽</text>
 <text x="134.00" y="62.20" font-size="2.80" text-anchor="start" font-weight="400" fill="#64748b">43 × 65 mm · 발광 LED</text>
-<circle cx="137.00" cy="97.00" r="2.50" fill="none" stroke="#dc2626" stroke-width="0.40" stroke-dasharray="1.2 1.2"/>
-<line x1="134.60" y1="97.00" x2="139.40" y2="97.00" stroke="#64748b" stroke-width="0.20" stroke-linecap="butt"/>
-<line x1="137.00" y1="94.60" x2="137.00" y2="99.40" stroke="#64748b" stroke-width="0.20" stroke-linecap="butt"/>
+<circle cx="136.50" cy="97.00" r="2.50" fill="none" stroke="#dc2626" stroke-width="0.40" stroke-dasharray="1.2 1.2"/>
+<line x1="134.10" y1="97.00" x2="138.90" y2="97.00" stroke="#64748b" stroke-width="0.20" stroke-linecap="butt"/>
+<line x1="136.50" y1="94.60" x2="136.50" y2="99.40" stroke="#64748b" stroke-width="0.20" stroke-linecap="butt"/>
 <circle cx="143.50" cy="97.00" r="2.50" fill="none" stroke="#dc2626" stroke-width="0.40" stroke-dasharray="1.2 1.2"/>
 <line x1="141.10" y1="97.00" x2="145.90" y2="97.00" stroke="#64748b" stroke-width="0.20" stroke-linecap="butt"/>
 <line x1="143.50" y1="94.60" x2="143.50" y2="99.40" stroke="#64748b" stroke-width="0.20" stroke-linecap="butt"/>
 <text x="143.50" y="92.70" font-size="2.50" text-anchor="middle" font-weight="700" fill="#dc2626">5mm 3개</text>
-<circle cx="150.00" cy="97.00" r="2.50" fill="none" stroke="#dc2626" stroke-width="0.40" stroke-dasharray="1.2 1.2"/>
-<line x1="147.60" y1="97.00" x2="152.40" y2="97.00" stroke="#64748b" stroke-width="0.20" stroke-linecap="butt"/>
-<line x1="150.00" y1="94.60" x2="150.00" y2="99.40" stroke="#64748b" stroke-width="0.20" stroke-linecap="butt"/>
+<circle cx="150.50" cy="97.00" r="2.50" fill="none" stroke="#dc2626" stroke-width="0.40" stroke-dasharray="1.2 1.2"/>
+<line x1="148.10" y1="97.00" x2="152.90" y2="97.00" stroke="#64748b" stroke-width="0.20" stroke-linecap="butt"/>
+<line x1="150.50" y1="94.60" x2="150.50" y2="99.40" stroke="#64748b" stroke-width="0.20" stroke-linecap="butt"/>
 <rect x="19.50" y="142.50" width="45.00" height="70.00" rx="1.00" fill="none" stroke="#cbd5e1" stroke-width="0.20" stroke-dasharray="1.5 1.5"/>
 <rect x="22.00" y="145.00" width="40.00" height="65.00" rx="0.00" fill="#ffffff" stroke="#1e293b" stroke-width="0.45"/>
 <line x1="19.00" y1="145.00" x2="25.00" y2="145.00" stroke="#dc2626" stroke-width="0.25" stroke-linecap="butt"/>
@@ -121,30 +121,33 @@
 <text x="71.40" y="107.00" font-size="3.0" text-anchor="middle" font-weight="700" fill="#dc2626" transform="rotate(-90 71.40 107.00)">20 mm (잠정)</text>
 <line x1="22.00" y1="97.00" x2="73.00" y2="97.00" stroke="#dc2626" stroke-width="0.20" stroke-linecap="butt" stroke-dasharray="1.2 1.2"/>
 <text x="76.00" y="98.00" font-size="2.80" text-anchor="start" font-weight="700" fill="#dc2626">← 빛이 지나가는 높이</text>
-<line x1="137.00" y1="109.40" x2="137.00" y2="112.60" stroke="#2563eb" stroke-width="0.25" stroke-linecap="butt"/>
+<line x1="136.50" y1="109.40" x2="136.50" y2="112.60" stroke="#2563eb" stroke-width="0.25" stroke-linecap="butt"/>
 <line x1="143.50" y1="109.40" x2="143.50" y2="112.60" stroke="#2563eb" stroke-width="0.25" stroke-linecap="butt"/>
-<line x1="137.00" y1="111.00" x2="143.50" y2="111.00" stroke="#2563eb" stroke-width="0.25" stroke-linecap="butt"/>
-<polygon points="137.00,111.00 138.50,110.33 138.50,111.67" fill="#2563eb" stroke="none" stroke-width="0.30" stroke-linejoin="round"/>
+<line x1="136.50" y1="111.00" x2="143.50" y2="111.00" stroke="#2563eb" stroke-width="0.25" stroke-linecap="butt"/>
+<polygon points="136.50,111.00 138.00,110.33 138.00,111.67" fill="#2563eb" stroke="none" stroke-width="0.30" stroke-linejoin="round"/>
 <polygon points="143.50,111.00 142.00,110.33 142.00,111.67" fill="#2563eb" stroke="none" stroke-width="0.30" stroke-linejoin="round"/>
-<text x="140.25" y="114.60" font-size="3.00" text-anchor="middle" font-weight="700" fill="#2563eb">6.5</text>
+<text x="140.00" y="114.60" font-size="3.00" text-anchor="middle" font-weight="700" fill="#2563eb">7</text>
 <line x1="143.50" y1="109.40" x2="143.50" y2="112.60" stroke="#2563eb" stroke-width="0.25" stroke-linecap="butt"/>
-<line x1="150.00" y1="109.40" x2="150.00" y2="112.60" stroke="#2563eb" stroke-width="0.25" stroke-linecap="butt"/>
-<line x1="143.50" y1="111.00" x2="150.00" y2="111.00" stroke="#2563eb" stroke-width="0.25" stroke-linecap="butt"/>
+<line x1="150.50" y1="109.40" x2="150.50" y2="112.60" stroke="#2563eb" stroke-width="0.25" stroke-linecap="butt"/>
+<line x1="143.50" y1="111.00" x2="150.50" y2="111.00" stroke="#2563eb" stroke-width="0.25" stroke-linecap="butt"/>
 <polygon points="143.50,111.00 145.00,110.33 145.00,111.67" fill="#2563eb" stroke="none" stroke-width="0.30" stroke-linejoin="round"/>
-<polygon points="150.00,111.00 148.50,110.33 148.50,111.67" fill="#2563eb" stroke="none" stroke-width="0.30" stroke-linejoin="round"/>
-<text x="146.75" y="114.60" font-size="3.00" text-anchor="middle" font-weight="700" fill="#2563eb">6.5</text>
-<rect x="14.00" y="222.00" width="182.00" height="34.00" rx="1.50" fill="#fef2f2" stroke="#dc2626" stroke-width="0.40"/>
-<text x="18.00" y="228.20" font-size="3.80" text-anchor="start" font-weight="700" fill="#dc2626">빨간 점선 구멍은 아직 뚫지 마세요</text>
-<text x="18.00" y="234.00" font-size="3.20" text-anchor="start" font-weight="400" fill="#1e293b">구멍 높이는 큐벳의 맑은 구간 한가운데여야 합니다. 큐벳이 오면 자로 재고,</text>
-<text x="18.00" y="238.40" font-size="3.20" text-anchor="start" font-weight="400" fill="#1e293b">docs/차광챔버_제작.md 4절의 실측 항목을 채운 뒤 이 3장만 다시 인쇄하세요.</text>
-<text x="18.00" y="242.80" font-size="3.20" text-anchor="start" font-weight="400" fill="#1e293b">재인쇄 방법:  python tools/make_build_drawings.py --axis (잰 값)</text>
-<text x="18.00" y="247.20" font-size="3.20" text-anchor="start" font-weight="400" fill="#1e293b"></text>
-<text x="18.00" y="251.60" font-size="3.20" text-anchor="start" font-weight="400" fill="#1e293b">구멍은 LED 가 빡빡하게 끼워질 크기로 뚫습니다. 헐거우면 흔들려서 값이 틀어집니다.</text>
-<rect x="14.00" y="262.00" width="182.00" height="22.00" rx="1.50" fill="#f1f5f9" stroke="none" stroke-width="0.30"/>
-<rect x="14.00" y="262.00" width="1.20" height="22.00" rx="0.00" fill="#059669" stroke="none" stroke-width="0.30"/>
-<text x="18.00" y="267.60" font-size="3.80" text-anchor="start" font-weight="700" fill="#059669">구멍 뚫는 방법</text>
-<text x="18.00" y="273.40" font-size="3.20" text-anchor="start" font-weight="400" fill="#1e293b">5mm 드릴이 없으면, 커터 끝으로 중심에 십자를 낸 뒤 LED 를 돌려가며 밀어 넣으세요.</text>
-<text x="18.00" y="277.80" font-size="3.20" text-anchor="start" font-weight="400" fill="#1e293b">우드락은 무르기 때문에 이 방법으로도 잘 들어가고, 오히려 더 빡빡하게 물립니다.</text>
+<polygon points="150.50,111.00 149.00,110.33 149.00,111.67" fill="#2563eb" stroke="none" stroke-width="0.30" stroke-linejoin="round"/>
+<text x="147.00" y="114.60" font-size="3.00" text-anchor="middle" font-weight="700" fill="#2563eb">7</text>
+<rect x="14.00" y="214.00" width="182.00" height="34.00" rx="1.50" fill="#fef2f2" stroke="#dc2626" stroke-width="0.40"/>
+<text x="18.00" y="220.20" font-size="3.80" text-anchor="start" font-weight="700" fill="#dc2626">빨간 점선 구멍은 아직 뚫지 마세요</text>
+<text x="18.00" y="226.00" font-size="3.20" text-anchor="start" font-weight="400" fill="#1e293b">구멍 높이는 큐벳의 맑은 구간 한가운데여야 합니다. 큐벳이 오면 자로 재고,</text>
+<text x="18.00" y="230.40" font-size="3.20" text-anchor="start" font-weight="400" fill="#1e293b">docs/차광챔버_제작.md 4절의 실측 항목을 채운 뒤 이 3장만 다시 인쇄하세요.</text>
+<text x="18.00" y="234.80" font-size="3.20" text-anchor="start" font-weight="400" fill="#1e293b">재인쇄 방법:  python tools/make_build_drawings.py --axis (잰 값)</text>
+<text x="18.00" y="239.20" font-size="3.20" text-anchor="start" font-weight="400" fill="#1e293b"></text>
+<text x="18.00" y="243.60" font-size="3.20" text-anchor="start" font-weight="400" fill="#1e293b">구멍은 LED 가 빡빡하게 끼워질 크기로 뚫습니다. 헐거우면 흔들려서 값이 틀어집니다.</text>
+<rect x="14.00" y="252.00" width="182.00" height="30.00" rx="1.50" fill="#f1f5f9" stroke="none" stroke-width="0.30"/>
+<rect x="14.00" y="252.00" width="1.20" height="30.00" rx="0.00" fill="#059669" stroke="none" stroke-width="0.30"/>
+<text x="18.00" y="257.60" font-size="3.80" text-anchor="start" font-weight="700" fill="#059669">구멍 뚫는 방법</text>
+<text x="18.00" y="263.40" font-size="3.20" text-anchor="start" font-weight="400" fill="#1e293b">5mm 드릴이 없으면, 커터 끝으로 중심에 십자를 낸 뒤 LED 를 돌려가며 밀어 넣으세요.</text>
+<text x="18.00" y="267.40" font-size="3.20" text-anchor="start" font-weight="400" fill="#1e293b">우드락은 무르기 때문에 이 방법으로도 잘 들어가고, 오히려 더 빡빡하게 물립니다.</text>
+<text x="18.00" y="271.40" font-size="3.20" text-anchor="start" font-weight="400" fill="#1e293b"></text>
+<text x="18.00" y="275.40" font-size="3.20" text-anchor="start" font-weight="400" fill="#1e293b">⑤ 우벽의 세 구멍은 사이 살이 2mm 뿐입니다. 하나씩 천천히, 옆 구멍 쪽으로 힘을 주지 마세요.</text>
+<text x="18.00" y="279.40" font-size="3.20" text-anchor="start" font-weight="400" fill="#1e293b">살이 찢어지면 세 구멍을 이어 17 × 5mm 가로 슬롯으로 만들고 LED 3개를 나란히 끼우면 됩니다.</text>
 <line x1="14.00" y1="285.00" x2="196.00" y2="285.00" stroke="#cbd5e1" stroke-width="0.30" stroke-linecap="butt"/>
 <text x="14.00" y="289.00" font-size="2.60" text-anchor="start" font-weight="400" fill="#64748b">차광 챔버 제작 도면  ·  LED PEDD 액체 광학 분석기</text>
 <text x="196.00" y="289.00" font-size="2.60" text-anchor="end" font-weight="400" fill="#64748b">1:1 실척 · 광축 20 mm 기준</text>

@@ -121,8 +121,10 @@ def sheet1(axis):
 
   # ---- 부품 목록 ----
   ty = 186
-  sh.txt(MARGIN, ty, "우드락(5mm 두께)에서 잘라낼 조각 — 모두 10개",
+  sh.txt(MARGIN, ty, "우드락(5mm 두께)에서 잘라낼 조각 — 10종 12장",
          4.4, weight="700")
+  sh.txt(PW - MARGIN, ty, "다 합쳐 약 171cm². A4 크기 우드락 1장이면 넉넉합니다.",
+         3.0, anchor="end", color=MUTE)
   ty += 6
   cols = [MARGIN + 2, MARGIN + 16, MARGIN + 74, MARGIN + 122, MARGIN + 160]
   sh.rect(MARGIN, ty, PW - 2 * MARGIN, 7, fill=TINT, stroke="none")
@@ -236,10 +238,11 @@ def sheet3(axis):
          color=RED, weight="700")
 
   # 발광 LED 간격
-  sh.dim_h(122 + cxw - LED_PITCH, 122 + cxw, 52 + wy + 14, "6.5", above=False)
-  sh.dim_h(122 + cxw, 122 + cxw + LED_PITCH, 52 + wy + 14, "6.5", above=False)
+  lbl = "%g" % LED_PITCH
+  sh.dim_h(122 + cxw - LED_PITCH, 122 + cxw, 52 + wy + 14, lbl, above=False)
+  sh.dim_h(122 + cxw, 122 + cxw + LED_PITCH, 52 + wy + 14, lbl, above=False)
 
-  sh.warn(MARGIN, 222, PW - 2 * MARGIN,
+  sh.warn(MARGIN, 214, PW - 2 * MARGIN,
           "빨간 점선 구멍은 아직 뚫지 마세요",
           ["구멍 높이는 큐벳의 맑은 구간 한가운데여야 합니다. 큐벳이 오면 자로 재고,",
            "docs/차광챔버_제작.md 4절의 실측 항목을 채운 뒤 이 3장만 다시 인쇄하세요.",
@@ -247,10 +250,15 @@ def sheet3(axis):
            "",
            "구멍은 LED 가 빡빡하게 끼워질 크기로 뚫습니다. 헐거우면 흔들려서 값이 틀어집니다."])
 
-  sh.band(MARGIN, 262, PW - 2 * MARGIN, 22, "구멍 뚫는 방법",
+  sh.band(MARGIN, 252, PW - 2 * MARGIN, 30, "구멍 뚫는 방법",
           ["5mm 드릴이 없으면, 커터 끝으로 중심에 십자를 낸 뒤 LED 를 돌려가며 밀어 넣으세요.",
-           "우드락은 무르기 때문에 이 방법으로도 잘 들어가고, 오히려 더 빡빡하게 물립니다."],
-          color=GREEN)
+           "우드락은 무르기 때문에 이 방법으로도 잘 들어가고, 오히려 더 빡빡하게 물립니다.",
+           "",
+           "⑤ 우벽의 세 구멍은 사이 살이 2mm 뿐입니다. 하나씩 천천히, 옆 구멍 쪽으로 힘을 주지 "
+           "마세요.",
+           "살이 찢어지면 세 구멍을 이어 17 × 5mm 가로 슬롯으로 만들고 LED 3개를 나란히 "
+           "끼우면 됩니다."],
+          color=GREEN, lead=4.0)
   sh.foot("1:1 실척 · 광축 %g mm 기준" % axis)
   return sh
 
@@ -546,7 +554,7 @@ def sheet6(axis):
   sh.txt(MARGIN, 197, "완성 체크리스트", 4.4, weight="700")
   items = [
     "불 끈 방에서 손전등을 비춰도 안쪽으로 빛이 새지 않는다",
-    "큐벳(12.5 × 12.5 mm)이 지그에 흔들림 없이 들어간다",
+    "큐벳(12.5 mm)이 지그 홈(13 × 13 mm)에 흔들림 없이 들어간다",
     "큐벳을 10번 넣었다 뺐다 해도 늘 같은 자리에 앉는다",
     "뚜껑을 여닫아도 LED 위치가 변하지 않는다",
     "빛이 큐벳의 맑은 구간 한가운데를 지난다",
@@ -578,6 +586,8 @@ def main():
   if not 5.0 <= args.axis <= IN_H - 5.0:
     ap.error("--axis 는 5 ~ %g mm 사이여야 합니다" % (IN_H - 5.0))
 
+  check_geometry()
+
   root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
   outdir = os.path.join(root, "figures", "build")
   if not os.path.isdir(outdir):
@@ -601,6 +611,29 @@ def check(svg, i):
     raise SystemExit("%d장: 용지 크기가 A4(210x297mm)가 아닙니다" % i)
   if 'viewBox="0 0 210 297"' not in svg:
     raise SystemExit("%d장: viewBox 가 1단위=1mm 가 아닙니다" % i)
+
+
+def check_geometry():
+  """치수끼리 모순이 없는지 점검한다. 상수를 손대면 여기서 걸린다."""
+  bad = []
+  if IN_W + 2 * T != OUT_W or IN_D + 2 * T != OUT_D:
+    bad.append("외곽 치수가 내부 + 벽 두께와 맞지 않는다")
+  if JIG_OUT > IN_W or JIG_OUT > IN_D:
+    bad.append("지그(%gmm)가 챔버 바닥(%g x %g)보다 크다"
+               % (JIG_OUT, IN_W, IN_D))
+  if JIG_OPEN <= CUV:
+    bad.append("지그 홈(%gmm)이 큐벳(%gmm)보다 작다" % (JIG_OPEN, CUV))
+  if 2 * JIG_BAND + JIG_OPEN != JIG_OUT:
+    bad.append("지그 조각을 모아도 프레임이 되지 않는다")
+  if 2 * LED_PITCH + LED_D >= OUT_D:
+    bad.append("발광 LED 3개가 벽 폭을 넘는다")
+  if LED_PITCH - LED_D < 2.0:
+    bad.append("LED 구멍 사이 살이 %.1fmm 로 너무 얇다 (2mm 이상 필요). "
+               "우드락이 찢어진다" % (LED_PITCH - LED_D))
+  if IN_H <= 45:
+    bad.append("큐벳(45mm)이 챔버 내부 높이(%gmm)에 들어가지 않는다" % IN_H)
+  if bad:
+    raise SystemExit("치수 모순 — " + " / ".join(bad))
 
 
 if __name__ == "__main__":

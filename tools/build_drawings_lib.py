@@ -44,7 +44,7 @@ CUV = 12.5                   # 큐벳 한 변
 JIG_OPEN = 13.0              # 지그 안쪽 (큐벳 + 0.5mm 여유)
 JIG_BAND = 8.0               # 지그 띠 폭
 LED_D = 5.0                  # LED 지름
-LED_PITCH = 6.5              # 발광 LED 3개 중심 간격
+LED_PITCH = 7.0              # 발광 LED 3개 중심 간격 (구멍 사이 살 2mm 확보)
 WIRE_D = 8.0                 # 배선 구멍 지름
 
 
