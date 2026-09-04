@@ -1,0 +1,53 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>차광 챔버 제작 도면</title>
+<!--
+  제작 도면 6장을 A4 PDF 로 묶는 인쇄 래퍼.
+
+  1:1 실척이 핵심이므로 여백을 0 으로 고정하고 이미지 크기를 mm 로 못박는다.
+  브라우저에서 직접 인쇄할 때는 반드시 배율을 "기본" 또는 100% 로 두어야
+  한다. "페이지에 맞춤"이 켜지면 축소되어 템플릿을 쓸 수 없다.
+-->
+<style>
+  @page { size: A4; margin: 0; }
+  html, body { margin: 0; padding: 0; background: #fff; }
+  .page {
+    width: 210mm;
+    height: 297mm;
+    overflow: hidden;
+    display: block;
+    page-break-after: always;
+    break-after: page;
+  }
+  .page:last-child { page-break-after: auto; break-after: auto; }
+  .page img { display: block; width: 210mm; height: 297mm; }
+
+  /* 화면에서 볼 때만 보이는 안내. 인쇄물에는 나오지 않는다. */
+  .hint {
+    font: 14px/1.6 'Malgun Gothic', sans-serif;
+    max-width: 210mm;
+    margin: 16px auto;
+    padding: 14px 18px;
+    background: #fef2f2;
+    border: 1px solid #dc2626;
+    border-radius: 6px;
+    color: #1e293b;
+  }
+  .hint b { color: #dc2626; }
+  @media print { .hint { display: none; } }
+</style>
+
+<div class="hint">
+  <b>인쇄하기 전에 확인하세요.</b><br>
+  Ctrl+P → 용지 <b>A4</b>, 여백 <b>없음</b>, 배율 <b>기본(100%)</b>.
+  "페이지에 맞춤"이 켜져 있으면 <b>끄세요</b>.<br>
+  인쇄한 뒤 2·3·4장의 눈금자를 자로 재서 정확히 100mm 인지 확인하세요.
+  아니면 배율 설정을 고쳐 다시 뽑아야 합니다.
+</div>
+
+<div class="page"><img src="sheet1.svg" alt="1장 무엇을 만드는가"></div>
+<div class="page"><img src="sheet2.svg" alt="2장 재단 템플릿 1"></div>
+<div class="page"><img src="sheet3.svg" alt="3장 재단 템플릿 2"></div>
+<div class="page"><img src="sheet4.svg" alt="4장 지그와 슬릿"></div>
+<div class="page"><img src="sheet5.svg" alt="5장 조립 순서"></div>
+<div class="page"><img src="sheet6.svg" alt="6장 단면도와 체크리스트"></div>

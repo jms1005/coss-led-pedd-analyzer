@@ -1,0 +1,192 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="210mm" height="297mm" viewBox="0 0 210 297" font-family="'Malgun Gothic','맑은 고딕','Noto Sans KR',sans-serif">
+<rect width="210" height="297" fill="#ffffff"/>
+<line x1="14.00" y1="22.00" x2="196.00" y2="22.00" stroke="#1e293b" stroke-width="0.60" stroke-linecap="butt"/>
+<text x="14.00" y="13.50" font-size="7.20" text-anchor="start" font-weight="700" fill="#1e293b">⑤ 조립 순서</text>
+<text x="14.00" y="19.40" font-size="3.20" text-anchor="start" font-weight="400" fill="#64748b">위에서 아래로, 왼쪽에서 오른쪽으로 순서대로 하세요</text>
+<text x="196.00" y="14.00" font-size="6.00" text-anchor="end" font-weight="700" fill="#64748b">5 / 6</text>
+<rect x="14.00" y="26.00" width="87.00" height="54.00" rx="2.00" fill="#ffffff" stroke="#e2e8f0" stroke-width="0.35"/>
+<circle cx="22.00" cy="34.00" r="3.40" fill="#1e293b" stroke="none" stroke-width="0.30"/>
+<text x="22.00" y="35.30" font-size="3.80" text-anchor="middle" font-weight="700" fill="#ffffff">1</text>
+<text x="28.00" y="35.40" font-size="4.00" text-anchor="start" font-weight="700" fill="#1e293b">바닥에 벽 4장 세우기</text>
+<text x="28.00" y="43.00" font-size="2.90" text-anchor="start" font-weight="400" fill="#1e293b">바닥(①) 위에 좌벽(④)·우벽(⑤)을 먼저 세웁니다.</text>
+<text x="28.00" y="47.20" font-size="2.90" text-anchor="start" font-weight="400" fill="#1e293b">그 사이에 앞벽(⑥)·뒤벽(⑦)을 끼웁니다.</text>
+<text x="28.00" y="51.40" font-size="2.90" text-anchor="start" font-weight="400" fill="#1e293b">아직 붙이지 말고 모양만 맞춰 보세요.</text>
+<polygon points="76.55,74.30 85.21,79.30 85.21,78.30 76.55,73.30" fill="#f1f5f9" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="92.66,75.00 85.21,79.30 85.21,78.30 92.66,74.00" fill="#cbd5e1" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="84.00,69.00 92.66,74.00 85.21,78.30 76.55,73.30" fill="#e2e8f0" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="76.55,73.30 77.42,73.80 77.42,60.80 76.55,60.30" fill="#94a3b8" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="84.87,69.50 77.42,73.80 77.42,60.80 84.87,56.50" fill="#b6c2d0" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="84.00,56.00 84.87,56.50 77.42,60.80 76.55,60.30" fill="#cbd5e1" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="84.00,70.00 90.93,74.00 90.93,61.00 84.00,57.00" fill="#b6c2d0" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="91.79,73.50 90.93,74.00 90.93,61.00 91.79,60.50" fill="#94a3b8" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="84.87,56.50 91.79,60.50 90.93,61.00 84.00,57.00" fill="#cbd5e1" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="84.35,77.80 85.21,78.30 85.21,65.30 84.35,64.80" fill="#b6c2d0" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="92.66,74.00 85.21,78.30 85.21,65.30 92.66,61.00" fill="#94a3b8" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="91.79,60.50 92.66,61.00 85.21,65.30 84.35,64.80" fill="#cbd5e1" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<rect x="105.00" y="26.00" width="87.00" height="54.00" rx="2.00" fill="#ffffff" stroke="#e2e8f0" stroke-width="0.35"/>
+<circle cx="113.00" cy="34.00" r="3.40" fill="#1e293b" stroke="none" stroke-width="0.30"/>
+<text x="113.00" y="35.30" font-size="3.80" text-anchor="middle" font-weight="700" fill="#ffffff">2</text>
+<text x="119.00" y="35.40" font-size="4.00" text-anchor="start" font-weight="700" fill="#1e293b">이음새를 테이프로 막기</text>
+<text x="119.00" y="43.00" font-size="2.90" text-anchor="start" font-weight="400" fill="#1e293b">모서리 8군데를 검정 절연테이프로 덮습니다.</text>
+<text x="119.00" y="47.20" font-size="2.90" text-anchor="start" font-weight="400" fill="#1e293b">우드락은 맞대면 반드시 틈이 생깁니다.</text>
+<text x="119.00" y="51.40" font-size="2.90" text-anchor="start" font-weight="400" fill="#1e293b">예쁘게보다 빈틈없이가 중요합니다.</text>
+<polygon points="167.55,74.30 176.21,79.30 176.21,78.30 167.55,73.30" fill="#f1f5f9" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="183.66,75.00 176.21,79.30 176.21,78.30 183.66,74.00" fill="#cbd5e1" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="175.00,69.00 183.66,74.00 176.21,78.30 167.55,73.30" fill="#e2e8f0" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="167.55,73.30 168.42,73.80 168.42,60.80 167.55,60.30" fill="#94a3b8" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="175.87,69.50 168.42,73.80 168.42,60.80 175.87,56.50" fill="#b6c2d0" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="175.00,56.00 175.87,56.50 168.42,60.80 167.55,60.30" fill="#cbd5e1" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="175.00,70.00 181.93,74.00 181.93,61.00 175.00,57.00" fill="#b6c2d0" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="182.79,73.50 181.93,74.00 181.93,61.00 182.79,60.50" fill="#94a3b8" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="175.87,56.50 182.79,60.50 181.93,61.00 175.00,57.00" fill="#cbd5e1" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="175.35,77.80 176.21,78.30 176.21,65.30 175.35,64.80" fill="#b6c2d0" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="183.66,74.00 176.21,78.30 176.21,65.30 183.66,61.00" fill="#94a3b8" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="182.79,60.50 183.66,61.00 176.21,65.30 175.35,64.80" fill="#cbd5e1" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<rect x="14.00" y="84.00" width="87.00" height="54.00" rx="2.00" fill="#ffffff" stroke="#e2e8f0" stroke-width="0.35"/>
+<circle cx="22.00" cy="92.00" r="3.40" fill="#1e293b" stroke="none" stroke-width="0.30"/>
+<text x="22.00" y="93.30" font-size="3.80" text-anchor="middle" font-weight="700" fill="#ffffff">3</text>
+<text x="28.00" y="93.40" font-size="4.00" text-anchor="start" font-weight="700" fill="#1e293b">안쪽을 새까맣게</text>
+<text x="28.00" y="101.00" font-size="2.90" text-anchor="start" font-weight="400" fill="#1e293b">안쪽 5면 + 뚜껑 안쪽에 검정 무광 도화지를</text>
+<text x="28.00" y="105.20" font-size="2.90" text-anchor="start" font-weight="400" fill="#1e293b">붙이거나 검정 테이프를 겹치지 않게 바릅니다.</text>
+<text x="28.00" y="109.40" font-size="2.90" text-anchor="start" font-weight="400" fill="#1e293b">흰 벽은 빛을 반사해 측정을 망칩니다.</text>
+<polygon points="76.55,132.30 85.21,137.30 85.21,136.30 76.55,131.30" fill="#f1f5f9" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="92.66,133.00 85.21,137.30 85.21,136.30 92.66,132.00" fill="#cbd5e1" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="84.00,127.00 92.66,132.00 85.21,136.30 76.55,131.30" fill="#e2e8f0" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="76.55,131.30 77.42,131.80 77.42,118.80 76.55,118.30" fill="#334155" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="84.87,127.50 77.42,131.80 77.42,118.80 84.87,114.50" fill="#3f4a5a" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="84.00,114.00 84.87,114.50 77.42,118.80 76.55,118.30" fill="#475569" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="84.00,128.00 90.93,132.00 90.93,119.00 84.00,115.00" fill="#3f4a5a" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="91.79,131.50 90.93,132.00 90.93,119.00 91.79,118.50" fill="#334155" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="84.87,114.50 91.79,118.50 90.93,119.00 84.00,115.00" fill="#475569" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="84.35,135.80 85.21,136.30 85.21,123.30 84.35,122.80" fill="#3f4a5a" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="92.66,132.00 85.21,136.30 85.21,123.30 92.66,119.00" fill="#334155" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="91.79,118.50 92.66,119.00 85.21,123.30 84.35,122.80" fill="#475569" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<rect x="105.00" y="84.00" width="87.00" height="54.00" rx="2.00" fill="#ffffff" stroke="#e2e8f0" stroke-width="0.35"/>
+<circle cx="113.00" cy="92.00" r="3.40" fill="#1e293b" stroke="none" stroke-width="0.30"/>
+<text x="113.00" y="93.30" font-size="3.80" text-anchor="middle" font-weight="700" fill="#ffffff">4</text>
+<text x="119.00" y="93.40" font-size="4.00" text-anchor="start" font-weight="700" fill="#1e293b">뒤벽에 배선 구멍</text>
+<text x="119.00" y="101.00" font-size="2.90" text-anchor="start" font-weight="400" fill="#1e293b">뒤벽(⑦) 아래쪽에 8mm 구멍 하나만 뚫습니다.</text>
+<text x="119.00" y="105.20" font-size="2.90" text-anchor="start" font-weight="400" fill="#1e293b">LED 4개의 다리 선이 여기로 나갑니다.</text>
+<text x="119.00" y="109.40" font-size="2.90" text-anchor="start" font-weight="400" fill="#1e293b">선을 통과시킨 뒤 남는 틈은 테이프로 막습니다.</text>
+<polygon points="167.55,132.30 176.21,137.30 176.21,136.30 167.55,131.30" fill="#f1f5f9" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="183.66,133.00 176.21,137.30 176.21,136.30 183.66,132.00" fill="#cbd5e1" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="175.00,127.00 183.66,132.00 176.21,136.30 167.55,131.30" fill="#e2e8f0" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="167.55,131.30 168.42,131.80 168.42,118.80 167.55,118.30" fill="#334155" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="175.87,127.50 168.42,131.80 168.42,118.80 175.87,114.50" fill="#3f4a5a" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="175.00,114.00 175.87,114.50 168.42,118.80 167.55,118.30" fill="#475569" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="175.00,128.00 181.93,132.00 181.93,119.00 175.00,115.00" fill="#3f4a5a" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="182.79,131.50 181.93,132.00 181.93,119.00 182.79,118.50" fill="#334155" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="175.87,114.50 182.79,118.50 181.93,119.00 175.00,115.00" fill="#475569" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="175.35,135.80 176.21,136.30 176.21,123.30 175.35,122.80" fill="#3f4a5a" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="183.66,132.00 176.21,136.30 176.21,123.30 183.66,119.00" fill="#334155" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="182.79,118.50 183.66,119.00 176.21,123.30 175.35,122.80" fill="#475569" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<rect x="14.00" y="142.00" width="87.00" height="54.00" rx="2.00" fill="#ffffff" stroke="#e2e8f0" stroke-width="0.35"/>
+<circle cx="22.00" cy="150.00" r="3.40" fill="#1e293b" stroke="none" stroke-width="0.30"/>
+<text x="22.00" y="151.30" font-size="3.80" text-anchor="middle" font-weight="700" fill="#ffffff">5</text>
+<text x="28.00" y="151.40" font-size="4.00" text-anchor="start" font-weight="700" fill="#1e293b">큐벳 재고 LED 구멍 뚫기</text>
+<text x="28.00" y="159.00" font-size="2.90" text-anchor="start" font-weight="400" fill="#1e293b">큐벳이 오면 맑은 구간을 자로 잽니다.</text>
+<text x="28.00" y="163.20" font-size="2.90" text-anchor="start" font-weight="400" fill="#1e293b">그 한가운데 높이에 좌벽 1개·우벽 3개를 뚫습니다.</text>
+<text x="28.00" y="167.40" font-size="2.90" text-anchor="start" font-weight="400" fill="#1e293b">3장을 다시 인쇄해서 쓰면 편합니다.</text>
+<polygon points="76.55,190.30 85.21,195.30 85.21,194.30 76.55,189.30" fill="#f1f5f9" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="92.66,191.00 85.21,195.30 85.21,194.30 92.66,190.00" fill="#cbd5e1" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="84.00,185.00 92.66,190.00 85.21,194.30 76.55,189.30" fill="#e2e8f0" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="76.55,189.30 77.42,189.80 77.42,176.80 76.55,176.30" fill="#334155" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="84.87,185.50 77.42,189.80 77.42,176.80 84.87,172.50" fill="#3f4a5a" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="84.00,172.00 84.87,172.50 77.42,176.80 76.55,176.30" fill="#475569" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="84.00,186.00 90.93,190.00 90.93,177.00 84.00,173.00" fill="#3f4a5a" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="91.79,189.50 90.93,190.00 90.93,177.00 91.79,176.50" fill="#334155" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="84.87,172.50 91.79,176.50 90.93,177.00 84.00,173.00" fill="#475569" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="80.71,184.40 81.92,185.10 81.92,184.10 80.71,183.40" fill="#f87171" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="82.79,184.60 81.92,185.10 81.92,184.10 82.79,183.60" fill="#ef4444" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="81.58,182.90 82.79,183.60 81.92,184.10 80.71,183.40" fill="#fca5a5" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="84.35,193.80 85.21,194.30 85.21,181.30 84.35,180.80" fill="#3f4a5a" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="92.66,190.00 85.21,194.30 85.21,181.30 92.66,177.00" fill="#334155" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="91.79,176.50 92.66,177.00 85.21,181.30 84.35,180.80" fill="#475569" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<rect x="105.00" y="142.00" width="87.00" height="54.00" rx="2.00" fill="#ffffff" stroke="#e2e8f0" stroke-width="0.35"/>
+<circle cx="113.00" cy="150.00" r="3.40" fill="#1e293b" stroke="none" stroke-width="0.30"/>
+<text x="113.00" y="151.30" font-size="3.80" text-anchor="middle" font-weight="700" fill="#ffffff">6</text>
+<text x="119.00" y="151.40" font-size="4.00" text-anchor="start" font-weight="700" fill="#1e293b">지그 붙이기</text>
+<text x="119.00" y="159.00" font-size="2.90" text-anchor="start" font-weight="400" fill="#1e293b">⑧⑨ 네 조각을 바닥 한가운데에 붙입니다.</text>
+<text x="119.00" y="163.20" font-size="2.90" text-anchor="start" font-weight="400" fill="#1e293b">안쪽 구멍 13 × 13 mm 를 꼭 확인하세요.</text>
+<text x="119.00" y="167.40" font-size="2.90" text-anchor="start" font-weight="400" fill="#1e293b">큐벳을 넣었다 뺐다 해보고 붙입니다.</text>
+<polygon points="167.55,190.30 176.21,195.30 176.21,194.30 167.55,189.30" fill="#f1f5f9" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="183.66,191.00 176.21,195.30 176.21,194.30 183.66,190.00" fill="#cbd5e1" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="175.00,185.00 183.66,190.00 176.21,194.30 167.55,189.30" fill="#e2e8f0" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="167.55,189.30 168.42,189.80 168.42,176.80 167.55,176.30" fill="#334155" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="175.87,185.50 168.42,189.80 168.42,176.80 175.87,172.50" fill="#3f4a5a" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="175.00,172.00 175.87,172.50 168.42,176.80 167.55,176.30" fill="#475569" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="175.00,186.00 181.93,190.00 181.93,177.00 175.00,173.00" fill="#3f4a5a" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="182.79,189.50 181.93,190.00 181.93,177.00 182.79,176.50" fill="#334155" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="175.87,172.50 182.79,176.50 181.93,177.00 175.00,173.00" fill="#475569" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="170.58,189.65 175.61,192.55 175.61,191.55 170.58,188.65" fill="#f59e0b" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="180.63,189.65 175.61,192.55 175.61,191.55 180.63,188.65" fill="#d97706" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="175.61,185.75 180.63,188.65 175.61,191.55 170.58,188.65" fill="#fbbf24" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="175.35,193.80 176.21,194.30 176.21,181.30 175.35,180.80" fill="#3f4a5a" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="183.66,190.00 176.21,194.30 176.21,181.30 183.66,177.00" fill="#334155" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="182.79,176.50 183.66,177.00 176.21,181.30 175.35,180.80" fill="#475569" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<rect x="14.00" y="200.00" width="87.00" height="54.00" rx="2.00" fill="#ffffff" stroke="#e2e8f0" stroke-width="0.35"/>
+<circle cx="22.00" cy="208.00" r="3.40" fill="#1e293b" stroke="none" stroke-width="0.30"/>
+<text x="22.00" y="209.30" font-size="3.80" text-anchor="middle" font-weight="700" fill="#ffffff">7</text>
+<text x="28.00" y="209.40" font-size="4.00" text-anchor="start" font-weight="700" fill="#1e293b">정렬 확인 — 붙이기 전에!</text>
+<text x="28.00" y="217.00" font-size="2.90" text-anchor="start" font-weight="400" fill="#1e293b">LED 를 구멍에 꽂고 건전지로 켜 봅니다.</text>
+<text x="28.00" y="221.20" font-size="2.90" text-anchor="start" font-weight="400" fill="#1e293b">빛이 큐벳 한가운데를 지나 반대편 LED 정면에</text>
+<text x="28.00" y="225.40" font-size="2.90" text-anchor="start" font-weight="400" fill="#1e293b">닿는지 봅니다. 세 개 모두 확인하세요.</text>
+<polygon points="76.55,248.30 85.21,253.30 85.21,252.30 76.55,247.30" fill="#f1f5f9" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="92.66,249.00 85.21,253.30 85.21,252.30 92.66,248.00" fill="#cbd5e1" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="84.00,243.00 92.66,248.00 85.21,252.30 76.55,247.30" fill="#e2e8f0" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="76.55,247.30 77.42,247.80 77.42,234.80 76.55,234.30" fill="#334155" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="84.87,243.50 77.42,247.80 77.42,234.80 84.87,230.50" fill="#3f4a5a" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="84.00,230.00 84.87,230.50 77.42,234.80 76.55,234.30" fill="#475569" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="84.00,244.00 90.93,248.00 90.93,235.00 84.00,231.00" fill="#3f4a5a" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="91.79,247.50 90.93,248.00 90.93,235.00 91.79,234.50" fill="#334155" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="84.87,230.50 91.79,234.50 90.93,235.00 84.00,231.00" fill="#475569" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="79.58,247.65 84.61,250.55 84.61,249.55 79.58,246.65" fill="#f59e0b" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="89.63,247.65 84.61,250.55 84.61,249.55 89.63,246.65" fill="#d97706" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="84.61,243.75 89.63,246.65 84.61,249.55 79.58,246.65" fill="#fbbf24" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="82.44,247.65 84.61,248.90 84.61,239.90 82.44,238.65" fill="#dbeafe" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="86.77,247.65 84.61,248.90 84.61,239.90 86.77,238.65" fill="#93c5fd" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="84.61,237.40 86.77,238.65 84.61,239.90 82.44,238.65" fill="#bfdbfe" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="80.71,242.40 81.92,243.10 81.92,242.10 80.71,241.40" fill="#f87171" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="82.79,242.60 81.92,243.10 81.92,242.10 82.79,241.60" fill="#ef4444" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="81.58,240.90 82.79,241.60 81.92,242.10 80.71,241.40" fill="#fca5a5" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="84.35,251.80 85.21,252.30 85.21,239.30 84.35,238.80" fill="#3f4a5a" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="92.66,248.00 85.21,252.30 85.21,239.30 92.66,235.00" fill="#334155" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="91.79,234.50 92.66,235.00 85.21,239.30 84.35,238.80" fill="#475569" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<rect x="105.00" y="200.00" width="87.00" height="54.00" rx="2.00" fill="#ffffff" stroke="#e2e8f0" stroke-width="0.35"/>
+<circle cx="113.00" cy="208.00" r="3.40" fill="#1e293b" stroke="none" stroke-width="0.30"/>
+<text x="113.00" y="209.30" font-size="3.80" text-anchor="middle" font-weight="700" fill="#ffffff">8</text>
+<text x="119.00" y="209.40" font-size="4.00" text-anchor="start" font-weight="700" fill="#1e293b">고정하고 뚜껑 완성</text>
+<text x="119.00" y="217.00" font-size="2.90" text-anchor="start" font-weight="400" fill="#1e293b">정렬이 맞으면 그때 글루건으로 고정합니다.</text>
+<text x="119.00" y="221.20" font-size="2.90" text-anchor="start" font-weight="400" fill="#1e293b">뚜껑(②) 아래에 마개(③)를 가운데 맞춰 붙입니다.</text>
+<text x="119.00" y="225.40" font-size="2.90" text-anchor="start" font-weight="400" fill="#1e293b">다 만든 뒤에는 챔버를 옮기지 마세요.</text>
+<polygon points="167.55,248.30 176.21,253.30 176.21,252.30 167.55,247.30" fill="#f1f5f9" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="183.66,249.00 176.21,253.30 176.21,252.30 183.66,248.00" fill="#cbd5e1" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="175.00,243.00 183.66,248.00 176.21,252.30 167.55,247.30" fill="#e2e8f0" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="167.55,247.30 168.42,247.80 168.42,234.80 167.55,234.30" fill="#334155" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="175.87,243.50 168.42,247.80 168.42,234.80 175.87,230.50" fill="#3f4a5a" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="175.00,230.00 175.87,230.50 168.42,234.80 167.55,234.30" fill="#475569" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="175.00,244.00 181.93,248.00 181.93,235.00 175.00,231.00" fill="#3f4a5a" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="182.79,247.50 181.93,248.00 181.93,235.00 182.79,234.50" fill="#334155" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="175.87,230.50 182.79,234.50 181.93,235.00 175.00,231.00" fill="#475569" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="170.58,247.65 175.61,250.55 175.61,249.55 170.58,246.65" fill="#f59e0b" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="180.63,247.65 175.61,250.55 175.61,249.55 180.63,246.65" fill="#d97706" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="175.61,243.75 180.63,246.65 175.61,249.55 170.58,246.65" fill="#fbbf24" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="173.44,247.65 175.61,248.90 175.61,239.90 173.44,238.65" fill="#dbeafe" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="177.77,247.65 175.61,248.90 175.61,239.90 177.77,238.65" fill="#93c5fd" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="175.61,237.40 177.77,238.65 175.61,239.90 173.44,238.65" fill="#bfdbfe" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="171.71,242.40 172.92,243.10 172.92,242.10 171.71,241.40" fill="#f87171" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="173.79,242.60 172.92,243.10 172.92,242.10 173.79,241.60" fill="#ef4444" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="172.58,240.90 173.79,241.60 172.92,242.10 171.71,241.40" fill="#fca5a5" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="175.35,251.80 176.21,252.30 176.21,239.30 175.35,238.80" fill="#3f4a5a" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="183.66,248.00 176.21,252.30 176.21,239.30 183.66,235.00" fill="#334155" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="182.79,234.50 183.66,235.00 176.21,239.30 175.35,238.80" fill="#475569" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="167.55,233.10 176.21,238.10 176.21,237.10 167.55,232.10" fill="#f1f5f9" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="183.66,233.80 176.21,238.10 176.21,237.10 183.66,232.80" fill="#cbd5e1" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<polygon points="175.00,227.80 183.66,232.80 176.21,237.10 167.55,232.10" fill="#e2e8f0" stroke="#1e293b" stroke-width="0.28" stroke-linejoin="round"/>
+<rect x="14.00" y="262.00" width="182.00" height="16.40" rx="1.50" fill="#fef2f2" stroke="#dc2626" stroke-width="0.40"/>
+<text x="18.00" y="268.20" font-size="3.80" text-anchor="start" font-weight="700" fill="#dc2626">7번을 건너뛰면 처음부터 다시 만듭니다</text>
+<text x="18.00" y="274.00" font-size="3.20" text-anchor="start" font-weight="400" fill="#1e293b">붙이기 전에 빛이 제대로 지나가는지 꼭 확인하세요. 한 번 붙이면 못 고칩니다.</text>
+<line x1="14.00" y1="285.00" x2="196.00" y2="285.00" stroke="#cbd5e1" stroke-width="0.30" stroke-linecap="butt"/>
+<text x="14.00" y="289.00" font-size="2.60" text-anchor="start" font-weight="400" fill="#64748b">차광 챔버 제작 도면  ·  LED PEDD 액체 광학 분석기</text>
+<text x="196.00" y="289.00" font-size="2.60" text-anchor="end" font-weight="400" fill="#64748b">조립 순서</text>
+</svg>
