@@ -1,0 +1,22 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<link rel="stylesheet" href="slides.css"></head>
+<body class="x2">
+<div class="slide theme-paper">
+  <header class="bar"><h1>MCU 선정 근거 — ATmega328P</h1><span class="tag">3. 구현 전략 〔4-가-2〕</span></header>
+  <main>
+    <table>
+      <thead><tr><th>선정 기준</th><th>요구 사항</th><th>ATmega328P 사양 및 적합성</th></tr></thead>
+      <tbody>
+      <tr><td>타이머</td><td>μs 분해능 시간 측정</td><td class="hi">Timer1 16비트, /8에서 500ns 분해능</td></tr>
+      <tr><td>비교기</td><td>임계 통과 시점 포착</td><td class="hi">Analog Comparator 내장 + 1.1V 밴드갭 기준</td></tr>
+      <tr><td>캡처</td><td>지연 없는 시각 기록</td><td class="hi">Input Capture가 비교기 출력에 직결</td></tr>
+      <tr><td>GPIO</td><td>광학부 4 + 버튼 1 + I2C 2 + UART 1</td><td>23개 I/O — 여유 있으나 과잉 아님</td></tr>
+      <tr><td>개발환경</td><td>레지스터 직접 제어</td><td>Microchip Studio + avr-gcc</td></tr>
+      <tr><td>가격</td><td>저비용 구성</td><td>IC 단품 약 5,000원</td></tr>
+      </tbody>
+    </table>
+  </main>
+  <div class="note"><div>STM32를 쓰지 않은 이유: 본 설계는 ADC를 쓰지 않으므로 고성능 ADC의 이점이 없다.</div><div>필요한 것은 비교기 출력을 타이머가 직접 캡처하는 경로인데, 그 조합이 328P에 그대로 있다.</div></div>
+  <div class="pageno">08</div>
+</div>
+</body></html>

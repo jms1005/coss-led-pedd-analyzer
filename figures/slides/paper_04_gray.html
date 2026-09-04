@@ -1,0 +1,23 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<link rel="stylesheet" href="slides.css"></head>
+<body class="x2 gray">
+<div class="slide theme-paper">
+  <header class="bar"><h1>PEDD 동작 원리</h1><span class="tag">2. 기능·원리·구조 〔4-가-1〕</span></header>
+  <main>
+    <ul class="bul">
+      <li class="lv0">1단계 — 충전</li>
+      <li class="lv1">검출 LED의 캐소드를 HIGH로 구동해 역방향 바이어스를 건다.</li>
+      <li class="lv1">접합 정전용량(수십 pF)이 전원 전압까지 충전된다.</li>
+      <li class="lv0">2단계 — 방전</li>
+      <li class="lv1">핀을 입력(Hi-Z)으로 전환하면 광전류만이 방전 경로가 된다.</li>
+      <li class="lv1">빛이 셀수록 광전류가 크고 전압이 빨리 떨어진다.</li>
+      <li class="lv0">3단계 — 시간 측정</li>
+      <li class="lv1">전압이 내부 1.1V 밴드갭 기준을 지나는 순간을 Analog Comparator가 잡고,</li>
+      <li class="lv1">그 사건이 Timer1 Input Capture로 하드웨어에서 직접 기록된다.</li>
+      <li class="lv0 hi">방전 시간 ∝ 1 / 광량 — 시간이라는 디지털 값으로 광량을 얻는다</li>
+    </ul>
+  </main>
+  <div class="note"><div>계획서 3.2절 / 3.6절.</div><div>논리 문턱값 대신 밴드갭 기준을 쓰는 이유는 논리 문턱값이 전원 전압과</div><div>온도에 따라 흔들려 측정 재현성을 해치기 때문이다.</div></div>
+  <div class="pageno">04</div>
+</div>
+</body></html>
