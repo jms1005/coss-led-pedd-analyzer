@@ -16,6 +16,10 @@ make_ppt.py — 예선 보고서 PPT 초안 생성기
 """
 
 import os
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import slide_content
 
 from pptx import Presentation
 from pptx.util import Inches, Pt
@@ -340,20 +344,12 @@ def build():
         "analyze.py 3번 항목이 이 값을 자동 계산한다.",
     ], y=1.55, h=4.4)
 
-    s = new_slide(prs, "시행착오와 해결", "4. 설계·실험 과정 〔4-가-3〕", num())
-    table(s,
-          ["문제", "원인", "해결"],
-          [["프로젝트가 열리지 않음", "componentinfo.xml 누락으로 디바이스 팩 경로가 비었음",
-            "*파일 추가 후 정상 로딩"],
-           ["SRAM 23.6% 점유", "AVR이 문자열 리터럴을 부팅 시 SRAM으로 복사",
-            "*PROGMEM 이전 → 4.4%"],
-           ["정규화 값 붕괴", "합이 작을 때 정수 나눗셈이 잘려 지문이 깨짐",
-            "*곱셈 전 우측 시프트로 변경"],
-           ["로그 파일 헤더 혼입", "측정마다 CSV 헤더를 재출력", "*부팅 시 1회만 출력"]],
-          y=1.5, fs=13, h=2.9)
-    note_box(s, ["★ 실험 중 발생한 하드웨어 문제를 여기에 추가할 것 (계획서 4.5절 실패 대응표 참조)",
-                 "요강 1-나가 명시한 항목이다. 문제를 겪지 않은 척하는 것보다 해결 과정을 보이는 편이 유리하다."],
-             y=4.65, h=1.1)
+    # 내용은 tools/slide_content.py 에 있다. 초안 pptx 와 HTML 슬라이드가
+    # 같은 출처를 보게 해 두 곳이 어긋나지 않게 한다.
+    d = slide_content.TRIAL
+    s = new_slide(prs, d["title"], d["tag"], num())
+    table(s, d["headers"], d["rows"], y=1.5, fs=13)
+    note_box(s, d["note"], y=4.78, h=1.15)
 
     s = new_slide(prs, "예외 상황 대비", "4. 설계·실험 과정 〔4-가-3〕", num())
     bullets(s, [
