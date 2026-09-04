@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="210mm" height="297mm" viewBox="0 0 210 297" font-family="'Malgun Gothic','맑은 고딕','Noto Sans KR',sans-serif">
+<rect width="210" height="297" fill="#ffffff"/>
+<line x1="14.00" y1="22.00" x2="196.00" y2="22.00" stroke="#1e293b" stroke-width="0.60" stroke-linecap="butt"/>
+<text x="14.00" y="13.50" font-size="7.20" text-anchor="start" font-weight="700" fill="#1e293b">① 한눈에 보기</text>
+<text x="14.00" y="19.40" font-size="3.20" text-anchor="start" font-weight="400" fill="#64748b">무엇을 어디에 연결하는지 — 먼저 이 장을 읽으세요</text>
+<text x="196.00" y="14.00" font-size="6.00" text-anchor="end" font-weight="700" fill="#64748b">1 / 4</text>
+<rect x="14.00" y="25.00" width="182.00" height="26.00" rx="1.50" fill="#f1f5f9" stroke="none" stroke-width="0.30"/>
+<rect x="14.00" y="25.00" width="1.20" height="26.00" rx="0.00" fill="#2563eb" stroke="none" stroke-width="0.30"/>
+<text x="18.00" y="30.60" font-size="3.80" text-anchor="start" font-weight="700" fill="#2563eb">이 회로가 하는 일</text>
+<text x="18.00" y="36.40" font-size="3.20" text-anchor="start" font-weight="400" fill="#1e293b">우노가 발광 LED 3개를 하나씩 켜서 시료에 빛을 보내고, 반대편 검출 LED 로</text>
+<text x="18.00" y="40.80" font-size="3.20" text-anchor="start" font-weight="400" fill="#1e293b">그 빛을 받습니다. 버튼으로 측정을 시작하고 결과는 OLED 화면에 나옵니다.</text>
+<rect x="20.00" y="58.00" width="46.00" height="16.00" rx="2.00" fill="#e0e7ff" stroke="#1e293b" stroke-width="0.40"/>
+<text x="43.00" y="65.00" font-size="4.00" text-anchor="middle" font-weight="700" fill="#1e293b">Arduino Uno</text>
+<text x="43.00" y="70.00" font-size="2.80" text-anchor="middle" font-weight="400" fill="#64748b">ATmega328P</text>
+<rect x="120.00" y="56.00" width="62.00" height="13.00" rx="2.00" fill="#ffffff" stroke="#dc2626" stroke-width="0.50"/>
+<text x="124.00" y="61.60" font-size="3.40" text-anchor="start" font-weight="700" fill="#dc2626">발광 LED 적 · 녹 · 청</text>
+<text x="124.00" y="66.20" font-size="2.90" text-anchor="start" font-weight="400" fill="#64748b">D8 · D9 · D10</text>
+<path d="M 66.00 66.00 C 96.00 66.00, 90.00 62.50, 120.00 62.50" fill="none" stroke="#dc2626" stroke-width="0.8" stroke-linecap="round"/>
+<rect x="120.00" y="73.00" width="62.00" height="13.00" rx="2.00" fill="#ffffff" stroke="#7c3aed" stroke-width="0.50"/>
+<text x="124.00" y="78.60" font-size="3.40" text-anchor="start" font-weight="700" fill="#7c3aed">검출 LED (거꾸로!)</text>
+<text x="124.00" y="83.20" font-size="2.90" text-anchor="start" font-weight="400" fill="#64748b">D7</text>
+<path d="M 66.00 66.00 C 96.00 66.00, 90.00 79.50, 120.00 79.50" fill="none" stroke="#7c3aed" stroke-width="0.8" stroke-linecap="round"/>
+<rect x="120.00" y="90.00" width="62.00" height="13.00" rx="2.00" fill="#ffffff" stroke="#ea580c" stroke-width="0.50"/>
+<text x="124.00" y="95.60" font-size="3.40" text-anchor="start" font-weight="700" fill="#ea580c">버튼 SW1</text>
+<text x="124.00" y="100.20" font-size="2.90" text-anchor="start" font-weight="400" fill="#64748b">D2</text>
+<path d="M 66.00 66.00 C 96.00 66.00, 90.00 96.50, 120.00 96.50" fill="none" stroke="#ea580c" stroke-width="0.8" stroke-linecap="round"/>
+<rect x="120.00" y="107.00" width="62.00" height="13.00" rx="2.00" fill="#ffffff" stroke="#1e293b" stroke-width="0.50"/>
+<text x="124.00" y="112.60" font-size="3.40" text-anchor="start" font-weight="700" fill="#1e293b">OLED 화면</text>
+<text x="124.00" y="117.20" font-size="2.90" text-anchor="start" font-weight="400" fill="#64748b">A4 · A5 · 5V · GND</text>
+<path d="M 66.00 66.00 C 96.00 66.00, 90.00 113.50, 120.00 113.50" fill="none" stroke="#1e293b" stroke-width="0.8" stroke-linecap="round"/>
+<text x="14.00" y="132.00" font-size="4.40" text-anchor="start" font-weight="700" fill="#1e293b">핀 대응표 — 우노 보드에 적힌 번호를 보세요</text>
+<rect x="14.00" y="138.00" width="182.00" height="7.00" rx="0.00" fill="#f1f5f9" stroke="none" stroke-width="0.30"/>
+<text x="16.00" y="142.80" font-size="3.10" text-anchor="start" font-weight="700" fill="#1e293b">MCU 핀</text>
+<text x="44.00" y="142.80" font-size="3.10" text-anchor="start" font-weight="700" fill="#1e293b">우노 표기</text>
+<text x="70.00" y="142.80" font-size="3.10" text-anchor="start" font-weight="700" fill="#1e293b">연결 대상</text>
+<text x="164.00" y="142.80" font-size="3.10" text-anchor="start" font-weight="700" fill="#1e293b">점퍼선 색</text>
+<text x="16.00" y="149.40" font-size="3.00" text-anchor="start" font-weight="400" fill="#64748b">PB0</text>
+<text x="44.00" y="149.40" font-size="3.20" text-anchor="start" font-weight="700" fill="#1e293b">D8</text>
+<text x="70.00" y="149.40" font-size="3.00" text-anchor="start" font-weight="400" fill="#1e293b">발광 LED 적색 (R1 220Ω 거쳐)</text>
+<circle cx="165.60" cy="148.30" r="1.50" fill="#dc2626" stroke="none" stroke-width="0.30"/>
+<text x="169.00" y="149.40" font-size="3.00" text-anchor="start" font-weight="400" fill="#64748b">빨강</text>
+<rect x="14.00" y="151.40" width="182.00" height="6.40" rx="0.00" fill="#f8fafc" stroke="none" stroke-width="0.30"/>
+<text x="16.00" y="155.80" font-size="3.00" text-anchor="start" font-weight="400" fill="#64748b">PB1</text>
+<text x="44.00" y="155.80" font-size="3.20" text-anchor="start" font-weight="700" fill="#1e293b">D9</text>
+<text x="70.00" y="155.80" font-size="3.00" text-anchor="start" font-weight="400" fill="#1e293b">발광 LED 녹색 (R2 220Ω 거쳐)</text>
+<circle cx="165.60" cy="154.70" r="1.50" fill="#16a34a" stroke="none" stroke-width="0.30"/>
+<text x="169.00" y="155.80" font-size="3.00" text-anchor="start" font-weight="400" fill="#64748b">초록</text>
+<text x="16.00" y="162.20" font-size="3.00" text-anchor="start" font-weight="400" fill="#64748b">PB2</text>
+<text x="44.00" y="162.20" font-size="3.20" text-anchor="start" font-weight="700" fill="#1e293b">D10</text>
+<text x="70.00" y="162.20" font-size="3.00" text-anchor="start" font-weight="400" fill="#1e293b">발광 LED 청색 (R3 220Ω 거쳐)</text>
+<circle cx="165.60" cy="161.10" r="1.50" fill="#2563eb" stroke="none" stroke-width="0.30"/>
+<text x="169.00" y="162.20" font-size="3.00" text-anchor="start" font-weight="400" fill="#64748b">파랑</text>
+<rect x="14.00" y="164.20" width="182.00" height="6.40" rx="0.00" fill="#f8fafc" stroke="none" stroke-width="0.30"/>
+<text x="16.00" y="168.60" font-size="3.00" text-anchor="start" font-weight="400" fill="#64748b">PD7</text>
+<text x="44.00" y="168.60" font-size="3.20" text-anchor="start" font-weight="700" fill="#1e293b">D7</text>
+<text x="70.00" y="168.60" font-size="3.00" text-anchor="start" font-weight="400" fill="#1e293b">검출 LED 캐소드 (짧은 다리)</text>
+<circle cx="165.60" cy="167.50" r="1.50" fill="#7c3aed" stroke="none" stroke-width="0.30"/>
+<text x="169.00" y="168.60" font-size="3.00" text-anchor="start" font-weight="400" fill="#64748b">보라</text>
+<text x="16.00" y="175.00" font-size="3.00" text-anchor="start" font-weight="400" fill="#64748b">PD2</text>
+<text x="44.00" y="175.00" font-size="3.20" text-anchor="start" font-weight="700" fill="#1e293b">D2</text>
+<text x="70.00" y="175.00" font-size="3.00" text-anchor="start" font-weight="400" fill="#1e293b">버튼 SW1</text>
+<circle cx="165.60" cy="173.90" r="1.50" fill="#ea580c" stroke="none" stroke-width="0.30"/>
+<text x="169.00" y="175.00" font-size="3.00" text-anchor="start" font-weight="400" fill="#64748b">주황</text>
+<rect x="14.00" y="177.00" width="182.00" height="6.40" rx="0.00" fill="#f8fafc" stroke="none" stroke-width="0.30"/>
+<text x="16.00" y="181.40" font-size="3.00" text-anchor="start" font-weight="400" fill="#64748b">PC4</text>
+<text x="44.00" y="181.40" font-size="3.20" text-anchor="start" font-weight="700" fill="#1e293b">A4</text>
+<text x="70.00" y="181.40" font-size="3.00" text-anchor="start" font-weight="400" fill="#1e293b">OLED SDA</text>
+<circle cx="165.60" cy="180.30" r="1.50" fill="#1e293b" stroke="none" stroke-width="0.30"/>
+<text x="169.00" y="181.40" font-size="3.00" text-anchor="start" font-weight="400" fill="#64748b">아무 색</text>
+<text x="16.00" y="187.80" font-size="3.00" text-anchor="start" font-weight="400" fill="#64748b">PC5</text>
+<text x="44.00" y="187.80" font-size="3.20" text-anchor="start" font-weight="700" fill="#1e293b">A5</text>
+<text x="70.00" y="187.80" font-size="3.00" text-anchor="start" font-weight="400" fill="#1e293b">OLED SCL</text>
+<circle cx="165.60" cy="186.70" r="1.50" fill="#1e293b" stroke="none" stroke-width="0.30"/>
+<text x="169.00" y="187.80" font-size="3.00" text-anchor="start" font-weight="400" fill="#64748b">아무 색</text>
+<rect x="14.00" y="189.80" width="182.00" height="6.40" rx="0.00" fill="#f8fafc" stroke="none" stroke-width="0.30"/>
+<text x="16.00" y="194.20" font-size="3.00" text-anchor="start" font-weight="400" fill="#64748b">—</text>
+<text x="44.00" y="194.20" font-size="3.20" text-anchor="start" font-weight="700" fill="#1e293b">5V</text>
+<text x="70.00" y="194.20" font-size="3.00" text-anchor="start" font-weight="400" fill="#1e293b">OLED VCC</text>
+<circle cx="165.60" cy="193.10" r="1.50" fill="#1e293b" stroke="none" stroke-width="0.30"/>
+<text x="169.00" y="194.20" font-size="3.00" text-anchor="start" font-weight="400" fill="#64748b">아무 색</text>
+<text x="16.00" y="200.60" font-size="3.00" text-anchor="start" font-weight="400" fill="#64748b">—</text>
+<text x="44.00" y="200.60" font-size="3.20" text-anchor="start" font-weight="700" fill="#1e293b">GND</text>
+<text x="70.00" y="200.60" font-size="3.00" text-anchor="start" font-weight="400" fill="#1e293b">브레드보드 GND 줄 (− 줄)</text>
+<circle cx="165.60" cy="199.50" r="1.50" fill="#0f172a" stroke="none" stroke-width="0.30"/>
+<text x="169.00" y="200.60" font-size="3.00" text-anchor="start" font-weight="400" fill="#64748b">검정</text>
+<text x="14.00" y="208.60" font-size="4.40" text-anchor="start" font-weight="700" fill="#1e293b">LED 다리 구별하는 법</text>
+<rect x="14.00" y="213.60" width="96.00" height="40.00" rx="1.50" fill="#f1f5f9" stroke="none" stroke-width="0.30"/>
+<rect x="14.00" y="213.60" width="1.20" height="40.00" rx="0.00" fill="#059669" stroke="none" stroke-width="0.30"/>
+<text x="18.00" y="219.20" font-size="3.80" text-anchor="start" font-weight="700" fill="#059669">긴 다리 = + , 짧은 다리 = −</text>
+<text x="18.00" y="225.00" font-size="3.20" text-anchor="start" font-weight="400" fill="#1e293b">LED 를 옆에서 보면 다리 길이가 다릅니다.</text>
+<text x="18.00" y="229.20" font-size="3.20" text-anchor="start" font-weight="400" fill="#1e293b">짧은 다리 쪽 렌즈 테두리가 평평하게</text>
+<text x="18.00" y="233.40" font-size="3.20" text-anchor="start" font-weight="400" fill="#1e293b">깎여 있기도 합니다.</text>
+<text x="18.00" y="237.60" font-size="3.20" text-anchor="start" font-weight="400" fill="#1e293b"></text>
+<text x="18.00" y="241.80" font-size="3.20" text-anchor="start" font-weight="400" fill="#1e293b">· 긴 다리(+, 애노드) → 저항 쪽</text>
+<text x="18.00" y="246.00" font-size="3.20" text-anchor="start" font-weight="400" fill="#1e293b">· 짧은 다리(−, 캐소드) → GND 쪽</text>
+<rect x="109.00" y="213.60" width="87.00" height="38.40" rx="1.50" fill="#fef2f2" stroke="#dc2626" stroke-width="0.40"/>
+<text x="113.00" y="219.80" font-size="3.80" text-anchor="start" font-weight="700" fill="#dc2626">검출 LED 하나만 반대입니다</text>
+<text x="113.00" y="225.60" font-size="3.20" text-anchor="start" font-weight="400" fill="#1e293b">발광 LED 3개는 짧은 다리가 GND 로 갑니다. 보통 방식입니다.</text>
+<text x="113.00" y="230.00" font-size="3.20" text-anchor="start" font-weight="400" fill="#1e293b"></text>
+<text x="113.00" y="234.40" font-size="3.20" text-anchor="start" font-weight="400" fill="#1e293b">검출 LED(D4)만 <tspan font-weight="700">짧은 다리가 우노 D7 로</tspan>, 긴 다리가 GND 로</text>
+<text x="113.00" y="238.80" font-size="3.20" text-anchor="start" font-weight="400" fill="#1e293b">갑니다. 거꾸로 꽂아야 빛을 받아 전기를 만드는 소자가 됩니다.</text>
+<text x="113.00" y="243.20" font-size="3.20" text-anchor="start" font-weight="400" fill="#1e293b"></text>
+<text x="113.00" y="247.60" font-size="3.20" text-anchor="start" font-weight="400" fill="#1e293b">이걸 바로 꽂으면 측정이 전부 TIMEOUT 으로 나옵니다.</text>
+<line x1="14.00" y1="285.00" x2="196.00" y2="285.00" stroke="#cbd5e1" stroke-width="0.30" stroke-linecap="butt"/>
+<text x="14.00" y="289.00" font-size="2.60" text-anchor="start" font-weight="400" fill="#64748b">브레드보드 배선도  ·  LED PEDD 액체 광학 분석기</text>
+<text x="196.00" y="289.00" font-size="2.60" text-anchor="end" font-weight="400" fill="#64748b">핀 배정 출처: firmware/common/pedd.c · button.c · i2c.c</text>
+</svg>

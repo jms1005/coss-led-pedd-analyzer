@@ -57,8 +57,10 @@ def esc(s):
 class Sheet(object):
   """A4 한 장. 모든 좌표는 mm."""
 
-  def __init__(self, num, title, subtitle=""):
+  def __init__(self, num, title, subtitle="", total=6, doc=None):
     self.num = num
+    self.total = total
+    self.doc = doc or "차광 챔버 제작 도면"
     self.el = []
     self.head(title, subtitle)
 
@@ -92,10 +94,17 @@ class Sheet(object):
 
   def txt(self, x, y, s, size=3.2, anchor="start", weight="400", color=INK,
           italic=False):
+    """**별표로 감싼 부분**은 굵은 글씨로 나간다."""
     st = ' font-style="italic"' if italic else ''
+    if "**" in s:
+      body = "".join(
+        ('<tspan font-weight="700">%s</tspan>' % esc(t)) if i % 2 else esc(t)
+        for i, t in enumerate(s.split("**")))
+    else:
+      body = esc(s)
     self.add('<text x="%.2f" y="%.2f" font-size="%.2f" text-anchor="%s" '
              'font-weight="%s" fill="%s"%s>%s</text>'
-             % (x, y, size, anchor, weight, color, st, esc(s)))
+             % (x, y, size, anchor, weight, color, st, body))
 
   def lines(self, x, y, rows, size=3.2, lead=4.4, anchor="start",
             weight="400", color=INK):
@@ -111,12 +120,12 @@ class Sheet(object):
     self.txt(MARGIN, 13.5, title, 7.2, weight="700")
     if subtitle:
       self.txt(MARGIN, 19.4, subtitle, 3.2, color=MUTE)
-    self.txt(PW - MARGIN, 14, "%d / 6" % self.num, 6.0, anchor="end",
-             color=MUTE, weight="700")
+    self.txt(PW - MARGIN, 14, "%d / %d" % (self.num, self.total), 6.0,
+             anchor="end", color=MUTE, weight="700")
 
   def foot(self, note=""):
     self.line(MARGIN, PH - 12, PW - MARGIN, PH - 12, "#cbd5e1", 0.3)
-    self.txt(MARGIN, PH - 8, "차광 챔버 제작 도면  ·  LED PEDD 액체 광학 분석기",
+    self.txt(MARGIN, PH - 8, self.doc + "  ·  LED PEDD 액체 광학 분석기",
              2.6, color=MUTE)
     if note:
       self.txt(PW - MARGIN, PH - 8, note, 2.6, anchor="end", color=MUTE)
