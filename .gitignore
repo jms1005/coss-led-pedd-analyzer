@@ -5,3 +5,5 @@ Release/
 *.o
 *.elf
 tools/test_classify.exe
+__pycache__/
+*.pyc
