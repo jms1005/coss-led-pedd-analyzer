@@ -1,0 +1,22 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<link rel="stylesheet" href="slides.css"></head>
+<body class="x2">
+<div class="slide theme-dark">
+  <header class="bar"><h1>해결하지 못한 부분</h1><span class="tag">6. 미해결 〔4-가-5〕</span></header>
+  <main>
+    <ul class="bul">
+      <li class="lv0 hi">실험을 통해서만 확정되는 항목</li>
+      <li class="lv1">분류 임계값·최소 신호 하한·반복 측정 횟수는 임시값이다. 반복 측정 분산을 보고 정한다.</li>
+      <li class="lv0 hi">하드웨어 검증이 남은 부분</li>
+      <li class="lv1">I2C·OLED·EEPROM·버튼 드라이버는 컴파일 검증까지만 되어 있다.</li>
+      <li class="lv1">분류 로직은 PC 단위 테스트 24개 항목으로 검증했다. 드라이버는 실물이 필요하다.</li>
+      <li class="lv0 hi">설계상 남은 한계</li>
+      <li class="lv1">LED·칩 개체차 — 같은 로트로 완화했을 뿐 제거하지 못했다. 보드를 바꾸면 중심점을 다시 학습해야 한다.</li>
+      <li class="lv1">온도 드리프트 보정 미구현 — 세션 시작·종료 시 증류수 재측정 절차로 대응한다.</li>
+      <li class="lv1">가시광 3채널만 다루므로 흡광이 유사한 물질은 구분되지 않는다 — IR 채널은 향후 과제.</li>
+    </ul>
+  </main>
+  <div class="note"><div>최근접 중심점 분류기는 각 시료군이 구형으로 분포한다고 가정한다. 비대칭이면 판별 성능이 떨어진다 (계획서 8.3절).</div><div>★ 실험 후: 확정된 상수와 검증이 끝난 항목은 결과 슬라이드로 옮길 것</div></div>
+  <div class="pageno">19</div>
+</div>
+</body></html>
