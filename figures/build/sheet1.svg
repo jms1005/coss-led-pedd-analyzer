@@ -3,7 +3,7 @@
 <line x1="14.00" y1="22.00" x2="196.00" y2="22.00" stroke="#1e293b" stroke-width="0.60" stroke-linecap="butt"/>
 <text x="14.00" y="13.50" font-size="7.20" text-anchor="start" font-weight="700" fill="#1e293b">① 무엇을 만드는가</text>
 <text x="14.00" y="19.40" font-size="3.20" text-anchor="start" font-weight="400" fill="#64748b">차광 챔버 — 시료를 넣고 빛을 통과시키는 검은 상자입니다</text>
-<text x="196.00" y="14.00" font-size="6.00" text-anchor="end" font-weight="700" fill="#64748b">1 / 6</text>
+<text x="196.00" y="14.00" font-size="6.00" text-anchor="end" font-weight="700" fill="#64748b">1 / 7</text>
 <rect x="14.00" y="25.00" width="182.00" height="30.00" rx="1.50" fill="#f1f5f9" stroke="none" stroke-width="0.30"/>
 <rect x="14.00" y="25.00" width="1.20" height="30.00" rx="0.00" fill="#2563eb" stroke="none" stroke-width="0.30"/>
 <text x="18.00" y="30.60" font-size="3.80" text-anchor="start" font-weight="700" fill="#2563eb">이 상자가 하는 일</text>

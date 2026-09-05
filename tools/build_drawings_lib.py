@@ -3,7 +3,7 @@
 make_build_drawings.py — 차광 챔버 제작 도면 생성기
 
 `docs/차광챔버_제작.md` 의 치수를 그림으로 옮긴다. 인쇄해서 보면서
-만들 수 있도록 A4 6장으로 구성하고, 재단 템플릿은 1:1 실척으로 그린다.
+만들 수 있도록 A4 7장으로 구성하고, 재단 템플릿은 1:1 실척으로 그린다.
 
   1장  무엇을 만드는가 (준비물 + 조립 그림)
   2장  1:1 재단 템플릿 ① 바닥·뚜껑·마개
@@ -11,12 +11,13 @@ make_build_drawings.py — 차광 챔버 제작 도면 생성기
   4장  1:1 지그·슬릿
   5장  조립 순서 8단계
   6장  단면도·누광 검사·체크리스트
+  7장  무엇을 덮는가 (챔버 안 / 밖 경계)
 
 핵심 규칙: **SVG 1 단위 = 1mm**. 인쇄 래퍼가 210x297mm 로 고정하므로
 템플릿을 오려 우드락에 대고 그대로 자를 수 있다.
 
 실행:  python tools/make_build_drawings.py [--axis 20]
-출력:  figures/build/sheet1.svg ... sheet6.svg
+출력:  figures/build/sheet1.svg ... sheet7.svg
 """
 
 import argparse
@@ -65,7 +66,7 @@ def text_width(s, size):
 class Sheet(object):
   """A4 한 장. 모든 좌표는 mm."""
 
-  def __init__(self, num, title, subtitle="", total=6, doc=None):
+  def __init__(self, num, title, subtitle="", total=7, doc=None):
     self.num = num
     self.total = total
     self.doc = doc or "차광 챔버 제작 도면"

@@ -3,7 +3,7 @@
 <line x1="14.00" y1="22.00" x2="196.00" y2="22.00" stroke="#1e293b" stroke-width="0.60" stroke-linecap="butt"/>
 <text x="14.00" y="13.50" font-size="7.20" text-anchor="start" font-weight="700" fill="#1e293b">⑥ 단면도 · 검사 · 체크리스트</text>
 <text x="14.00" y="19.40" font-size="3.20" text-anchor="start" font-weight="400" fill="#64748b">다 만든 뒤 이 장으로 확인하세요</text>
-<text x="196.00" y="14.00" font-size="6.00" text-anchor="end" font-weight="700" fill="#64748b">6 / 6</text>
+<text x="196.00" y="14.00" font-size="6.00" text-anchor="end" font-weight="700" fill="#64748b">6 / 7</text>
 <text x="14.00" y="31.00" font-size="4.40" text-anchor="start" font-weight="700" fill="#1e293b">빛이 지나가는 길 (앞에서 자른 단면)</text>
 <rect x="26.00" y="114.40" width="56.00" height="5.60" rx="0.00" fill="#e2e8f0" stroke="#1e293b" stroke-width="0.40"/>
 <rect x="26.00" y="41.60" width="5.60" height="72.80" rx="0.00" fill="#475569" stroke="#1e293b" stroke-width="0.40"/>

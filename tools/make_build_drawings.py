@@ -11,9 +11,10 @@ make_build_drawings.py — 차광 챔버 제작 도면 6장 생성
   4장  1:1 지그·슬릿
   5장  조립 순서 8단계
   6장  단면도·누광 검사·완성 체크리스트
+  7장  무엇을 덮는가 (챔버 안 / 밖 경계)
 
 실행:  python tools/make_build_drawings.py [--axis 20]
-출력:  figures/build/sheet1.svg ... sheet6.svg
+출력:  figures/build/sheet1.svg ... sheet7.svg
 
 --axis 는 챔버 바닥에서 광축까지의 높이(mm)다. 큐벳을 실측하기 전에는
 잠정값 20 을 쓰고, 실측 후 실제 값으로 다시 실행해 3장만 재인쇄한다.
@@ -575,6 +576,152 @@ def sheet6(axis):
   return sh
 
 
+# ============================ 7장 ============================
+
+def sheet7(axis):
+  sh = Sheet(7, "⑦ 무엇을 덮는가", "챔버 안에 들어가는 것과, 밖에 남는 것")
+
+  sh.band(MARGIN, 25, PW - 2 * MARGIN, 22, "한 줄로 말하면",
+          ["**발광 LED 3개 → 큐벳 → 검출 LED**, 이 세 점을 잇는 직선만 감싸면 됩니다.",
+           "빛을 내거나 받는 것만 안에 넣고, 나머지 전자부품은 전부 밖에 둡니다."])
+
+  # ---- 왼쪽: 위에서 본 챔버 ----
+  sh.txt(MARGIN, 54, "위에서 내려다본 챔버", 4.4, weight="700")
+  sh.txt(MARGIN, 58.5, "안에 무엇이 들어가는지 보는 개념도입니다. "
+         "재단 치수는 2·3·4장을 보세요.", 2.8, color=MUTE)
+
+  X0, Y0, W, H = 26.0, 72.0, 100.0, 80.0      # 챔버 외곽 (그림상)
+  WT = 10.0                                    # 벽 (5mm 를 2배로)
+  IX, IY = X0 + WT, Y0 + WT
+  IW, IH = W - 2 * WT, H - 2 * WT
+  CX, CY = X0 + W / 2.0, Y0 + H / 2.0
+
+  sh.rect(X0, Y0, W, H, fill="#475569", stroke=INK, sw=0.5, rx=1)
+  sh.rect(IX, IY, IW, IH, fill="#eef2f7", stroke=INK, sw=0.4)
+
+  # 지그 프레임 (바깥 29 / 안쪽 13mm)
+  sh.rect(CX - 29, CY - 29, 58, 58, fill="none", stroke="#b45309", sw=0.35,
+          dash="2 1.5")
+  sh.rect(CX - 13, CY - 13, 26, 26, fill="none", stroke="#b45309", sw=0.35,
+          dash="2 1.5")
+  sh.txt(CX + 26, CY + 25, "지그 (큐벳 자리)", 2.6, anchor="end",
+         color="#b45309")
+
+  # 큐벳
+  sh.rect(CX - 12.5, CY - 12.5, 25, 25, fill="#dbeafe", stroke=BLUE, sw=0.45)
+  sh.txt(CX, CY - 5, "큐벳", 3.0, anchor="middle", weight="700", color=BLUE)
+
+  # 발광 LED 3개 (벽에 박힌다) · 검출 LED 1개
+  for dy, col, name in ((-14, RED, "R"), (0, GREEN, "G"), (14, BLUE, "B")):
+    sh.circle(X0 + WT / 2.0, CY + dy, 5, fill=col, stroke=INK, sw=0.35)
+    sh.txt(X0 + WT / 2.0, CY + dy + 1.3, name, 3.4, anchor="middle",
+           weight="700", color="#ffffff")
+  sh.circle(X0 + W - WT / 2.0, CY, 5, fill="#6ee7b7", stroke=INK, sw=0.35)
+  sh.txt(X0 + W - WT / 2.0, CY + 1.2, "검출", 2.6, anchor="middle",
+         weight="700")
+
+  # 광축
+  sh.line(IX, CY, IX + IW, CY, RED, 0.5, dash="3 1.5")
+  sh.arrow(IX + IW, CY, -1, 0, RED, 2.0)
+  sh.txt(IX + 2, CY - 3.5, "빛이 가는 길", 2.7, color=RED, weight="700")
+
+  # 부품 이름 (챔버 위쪽에 모아서)
+  for x, label in ((X0 + WT / 2.0, "발광 LED 3개"), (CX, "큐벳 · 지그"),
+                   (X0 + W - WT / 2.0, "검출 LED 1개")):
+    sh.txt(x, Y0 - 4, label, 3.0, anchor="middle", weight="700")
+    sh.line(x, Y0 - 2.6, x, Y0, MUTE, 0.25)
+
+  # 배선 구멍 — 챔버를 드나드는 유일한 통로
+  hx, hy = X0 + W - 16, Y0 + H - WT / 2.0
+  sh.circle(hx, hy, 4, fill="#f8fafc", stroke=INK, sw=0.4)
+  for x1, y1, x2, y2 in ((hx, hy, hx, 157), (hx, 157, 78, 157),
+                         (78, 157, 78, 170)):
+    sh.line(x1, y1, x2, y2, MUTE, 0.8)
+  sh.arrow(78, 170, 0, -1, MUTE, 1.8)
+  sh.txt(hx + 6, 156,
+         "배선 구멍 — 리드선만 나가고, 남는 틈은 테이프로 막습니다.", 2.8,
+         color=MUTE)
+
+  # ---- 오른쪽: 경계 확대 단면 ----
+  RX = 132.0
+  sh.txt(RX, 54, "경계는 어디인가", 4.4, weight="700")
+  sh.txt(RX, 58.5, "벽을 자른 단면 (확대)", 2.8, color=MUTE)
+
+  wx, wy, wh = 154.0, 74.0, 44.0               # 벽 단면
+  sh.rect(wx, wy, 12, wh, fill="#475569", stroke=INK, sw=0.4)
+  sh.txt(RX + 2, 70, "← 챔버 안", 2.8, weight="700", color=GREEN)
+  sh.txt(PW - MARGIN, 70, "챔버 밖 →", 2.8, anchor="end", weight="700",
+         color=MUTE)
+
+  led_y = wy + wh / 2.0
+  sh.circle(wx + 6, led_y, 6, fill="#fca5a5", stroke=INK, sw=0.4)
+  for dy, dx in ((-2.5, 14.0), (2.5, 10.0)):
+    sh.line(wx, led_y + dy, wx - dx, led_y + dy, INK, 0.4)
+    sh.line(wx - dx, led_y + dy, wx - dx, wy + wh + 4, INK, 0.4)
+    sh.arrow(wx - dx, wy + wh + 4, 0, 1, INK, 1.6)
+  sh.txt(RX, led_y - 6, "리드선", 2.6, weight="700")
+  sh.txt(wx + 6, wy - 2.5, "LED", 2.8, anchor="middle", weight="700")
+
+  sh.lines(RX, 128,
+           ["· LED 머리가 5mm 구멍을 **꽉 막아야** 합니다.",
+            "  헐거우면 빛도 새고 정렬도 깨집니다.",
+            "· 리드선은 챔버 **안쪽**으로 나와, 바닥을",
+            "  따라 배선 구멍 하나로만 빠져나갑니다.",
+            "· 그 구멍 말고 뚫린 곳이 있으면 안 됩니다."], 2.9, 4.2)
+
+  # ---- 챔버 밖 ----
+  sh.rect(MARGIN, 160, PW - 2 * MARGIN, 26, fill="#f8fafc", stroke=MUTE,
+          sw=0.4, rx=2, dash="2 1.5")
+  sh.txt(MARGIN + 4, 166.5, "여기부터 챔버 밖 — 빛과 상관없는 것들", 3.4,
+         weight="700", color=MUTE)
+  for bx, bw, label in ((20, 32, "저항 4개"), (56, 44, "MCU 보드"),
+                        (104, 32, "OLED 화면"), (140, 24, "버튼"),
+                        (168, 24, "USB 전원")):
+    sh.rect(bx, 170, bw, 12, fill="#e2e8f0", stroke=MUTE, sw=0.3, rx=1.5)
+    sh.txt(bx + bw / 2.0, 177.5, label, 3.0, anchor="middle", weight="700")
+
+  # ---- 안 / 밖 정리 ----
+  half = (PW - 2 * MARGIN) / 2.0 - 3
+  sh.band(MARGIN, 192, half, 58, "챔버 안 — 반드시 덮습니다",
+          ["· **검출 LED 1개** (PD7)",
+           "   여기로 드는 빛이 곧 측정값입니다",
+           "· **발광 LED 3개** (PB0 · PB1 · PB2)",
+           "   밖에 두면 큐벳을 안 거친 빛이 샙니다",
+           "· **큐벳 (시료)**",
+           "· **지그 ㄷ자 홈** — 큐벳 자리 고정",
+           "· (필요하면) **슬릿** — 발광 LED 앞",
+           "",
+           "이것들을 잇는 직선을 6면으로 감쌉니다.",
+           "**뚜껑 안쪽까지** 검게 처리하세요. 위에서",
+           "반사돼 내려오는 빛이 의외로 큽니다."],
+          color=GREEN, size=3.0, lead=4.0)
+
+  sh.band(PW / 2.0 + 1, 192, half, 58, "챔버 밖 — 덮지 않습니다",
+          ["· **MCU 보드** (ATmega328P)",
+           "· **OLED 화면**, **버튼**",
+           "· **전류 제한 저항 4개**, 브레드보드",
+           "· **USB 케이블**, 전원",
+           "",
+           "빛을 내지도 받지도 않는 것들입니다.",
+           "안에 넣으면 자리만 좁아집니다.",
+           "",
+           "**보드의 전원 표시 LED 를 조심하세요.**",
+           "그것 하나가 챔버 안에 있으면 계속 켜진",
+           "빛이 되어 측정이 통째로 망가집니다."],
+          color=MUTE, size=3.0, lead=4.0)
+
+  sh.band(MARGIN, 254, PW - 2 * MARGIN, 22,
+          "덮을 곳을 다 덮었는지 확인하는 법",
+          ["① 뚜껑을 닫고 **방 불을 켠 채로** DARK 10회  →  "
+           "② 방 불만 끄고 DARK 10회  →  ③ 두 평균을 비교",
+           "거의 같으면 성공입니다. 불 켠 쪽이 뚜렷하게 짧으면 새는 것이니 "
+           "이음새 → 배선 구멍 → 뚜껑 테두리 순으로 막으세요."],
+          color=GREEN, size=2.9, lead=4.4)
+
+  sh.foot("챔버가 덮는 범위")
+  return sh
+
+
 # ============================ 실행 ============================
 
 def main():
@@ -593,7 +740,8 @@ def main():
   if not os.path.isdir(outdir):
     os.makedirs(outdir)
 
-  for i, fn in enumerate((sheet1, sheet2, sheet3, sheet4, sheet5, sheet6), 1):
+  for i, fn in enumerate((sheet1, sheet2, sheet3, sheet4, sheet5,
+                          sheet6, sheet7), 1):
     svg = fn(args.axis).render()
     check(svg, i)
     path = os.path.join(outdir, "sheet%d.svg" % i)

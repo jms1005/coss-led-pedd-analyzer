@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="210mm" height="297mm" viewBox="0 0 210 297" font-family="'Malgun Gothic','맑은 고딕','Noto Sans KR',sans-serif">
+<rect width="210" height="297" fill="#ffffff"/>
+<line x1="14.00" y1="22.00" x2="196.00" y2="22.00" stroke="#1e293b" stroke-width="0.60" stroke-linecap="butt"/>
+<text x="14.00" y="13.50" font-size="7.20" text-anchor="start" font-weight="700" fill="#1e293b">⑦ 무엇을 덮는가</text>
+<text x="14.00" y="19.40" font-size="3.20" text-anchor="start" font-weight="400" fill="#64748b">챔버 안에 들어가는 것과, 밖에 남는 것</text>
+<text x="196.00" y="14.00" font-size="6.00" text-anchor="end" font-weight="700" fill="#64748b">7 / 7</text>
+<rect x="14.00" y="25.00" width="182.00" height="22.00" rx="1.50" fill="#f1f5f9" stroke="none" stroke-width="0.30"/>
+<rect x="14.00" y="25.00" width="1.20" height="22.00" rx="0.00" fill="#2563eb" stroke="none" stroke-width="0.30"/>
+<text x="18.00" y="30.60" font-size="3.80" text-anchor="start" font-weight="700" fill="#2563eb">한 줄로 말하면</text>
+<text x="18.00" y="36.40" font-size="3.20" text-anchor="start" font-weight="400" fill="#1e293b"><tspan font-weight="700">발광 LED 3개 → 큐벳 → 검출 LED</tspan>, 이 세 점을 잇는 직선만 감싸면 됩니다.</text>
+<text x="18.00" y="40.80" font-size="3.20" text-anchor="start" font-weight="400" fill="#1e293b">빛을 내거나 받는 것만 안에 넣고, 나머지 전자부품은 전부 밖에 둡니다.</text>
+<text x="14.00" y="54.00" font-size="4.40" text-anchor="start" font-weight="700" fill="#1e293b">위에서 내려다본 챔버</text>
+<text x="14.00" y="58.50" font-size="2.80" text-anchor="start" font-weight="400" fill="#64748b">안에 무엇이 들어가는지 보는 개념도입니다. 재단 치수는 2·3·4장을 보세요.</text>
+<rect x="26.00" y="72.00" width="100.00" height="80.00" rx="1.00" fill="#475569" stroke="#1e293b" stroke-width="0.50"/>
+<rect x="36.00" y="82.00" width="80.00" height="60.00" rx="0.00" fill="#eef2f7" stroke="#1e293b" stroke-width="0.40"/>
+<rect x="47.00" y="83.00" width="58.00" height="58.00" rx="0.00" fill="none" stroke="#b45309" stroke-width="0.35" stroke-dasharray="2 1.5"/>
+<rect x="63.00" y="99.00" width="26.00" height="26.00" rx="0.00" fill="none" stroke="#b45309" stroke-width="0.35" stroke-dasharray="2 1.5"/>
+<text x="102.00" y="137.00" font-size="2.60" text-anchor="end" font-weight="400" fill="#b45309">지그 (큐벳 자리)</text>
+<rect x="63.50" y="99.50" width="25.00" height="25.00" rx="0.00" fill="#dbeafe" stroke="#2563eb" stroke-width="0.45"/>
+<text x="76.00" y="107.00" font-size="3.00" text-anchor="middle" font-weight="700" fill="#2563eb">큐벳</text>
+<circle cx="31.00" cy="98.00" r="5.00" fill="#dc2626" stroke="#1e293b" stroke-width="0.35"/>
+<text x="31.00" y="99.30" font-size="3.40" text-anchor="middle" font-weight="700" fill="#ffffff">R</text>
+<circle cx="31.00" cy="112.00" r="5.00" fill="#059669" stroke="#1e293b" stroke-width="0.35"/>
+<text x="31.00" y="113.30" font-size="3.40" text-anchor="middle" font-weight="700" fill="#ffffff">G</text>
+<circle cx="31.00" cy="126.00" r="5.00" fill="#2563eb" stroke="#1e293b" stroke-width="0.35"/>
+<text x="31.00" y="127.30" font-size="3.40" text-anchor="middle" font-weight="700" fill="#ffffff">B</text>
+<circle cx="121.00" cy="112.00" r="5.00" fill="#6ee7b7" stroke="#1e293b" stroke-width="0.35"/>
+<text x="121.00" y="113.20" font-size="2.60" text-anchor="middle" font-weight="700" fill="#1e293b">검출</text>
+<line x1="36.00" y1="112.00" x2="116.00" y2="112.00" stroke="#dc2626" stroke-width="0.50" stroke-linecap="butt" stroke-dasharray="3 1.5"/>
+<polygon points="116.00,112.00 114.00,111.10 114.00,112.90" fill="#dc2626" stroke="none" stroke-width="0.30" stroke-linejoin="round"/>
+<text x="38.00" y="108.50" font-size="2.70" text-anchor="start" font-weight="700" fill="#dc2626">빛이 가는 길</text>
+<text x="31.00" y="68.00" font-size="3.00" text-anchor="middle" font-weight="700" fill="#1e293b">발광 LED 3개</text>
+<line x1="31.00" y1="69.40" x2="31.00" y2="72.00" stroke="#64748b" stroke-width="0.25" stroke-linecap="butt"/>
+<text x="76.00" y="68.00" font-size="3.00" text-anchor="middle" font-weight="700" fill="#1e293b">큐벳 · 지그</text>
+<line x1="76.00" y1="69.40" x2="76.00" y2="72.00" stroke="#64748b" stroke-width="0.25" stroke-linecap="butt"/>
+<text x="121.00" y="68.00" font-size="3.00" text-anchor="middle" font-weight="700" fill="#1e293b">검출 LED 1개</text>
+<line x1="121.00" y1="69.40" x2="121.00" y2="72.00" stroke="#64748b" stroke-width="0.25" stroke-linecap="butt"/>
+<circle cx="110.00" cy="147.00" r="4.00" fill="#f8fafc" stroke="#1e293b" stroke-width="0.40"/>
+<line x1="110.00" y1="147.00" x2="110.00" y2="157.00" stroke="#64748b" stroke-width="0.80" stroke-linecap="butt"/>
+<line x1="110.00" y1="157.00" x2="78.00" y2="157.00" stroke="#64748b" stroke-width="0.80" stroke-linecap="butt"/>
+<line x1="78.00" y1="157.00" x2="78.00" y2="170.00" stroke="#64748b" stroke-width="0.80" stroke-linecap="butt"/>
+<polygon points="78.00,170.00 77.19,168.20 78.81,168.20" fill="#64748b" stroke="none" stroke-width="0.30" stroke-linejoin="round"/>
+<text x="116.00" y="156.00" font-size="2.80" text-anchor="start" font-weight="400" fill="#64748b">배선 구멍 — 리드선만 나가고, 남는 틈은 테이프로 막습니다.</text>
+<text x="132.00" y="54.00" font-size="4.40" text-anchor="start" font-weight="700" fill="#1e293b">경계는 어디인가</text>
+<text x="132.00" y="58.50" font-size="2.80" text-anchor="start" font-weight="400" fill="#64748b">벽을 자른 단면 (확대)</text>
+<rect x="154.00" y="74.00" width="12.00" height="44.00" rx="0.00" fill="#475569" stroke="#1e293b" stroke-width="0.40"/>
+<text x="134.00" y="70.00" font-size="2.80" text-anchor="start" font-weight="700" fill="#059669">← 챔버 안</text>
+<text x="196.00" y="70.00" font-size="2.80" text-anchor="end" font-weight="700" fill="#64748b">챔버 밖 →</text>
+<circle cx="160.00" cy="96.00" r="6.00" fill="#fca5a5" stroke="#1e293b" stroke-width="0.40"/>
+<line x1="154.00" y1="93.50" x2="140.00" y2="93.50" stroke="#1e293b" stroke-width="0.40" stroke-linecap="butt"/>
+<line x1="140.00" y1="93.50" x2="140.00" y2="122.00" stroke="#1e293b" stroke-width="0.40" stroke-linecap="butt"/>
+<polygon points="140.00,122.00 139.28,123.60 140.72,123.60" fill="#1e293b" stroke="none" stroke-width="0.30" stroke-linejoin="round"/>
+<line x1="154.00" y1="98.50" x2="144.00" y2="98.50" stroke="#1e293b" stroke-width="0.40" stroke-linecap="butt"/>
+<line x1="144.00" y1="98.50" x2="144.00" y2="122.00" stroke="#1e293b" stroke-width="0.40" stroke-linecap="butt"/>
+<polygon points="144.00,122.00 143.28,123.60 144.72,123.60" fill="#1e293b" stroke="none" stroke-width="0.30" stroke-linejoin="round"/>
+<text x="132.00" y="90.00" font-size="2.60" text-anchor="start" font-weight="700" fill="#1e293b">리드선</text>
+<text x="160.00" y="71.50" font-size="2.80" text-anchor="middle" font-weight="700" fill="#1e293b">LED</text>
+<text x="132.00" y="128.00" font-size="2.90" text-anchor="start" font-weight="400" fill="#1e293b">· LED 머리가 5mm 구멍을 <tspan font-weight="700">꽉 막아야</tspan> 합니다.</text>
+<text x="132.00" y="132.20" font-size="2.90" text-anchor="start" font-weight="400" fill="#1e293b">  헐거우면 빛도 새고 정렬도 깨집니다.</text>
+<text x="132.00" y="136.40" font-size="2.90" text-anchor="start" font-weight="400" fill="#1e293b">· 리드선은 챔버 <tspan font-weight="700">안쪽</tspan>으로 나와, 바닥을</text>
+<text x="132.00" y="140.60" font-size="2.90" text-anchor="start" font-weight="400" fill="#1e293b">  따라 배선 구멍 하나로만 빠져나갑니다.</text>
+<text x="132.00" y="144.80" font-size="2.90" text-anchor="start" font-weight="400" fill="#1e293b">· 그 구멍 말고 뚫린 곳이 있으면 안 됩니다.</text>
+<rect x="14.00" y="160.00" width="182.00" height="26.00" rx="2.00" fill="#f8fafc" stroke="#64748b" stroke-width="0.40" stroke-dasharray="2 1.5"/>
+<text x="18.00" y="166.50" font-size="3.40" text-anchor="start" font-weight="700" fill="#64748b">여기부터 챔버 밖 — 빛과 상관없는 것들</text>
+<rect x="20.00" y="170.00" width="32.00" height="12.00" rx="1.50" fill="#e2e8f0" stroke="#64748b" stroke-width="0.30"/>
+<text x="36.00" y="177.50" font-size="3.00" text-anchor="middle" font-weight="700" fill="#1e293b">저항 4개</text>
+<rect x="56.00" y="170.00" width="44.00" height="12.00" rx="1.50" fill="#e2e8f0" stroke="#64748b" stroke-width="0.30"/>
+<text x="78.00" y="177.50" font-size="3.00" text-anchor="middle" font-weight="700" fill="#1e293b">MCU 보드</text>
+<rect x="104.00" y="170.00" width="32.00" height="12.00" rx="1.50" fill="#e2e8f0" stroke="#64748b" stroke-width="0.30"/>
+<text x="120.00" y="177.50" font-size="3.00" text-anchor="middle" font-weight="700" fill="#1e293b">OLED 화면</text>
+<rect x="140.00" y="170.00" width="24.00" height="12.00" rx="1.50" fill="#e2e8f0" stroke="#64748b" stroke-width="0.30"/>
+<text x="152.00" y="177.50" font-size="3.00" text-anchor="middle" font-weight="700" fill="#1e293b">버튼</text>
+<rect x="168.00" y="170.00" width="24.00" height="12.00" rx="1.50" fill="#e2e8f0" stroke="#64748b" stroke-width="0.30"/>
+<text x="180.00" y="177.50" font-size="3.00" text-anchor="middle" font-weight="700" fill="#1e293b">USB 전원</text>
+<rect x="14.00" y="192.00" width="88.00" height="58.00" rx="1.50" fill="#f1f5f9" stroke="none" stroke-width="0.30"/>
+<rect x="14.00" y="192.00" width="1.20" height="58.00" rx="0.00" fill="#059669" stroke="none" stroke-width="0.30"/>
+<text x="18.00" y="197.60" font-size="3.80" text-anchor="start" font-weight="700" fill="#059669">챔버 안 — 반드시 덮습니다</text>
+<text x="18.00" y="203.40" font-size="3.00" text-anchor="start" font-weight="400" fill="#1e293b">· <tspan font-weight="700">검출 LED 1개</tspan> (PD7)</text>
+<text x="18.00" y="207.40" font-size="3.00" text-anchor="start" font-weight="400" fill="#1e293b">   여기로 드는 빛이 곧 측정값입니다</text>
+<text x="18.00" y="211.40" font-size="3.00" text-anchor="start" font-weight="400" fill="#1e293b">· <tspan font-weight="700">발광 LED 3개</tspan> (PB0 · PB1 · PB2)</text>
+<text x="18.00" y="215.40" font-size="3.00" text-anchor="start" font-weight="400" fill="#1e293b">   밖에 두면 큐벳을 안 거친 빛이 샙니다</text>
+<text x="18.00" y="219.40" font-size="3.00" text-anchor="start" font-weight="400" fill="#1e293b">· <tspan font-weight="700">큐벳 (시료)</tspan></text>
+<text x="18.00" y="223.40" font-size="3.00" text-anchor="start" font-weight="400" fill="#1e293b">· <tspan font-weight="700">지그 ㄷ자 홈</tspan> — 큐벳 자리 고정</text>
+<text x="18.00" y="227.40" font-size="3.00" text-anchor="start" font-weight="400" fill="#1e293b">· (필요하면) <tspan font-weight="700">슬릿</tspan> — 발광 LED 앞</text>
+<text x="18.00" y="231.40" font-size="3.00" text-anchor="start" font-weight="400" fill="#1e293b"></text>
+<text x="18.00" y="235.40" font-size="3.00" text-anchor="start" font-weight="400" fill="#1e293b">이것들을 잇는 직선을 6면으로 감쌉니다.</text>
+<text x="18.00" y="239.40" font-size="3.00" text-anchor="start" font-weight="400" fill="#1e293b"><tspan font-weight="700">뚜껑 안쪽까지</tspan> 검게 처리하세요. 위에서</text>
+<text x="18.00" y="243.40" font-size="3.00" text-anchor="start" font-weight="400" fill="#1e293b">반사돼 내려오는 빛이 의외로 큽니다.</text>
+<rect x="106.00" y="192.00" width="88.00" height="58.00" rx="1.50" fill="#f1f5f9" stroke="none" stroke-width="0.30"/>
+<rect x="106.00" y="192.00" width="1.20" height="58.00" rx="0.00" fill="#64748b" stroke="none" stroke-width="0.30"/>
+<text x="110.00" y="197.60" font-size="3.80" text-anchor="start" font-weight="700" fill="#64748b">챔버 밖 — 덮지 않습니다</text>
+<text x="110.00" y="203.40" font-size="3.00" text-anchor="start" font-weight="400" fill="#1e293b">· <tspan font-weight="700">MCU 보드</tspan> (ATmega328P)</text>
+<text x="110.00" y="207.40" font-size="3.00" text-anchor="start" font-weight="400" fill="#1e293b">· <tspan font-weight="700">OLED 화면</tspan>, <tspan font-weight="700">버튼</tspan></text>
+<text x="110.00" y="211.40" font-size="3.00" text-anchor="start" font-weight="400" fill="#1e293b">· <tspan font-weight="700">전류 제한 저항 4개</tspan>, 브레드보드</text>
+<text x="110.00" y="215.40" font-size="3.00" text-anchor="start" font-weight="400" fill="#1e293b">· <tspan font-weight="700">USB 케이블</tspan>, 전원</text>
+<text x="110.00" y="219.40" font-size="3.00" text-anchor="start" font-weight="400" fill="#1e293b"></text>
+<text x="110.00" y="223.40" font-size="3.00" text-anchor="start" font-weight="400" fill="#1e293b">빛을 내지도 받지도 않는 것들입니다.</text>
+<text x="110.00" y="227.40" font-size="3.00" text-anchor="start" font-weight="400" fill="#1e293b">안에 넣으면 자리만 좁아집니다.</text>
+<text x="110.00" y="231.40" font-size="3.00" text-anchor="start" font-weight="400" fill="#1e293b"></text>
+<text x="110.00" y="235.40" font-size="3.00" text-anchor="start" font-weight="400" fill="#1e293b"><tspan font-weight="700">보드의 전원 표시 LED 를 조심하세요.</tspan></text>
+<text x="110.00" y="239.40" font-size="3.00" text-anchor="start" font-weight="400" fill="#1e293b">그것 하나가 챔버 안에 있으면 계속 켜진</text>
+<text x="110.00" y="243.40" font-size="3.00" text-anchor="start" font-weight="400" fill="#1e293b">빛이 되어 측정이 통째로 망가집니다.</text>
+<rect x="14.00" y="254.00" width="182.00" height="22.00" rx="1.50" fill="#f1f5f9" stroke="none" stroke-width="0.30"/>
+<rect x="14.00" y="254.00" width="1.20" height="22.00" rx="0.00" fill="#059669" stroke="none" stroke-width="0.30"/>
+<text x="18.00" y="259.60" font-size="3.80" text-anchor="start" font-weight="700" fill="#059669">덮을 곳을 다 덮었는지 확인하는 법</text>
+<text x="18.00" y="265.40" font-size="2.90" text-anchor="start" font-weight="400" fill="#1e293b">① 뚜껑을 닫고 <tspan font-weight="700">방 불을 켠 채로</tspan> DARK 10회  →  ② 방 불만 끄고 DARK 10회  →  ③ 두 평균을 비교</text>
+<text x="18.00" y="269.80" font-size="2.90" text-anchor="start" font-weight="400" fill="#1e293b">거의 같으면 성공입니다. 불 켠 쪽이 뚜렷하게 짧으면 새는 것이니 이음새 → 배선 구멍 → 뚜껑 테두리 순으로 막으세요.</text>
+<line x1="14.00" y1="285.00" x2="196.00" y2="285.00" stroke="#cbd5e1" stroke-width="0.30" stroke-linecap="butt"/>
+<text x="14.00" y="289.00" font-size="2.60" text-anchor="start" font-weight="400" fill="#64748b">차광 챔버 제작 도면  ·  LED PEDD 액체 광학 분석기</text>
+<text x="196.00" y="289.00" font-size="2.60" text-anchor="end" font-weight="400" fill="#64748b">챔버가 덮는 범위</text>
+</svg>

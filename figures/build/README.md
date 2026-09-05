@@ -1,6 +1,6 @@
 # 제작 도면 사용법
 
-차광 챔버를 만들 때 보면서 작업하는 A4 6장입니다.
+차광 챔버를 만들 때 보면서 작업하는 A4 7장입니다.
 치수의 출처는 `docs/차광챔버_제작.md` 4절이고, 도면은 그것을 그림으로
 옮긴 것입니다. **치수를 바꾸려면 문서를 먼저 고치고 도면을 다시 만드세요.**
 
@@ -12,11 +12,12 @@
 | 4 | 재단 템플릿 ③ 지그·슬릿 | **1:1** |
 | 5 | 조립 순서 8단계 | — |
 | 6 | 단면도 · 누광 검사 · 완성 체크리스트 | — |
+| 7 | 챔버가 덮는 범위 — 안에 넣는 것과 밖에 두는 것 | — |
 
 ## 만들기
 
 ```
-sh tools/make_build_pdf.sh          # SVG 6장 + docs/제작도면.pdf 까지
+sh tools/make_build_pdf.sh          # SVG 7장 + docs/제작도면.pdf 까지
 python tools/make_build_drawings.py # SVG 만 다시
 ```
 
@@ -54,7 +55,7 @@ python tools/make_build_drawings.py --axis 17
 |---|---|
 | `tools/build_drawings_lib.py` | 도형·치수선·아이소메트릭 그리기 도구 |
 | `tools/make_build_drawings.py` | 시트 6장의 내용 |
-| `figures/build/sheet1~6.svg` | 생성물. **직접 고치지 마세요** — 다시 만들면 덮어씁니다 |
+| `figures/build/sheet1~7.svg` | 생성물. **직접 고치지 마세요** — 다시 만들면 덮어씁니다 |
 | `figures/build/print.html` | A4 인쇄 래퍼 (여백 0, mm 고정) |
 | `tools/make_build_pdf.sh` | 위를 묶어 `docs/제작도면.pdf` 생성 |
 

@@ -3,7 +3,7 @@
 <line x1="14.00" y1="22.00" x2="196.00" y2="22.00" stroke="#1e293b" stroke-width="0.60" stroke-linecap="butt"/>
 <text x="14.00" y="13.50" font-size="7.20" text-anchor="start" font-weight="700" fill="#1e293b">⑤ 조립 순서</text>
 <text x="14.00" y="19.40" font-size="3.20" text-anchor="start" font-weight="400" fill="#64748b">위에서 아래로, 왼쪽에서 오른쪽으로 순서대로 하세요</text>
-<text x="196.00" y="14.00" font-size="6.00" text-anchor="end" font-weight="700" fill="#64748b">5 / 6</text>
+<text x="196.00" y="14.00" font-size="6.00" text-anchor="end" font-weight="700" fill="#64748b">5 / 7</text>
 <rect x="14.00" y="26.00" width="87.00" height="54.00" rx="2.00" fill="#ffffff" stroke="#e2e8f0" stroke-width="0.35"/>
 <circle cx="22.00" cy="34.00" r="3.40" fill="#1e293b" stroke="none" stroke-width="0.30"/>
 <text x="22.00" y="35.30" font-size="3.80" text-anchor="middle" font-weight="700" fill="#ffffff">1</text>

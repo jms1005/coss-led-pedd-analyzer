@@ -1,5 +1,5 @@
 #!/bin/sh
-# 제작 도면 SVG 6장 -> A4 6페이지 PDF (docs/제작도면.pdf)
+# 제작 도면 SVG 7장 -> A4 7페이지 PDF (docs/제작도면.pdf)
 #
 # make_pdf.sh 와 같은 방식이다. 한글이 섞인 경로에서 file:// URL 이 깨지므로
 # 임시 ASCII 경로로 복사한 뒤 변환하고 결과만 되가져온다.
@@ -29,6 +29,6 @@ import sys, re
 print(len(re.findall(rb'/Type\s*/Page[^s]', sys.stdin.buffer.read())))
 ")
 echo "생성: docs/제작도면.pdf (${PAGES}페이지)"
-if [ "$PAGES" != "6" ]; then
-  echo "경고: 6페이지가 아닙니다. print.html 의 페이지 나눔을 확인하세요." >&2
+if [ "$PAGES" != "7" ]; then
+  echo "경고: 7페이지가 아닙니다. print.html 의 페이지 나눔을 확인하세요." >&2
 fi
