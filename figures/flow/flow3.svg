@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1020" height="510" viewBox="0 0 1020 510" font-family="'Malgun Gothic','맑은 고딕','Noto Sans KR',sans-serif">
+<rect width="1020" height="510" fill="#ffffff"/>
+<text x="40.0" y="42.0" font-size="21.0" text-anchor="start" font-weight="700" fill="#1e293b">빛은 어떻게 흐르고, 어떻게 답이 되나</text>
+<text x="40.0" y="66.0" font-size="13.0" text-anchor="start" font-weight="400" fill="#64748b">전기가 빛이 되고, 빛이 다시 숫자가 되고, 숫자가 답이 된다.</text>
+<rect x="40.0" y="108.0" width="446.0" height="268.0" rx="10.0" fill="#f1f5f9" stroke="#64748b" stroke-width="1.8" stroke-dasharray="8 6"/>
+<text x="58.0" y="134.0" font-size="12.5" text-anchor="start" font-weight="700" fill="#64748b">차광 챔버 — 바깥 빛을 막는 검은 상자</text>
+<text x="58.0" y="152.0" font-size="11.5" text-anchor="start" font-weight="400" fill="#64748b">바깥 빛이 새어 들어오면 측정이 엉망이 된다.</text>
+<polygon points="76.0,192.7 76.0,211.3 90.2,202.0" fill="#dc2626" stroke="#dc2626" stroke-width="1.4" stroke-linejoin="round"/>
+<line x1="90.2" y1="191.2" x2="90.2" y2="212.8" stroke="#dc2626" stroke-width="3.4" stroke-linecap="round"/>
+<text x="120.0" y="207.0" font-size="11.5" text-anchor="start" font-weight="400" fill="#64748b">빨강</text>
+<polygon points="76.0,236.7 76.0,255.3 90.2,246.0" fill="#16a34a" stroke="#16a34a" stroke-width="1.4" stroke-linejoin="round"/>
+<line x1="90.2" y1="235.2" x2="90.2" y2="256.8" stroke="#16a34a" stroke-width="3.4" stroke-linecap="round"/>
+<text x="120.0" y="251.0" font-size="11.5" text-anchor="start" font-weight="400" fill="#64748b">초록</text>
+<polygon points="76.0,280.7 76.0,299.3 90.2,290.0" fill="#2563eb" stroke="#2563eb" stroke-width="1.4" stroke-linejoin="round"/>
+<line x1="90.2" y1="279.2" x2="90.2" y2="300.8" stroke="#2563eb" stroke-width="3.4" stroke-linecap="round"/>
+<text x="120.0" y="295.0" font-size="11.5" text-anchor="start" font-weight="400" fill="#64748b">파랑</text>
+<text x="72.0" y="342.0" font-size="12.5" text-anchor="start" font-weight="700" fill="#1e293b">발광 LED 3개</text>
+<text x="72.0" y="360.0" font-size="11.5" text-anchor="start" font-weight="400" fill="#64748b">한 번에 하나만 켠다</text>
+<line x1="162.0" y1="246.0" x2="222.0" y2="246.0" stroke="#f59e0b" stroke-width="4.4" stroke-linecap="round"/>
+<polygon points="192.0,246.0 185.0,242.2 185.0,249.8" fill="#f59e0b" stroke="#f59e0b" stroke-width="0.5" stroke-linejoin="round"/>
+<text x="192.0" y="228.0" font-size="12.5" text-anchor="middle" font-weight="700" fill="#b45309">빛</text>
+<rect x="228.0" y="182.0" width="76.0" height="128.0" rx="5.0" fill="#dbeafe" stroke="#60a5fa" stroke-width="1.8"/>
+<text x="266.0" y="251.0" font-size="14.0" text-anchor="middle" font-weight="700" fill="#1d4ed8">액체</text>
+<text x="266.0" y="342.0" font-size="12.5" text-anchor="middle" font-weight="700" fill="#1e293b">큐벳 (작은 통)</text>
+<text x="266.0" y="360.0" font-size="11.5" text-anchor="middle" font-weight="400" fill="#64748b">빛의 일부를 삼킨다</text>
+<line x1="310.0" y1="246.0" x2="372.0" y2="246.0" stroke="#f59e0b" stroke-width="2.0" stroke-linecap="round"/>
+<polygon points="341.0,246.0 334.0,242.2 334.0,249.8" fill="#f59e0b" stroke="#f59e0b" stroke-width="0.5" stroke-linejoin="round"/>
+<text x="341.0" y="228.0" font-size="12.0" text-anchor="middle" font-weight="700" fill="#b45309">남은 빛</text>
+<polygon points="404.9,232.4 404.9,259.6 384.0,246.0" fill="#7c3aed" stroke="#7c3aed" stroke-width="1.4" stroke-linejoin="round"/>
+<line x1="384.0" y1="230.2" x2="384.0" y2="261.8" stroke="#7c3aed" stroke-width="3.4" stroke-linecap="round"/>
+<text x="395.0" y="342.0" font-size="12.5" text-anchor="middle" font-weight="700" fill="#1e293b">검출 LED 1개</text>
+<text x="395.0" y="360.0" font-size="11.5" text-anchor="middle" font-weight="400" fill="#64748b">빛을 시간으로 바꾼다</text>
+<line x1="420.0" y1="246.0" x2="504.0" y2="246.0" stroke="#7c3aed" stroke-width="3.2" stroke-linecap="round"/>
+<polygon points="462.0,246.0 455.0,242.2 455.0,249.8" fill="#7c3aed" stroke="#7c3aed" stroke-width="0.5" stroke-linejoin="round"/>
+<rect x="510.0" y="182.0" width="124.0" height="128.0" rx="6.0" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.4"/>
+<text x="572.0" y="202.0" font-size="12.5" text-anchor="middle" font-weight="700" fill="#1e293b">광학 지문</text>
+<rect x="532.0" y="234.0" width="20.0" height="48.0" rx="2.0" fill="#dc2626" stroke="none" stroke-width="0.0"/>
+<rect x="562.0" y="258.0" width="20.0" height="24.0" rx="2.0" fill="#16a34a" stroke="none" stroke-width="0.0"/>
+<rect x="592.0" y="246.0" width="20.0" height="36.0" rx="2.0" fill="#2563eb" stroke="none" stroke-width="0.0"/>
+<text x="572.0" y="302.0" font-size="11.5" text-anchor="middle" font-weight="400" fill="#64748b">숫자 3개</text>
+<line x1="658.0" y1="246.0" x2="694.0" y2="246.0" stroke="#1e293b" stroke-width="3.2" stroke-linecap="round"/>
+<polygon points="676.0,246.0 669.0,242.2 669.0,249.8" fill="#1e293b" stroke="#1e293b" stroke-width="0.5" stroke-linejoin="round"/>
+<rect x="700.0" y="192.0" width="140.0" height="108.0" rx="8.0" fill="#ffffff" stroke="#1e293b" stroke-width="1.8"/>
+<text x="770.0" y="220.0" font-size="13.5" text-anchor="middle" font-weight="700" fill="#1e293b">ATmega328P</text>
+<text x="770.0" y="240.0" font-size="11.5" text-anchor="middle" font-weight="400" fill="#64748b">미리 배워둔</text>
+<text x="770.0" y="258.0" font-size="11.5" text-anchor="middle" font-weight="400" fill="#64748b">지문과 견줘본다</text>
+<text x="770.0" y="284.0" font-size="11.5" text-anchor="middle" font-weight="700" fill="#059669">가장 닮은 것 = 답</text>
+<line x1="842.0" y1="246.0" x2="890.0" y2="246.0" stroke="#059669" stroke-width="3.2" stroke-linecap="round"/>
+<polygon points="866.0,246.0 859.0,242.2 859.0,249.8" fill="#059669" stroke="#059669" stroke-width="0.5" stroke-linejoin="round"/>
+<rect x="896.0" y="202.0" width="92.0" height="88.0" rx="6.0" fill="#0f172a" stroke="#1e293b" stroke-width="1.8"/>
+<text x="942.0" y="234.0" font-size="15.0" text-anchor="middle" font-weight="700" fill="#4ade80">MILK</text>
+<text x="942.0" y="258.0" font-size="11.5" text-anchor="middle" font-weight="400" fill="#94a3b8">우유</text>
+<text x="942.0" y="318.0" font-size="12.5" text-anchor="middle" font-weight="700" fill="#1e293b">OLED 화면</text>
+<rect x="40.0" y="402.0" width="940.0" height="73.0" rx="8.0" fill="#f1f5f9" stroke="none" stroke-width="0.0"/>
+<line x1="40.0" y1="406.0" x2="40.0" y2="471.0" stroke="#059669" stroke-width="3.0" stroke-linecap="round"/>
+<text x="59.0" y="426.0" font-size="13.0" text-anchor="start" font-weight="700" fill="#059669">왜 세 가지 색으로 재는가</text>
+<text x="59.0" y="443.0" font-size="12.5" text-anchor="start" font-weight="400" fill="#1e293b">빨강·초록·파랑을 하나씩 켜서 세 번 재면, 액체마다 다른 숫자 3개가 나온다. 이것이 광학 지문이다.</text>
+<text x="59.0" y="460.0" font-size="12.5" text-anchor="start" font-weight="400" fill="#1e293b">사람 지문처럼 액체마다 무늬가 달라서, 미리 배워둔 지문과 견주면 어떤 액체인지 맞힐 수 있다.</text>
+</svg>

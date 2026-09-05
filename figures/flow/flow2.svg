@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1020" height="748" viewBox="0 0 1020 748" font-family="'Malgun Gothic','맑은 고딕','Noto Sans KR',sans-serif">
+<rect width="1020" height="748" fill="#ffffff"/>
+<text x="40.0" y="42.0" font-size="21.0" text-anchor="start" font-weight="700" fill="#1e293b">빛을 재는 LED — 전기를 채웠다가, 새는 시간을 잰다</text>
+<text x="40.0" y="66.0" font-size="13.0" text-anchor="start" font-weight="400" fill="#64748b">이 프로젝트의 핵심. 검출 LED 는 일부러 거꾸로 꽂는다.</text>
+<rect x="40.0" y="96.0" width="462.0" height="300.0" rx="10.0" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="58.0" y="126.0" font-size="15.5" text-anchor="start" font-weight="700" fill="#7c3aed">1단계 · 충전</text>
+<text x="170.0" y="126.0" font-size="12.5" text-anchor="start" font-weight="400" fill="#64748b">전기를 가득 채운다 (0.0001초)</text>
+<rect x="62.0" y="222.0" width="74.0" height="48.0" rx="6.0" fill="#ffffff" stroke="#7c3aed" stroke-width="2.0"/>
+<text x="99.0" y="244.0" font-size="15.0" text-anchor="middle" font-weight="700" fill="#7c3aed">D7</text>
+<text x="99.0" y="261.0" font-size="11.5" text-anchor="middle" font-weight="400" fill="#64748b">5V 로 민다</text>
+<line x1="136.0" y1="246.0" x2="210.0" y2="246.0" stroke="#7c3aed" stroke-width="3.4" stroke-linecap="round"/>
+<polygon points="173.0,246.0 166.0,242.2 166.0,249.8" fill="#7c3aed" stroke="#7c3aed" stroke-width="0.5" stroke-linejoin="round"/>
+<polygon points="238.8,231.1 238.8,260.9 216.0,246.0" fill="#7c3aed" stroke="#7c3aed" stroke-width="1.4" stroke-linejoin="round"/>
+<line x1="216.0" y1="228.7" x2="216.0" y2="263.3" stroke="#7c3aed" stroke-width="3.4" stroke-linecap="round"/>
+<text x="228.0" y="288.0" font-size="12.5" text-anchor="middle" font-weight="700" fill="#7c3aed">검출 LED (거꾸로)</text>
+<line x1="212.0" y1="230.0" x2="244.0" y2="262.0" stroke="#dc2626" stroke-width="3.4" stroke-linecap="round"/>
+<line x1="244.0" y1="230.0" x2="212.0" y2="262.0" stroke="#dc2626" stroke-width="3.4" stroke-linecap="round"/>
+<text x="106.0" y="320.0" font-size="12.5" text-anchor="start" font-weight="700" fill="#dc2626">전기가 통과하지 못한다</text>
+<text x="106.0" y="338.0" font-size="12.0" text-anchor="start" font-weight="400" fill="#64748b">→ 갈 곳이 없어 LED 안에 고인다</text>
+<text x="152.0" y="228.0" font-size="15.0" text-anchor="start" font-weight="700" fill="#7c3aed">+</text>
+<text x="167.0" y="228.0" font-size="15.0" text-anchor="start" font-weight="700" fill="#7c3aed">+</text>
+<text x="182.0" y="228.0" font-size="15.0" text-anchor="start" font-weight="700" fill="#7c3aed">+</text>
+<text x="197.0" y="228.0" font-size="15.0" text-anchor="start" font-weight="700" fill="#7c3aed">+</text>
+<line x1="237.0" y1="246.0" x2="292.0" y2="246.0" stroke="#64748b" stroke-width="2.0" stroke-linecap="round" stroke-dasharray="5 4"/>
+<line x1="292.0" y1="246.0" x2="292.0" y2="272.0" stroke="#64748b" stroke-width="2.0" stroke-linecap="round" stroke-dasharray="5 4"/>
+<line x1="281.0" y1="272.0" x2="303.0" y2="272.0" stroke="#0f172a" stroke-width="2.6" stroke-linecap="round"/>
+<line x1="285.0" y1="276.5" x2="299.0" y2="276.5" stroke="#0f172a" stroke-width="2.6" stroke-linecap="round"/>
+<line x1="288.5" y1="281.0" x2="295.5" y2="281.0" stroke="#0f172a" stroke-width="2.6" stroke-linecap="round"/>
+<rect x="390.0" y="184.0" width="62.0" height="132.0" rx="4.0" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.6"/>
+<rect x="392.5" y="194.6" width="57.0" height="118.9" rx="3.0" fill="#c4b5fd" stroke="none" stroke-width="0.0"/>
+<text x="421.0" y="172.0" font-size="12.5" text-anchor="middle" font-weight="700" fill="#7c3aed">가득 찼다</text>
+<text x="421.0" y="338.0" font-size="11.5" text-anchor="middle" font-weight="400" fill="#64748b">물컵에 물을</text>
+<text x="421.0" y="354.0" font-size="11.5" text-anchor="middle" font-weight="400" fill="#64748b">채운 셈</text>
+<rect x="518.0" y="96.0" width="462.0" height="300.0" rx="10.0" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="536.0" y="126.0" font-size="15.5" text-anchor="start" font-weight="700" fill="#b45309">2단계 · 방전</text>
+<text x="648.0" y="126.0" font-size="12.5" text-anchor="start" font-weight="400" fill="#64748b">빛이 전기를 빼내간다 — 이 시간을 잰다</text>
+<rect x="540.0" y="222.0" width="74.0" height="48.0" rx="6.0" fill="#ffffff" stroke="#64748b" stroke-width="2.0" stroke-dasharray="5 4"/>
+<text x="577.0" y="244.0" font-size="15.0" text-anchor="middle" font-weight="700" fill="#64748b">D7</text>
+<text x="577.0" y="261.0" font-size="11.5" text-anchor="middle" font-weight="400" fill="#64748b">입력 = 문 닫음</text>
+<line x1="614.0" y1="246.0" x2="688.0" y2="246.0" stroke="#64748b" stroke-width="2.0" stroke-linecap="round" stroke-dasharray="5 4"/>
+<polygon points="716.8,231.1 716.8,260.9 694.0,246.0" fill="#7c3aed" stroke="#7c3aed" stroke-width="1.4" stroke-linejoin="round"/>
+<line x1="694.0" y1="228.7" x2="694.0" y2="263.3" stroke="#7c3aed" stroke-width="3.4" stroke-linecap="round"/>
+<text x="706.0" y="288.0" font-size="12.5" text-anchor="middle" font-weight="700" fill="#7c3aed">검출 LED (거꾸로)</text>
+<line x1="634.0" y1="170.0" x2="674.0" y2="220.0" stroke="#f59e0b" stroke-width="2.8" stroke-linecap="round"/>
+<polygon points="654.0,195.0 652.6,187.1 646.6,191.9" fill="#f59e0b" stroke="#f59e0b" stroke-width="0.5" stroke-linejoin="round"/>
+<line x1="652.0" y1="170.0" x2="692.0" y2="220.0" stroke="#f59e0b" stroke-width="2.8" stroke-linecap="round"/>
+<polygon points="672.0,195.0 670.6,187.1 664.6,191.9" fill="#f59e0b" stroke="#f59e0b" stroke-width="0.5" stroke-linejoin="round"/>
+<line x1="670.0" y1="170.0" x2="710.0" y2="220.0" stroke="#f59e0b" stroke-width="2.8" stroke-linecap="round"/>
+<polygon points="690.0,195.0 688.6,187.1 682.6,191.9" fill="#f59e0b" stroke="#f59e0b" stroke-width="0.5" stroke-linejoin="round"/>
+<text x="618.0" y="156.0" font-size="12.5" text-anchor="start" font-weight="700" fill="#b45309">빛이 들어오면</text>
+<line x1="715.0" y1="246.0" x2="770.0" y2="246.0" stroke="#7c3aed" stroke-width="3.0" stroke-linecap="round"/>
+<polygon points="742.5,246.0 735.5,242.2 735.5,249.8" fill="#7c3aed" stroke="#7c3aed" stroke-width="0.5" stroke-linejoin="round"/>
+<line x1="770.0" y1="246.0" x2="770.0" y2="272.0" stroke="#7c3aed" stroke-width="3.0" stroke-linecap="round"/>
+<polygon points="770.0,259.0 773.9,252.0 766.1,252.0" fill="#7c3aed" stroke="#7c3aed" stroke-width="0.5" stroke-linejoin="round"/>
+<line x1="759.0" y1="276.0" x2="781.0" y2="276.0" stroke="#0f172a" stroke-width="2.6" stroke-linecap="round"/>
+<line x1="763.0" y1="280.5" x2="777.0" y2="280.5" stroke="#0f172a" stroke-width="2.6" stroke-linecap="round"/>
+<line x1="766.5" y1="285.0" x2="773.5" y2="285.0" stroke="#0f172a" stroke-width="2.6" stroke-linecap="round"/>
+<text x="584.0" y="320.0" font-size="12.5" text-anchor="start" font-weight="700" fill="#7c3aed">고인 전기가 조금씩 빠져나간다</text>
+<text x="584.0" y="338.0" font-size="12.0" text-anchor="start" font-weight="400" fill="#64748b">→ 밝을수록 빨리 빠진다</text>
+<rect x="868.0" y="184.0" width="62.0" height="132.0" rx="4.0" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.6"/>
+<rect x="870.5" y="256.6" width="57.0" height="56.9" rx="3.0" fill="#c4b5fd" stroke="none" stroke-width="0.0"/>
+<circle cx="929.0" cy="264.6" r="3.2" fill="#ffffff" stroke="#c4b5fd" stroke-width="1.6"/>
+<circle cx="941.0" cy="269.6" r="2.4" fill="#c4b5fd" stroke="none" stroke-width="0.0"/>
+<circle cx="953.0" cy="276.6" r="2.4" fill="#c4b5fd" stroke="none" stroke-width="0.0"/>
+<circle cx="929.0" cy="281.6" r="3.2" fill="#ffffff" stroke="#c4b5fd" stroke-width="1.6"/>
+<circle cx="941.0" cy="286.6" r="2.4" fill="#c4b5fd" stroke="none" stroke-width="0.0"/>
+<circle cx="953.0" cy="293.6" r="2.4" fill="#c4b5fd" stroke="none" stroke-width="0.0"/>
+<text x="899.0" y="172.0" font-size="12.5" text-anchor="middle" font-weight="700" fill="#b45309">새는 중</text>
+<text x="899.0" y="338.0" font-size="11.5" text-anchor="middle" font-weight="400" fill="#64748b">빛 = 컵에 뚫린</text>
+<text x="899.0" y="354.0" font-size="11.5" text-anchor="middle" font-weight="400" fill="#64748b">구멍 크기</text>
+<rect x="40.0" y="424.0" width="940.0" height="192.0" rx="10.0" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="58.0" y="452.0" font-size="14.5" text-anchor="start" font-weight="700" fill="#1e293b">그래서 무엇을 재는가 — 1.1V 까지 내려가는 데 걸린 시간</text>
+<line x1="136.0" y1="476.0" x2="136.0" y2="572.0" stroke="#64748b" stroke-width="1.6" stroke-linecap="round"/>
+<line x1="136.0" y1="572.0" x2="826.0" y2="572.0" stroke="#64748b" stroke-width="1.6" stroke-linecap="round"/>
+<text x="124.0" y="480.0" font-size="11.5" text-anchor="end" font-weight="400" fill="#64748b">5V</text>
+<text x="124.0" y="576.0" font-size="11.5" text-anchor="end" font-weight="400" fill="#64748b">0V</text>
+<text x="826.0" y="606.0" font-size="11.5" text-anchor="end" font-weight="400" fill="#64748b">시간 →</text>
+<line x1="136.0" y1="552.6" x2="826.0" y2="552.6" stroke="#dc2626" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="7 5"/>
+<text x="124.0" y="556.6" font-size="11.5" text-anchor="end" font-weight="700" fill="#dc2626">1.1V</text>
+<path d="M 136.0 484.0 L 142.9 489.1 L 149.8 494.0 L 156.7 498.5 L 163.6 502.8 L 170.5 506.8 L 177.4 510.6 L 184.3 514.2 L 191.2 517.5 L 198.1 520.7 L 205.0 523.7 L 211.9 526.5 L 218.8 529.2 L 225.7 531.7 L 232.6 534.0 L 239.5 536.2 L 246.4 538.3 L 253.3 540.3 L 260.2 542.1 L 267.1 543.9 L 274.0 545.5 L 280.9 547.0 L 287.8 548.5 L 294.7 549.9 L 301.6 551.2 L 308.5 552.4 L 315.4 553.5 L 322.3 554.6 L 329.2 555.6 L 336.1 556.6 L 343.0 557.5 L 349.9 558.3 L 356.8 559.1 L 363.7 559.8 L 370.6 560.6 L 377.5 561.2 L 384.4 561.9 L 391.3 562.4 L 398.2 563.0 L 405.1 563.5 L 412.0 564.0 L 418.9 564.5 L 425.8 564.9 L 432.7 565.3 L 439.6 565.7 L 446.5 566.1 L 453.4 566.4 L 460.3 566.8 L 467.2 567.1 L 474.1 567.3 L 481.0 567.6 L 487.9 567.9 L 494.8 568.1 L 501.7 568.3 L 508.6 568.6 L 515.5 568.8 L 522.4 568.9 L 529.3 569.1 L 536.2 569.3 L 543.1 569.4 L 550.0 569.6 L 556.9 569.7 L 563.8 569.9 L 570.7 570.0 L 577.6 570.1 L 584.5 570.2 L 591.4 570.3 L 598.3 570.4 L 605.2 570.5 L 612.1 570.6 L 619.0 570.7 L 625.9 570.8 L 632.8 570.8 L 639.7 570.9 L 646.6 571.0 L 653.5 571.0 L 660.4 571.1 L 667.3 571.1 L 674.2 571.2 L 681.1 571.2 L 688.0 571.3 L 694.9 571.3 L 701.8 571.4 L 708.7 571.4 L 715.6 571.4 L 722.5 571.5 L 729.4 571.5 L 736.3 571.5 L 743.2 571.6 L 750.1 571.6 L 757.0 571.6 L 763.9 571.6 L 770.8 571.6 L 777.7 571.7 L 784.6 571.7 L 791.5 571.7 L 798.4 571.7 L 805.3 571.7 L 812.2 571.8 L 819.1 571.8 L 826.0 571.8" fill="none" stroke="#f59e0b" stroke-width="3.0" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="310.1" y1="552.6" x2="310.1" y2="572.0" stroke="#f59e0b" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="4 4"/>
+<circle cx="310.1" cy="552.6" r="5.0" fill="#f59e0b" stroke="#ffffff" stroke-width="2.0"/>
+<text x="310.1" y="590.0" font-size="11.5" text-anchor="middle" font-weight="700" fill="#f59e0b">밝을 때 = 짧다</text>
+<path d="M 136.0 484.0 L 142.9 485.7 L 149.8 487.3 L 156.7 488.9 L 163.6 490.4 L 170.5 492.0 L 177.4 493.5 L 184.3 495.0 L 191.2 496.4 L 198.1 497.8 L 205.0 499.2 L 211.9 500.6 L 218.8 501.9 L 225.7 503.3 L 232.6 504.6 L 239.5 505.8 L 246.4 507.1 L 253.3 508.3 L 260.2 509.5 L 267.1 510.7 L 274.0 511.8 L 280.9 513.0 L 287.8 514.1 L 294.7 515.2 L 301.6 516.2 L 308.5 517.3 L 315.4 518.3 L 322.3 519.3 L 329.2 520.3 L 336.1 521.3 L 343.0 522.2 L 349.9 523.2 L 356.8 524.1 L 363.7 525.0 L 370.6 525.9 L 377.5 526.7 L 384.4 527.6 L 391.3 528.4 L 398.2 529.3 L 405.1 530.1 L 412.0 530.8 L 418.9 531.6 L 425.8 532.4 L 432.7 533.1 L 439.6 533.9 L 446.5 534.6 L 453.4 535.3 L 460.3 536.0 L 467.2 536.6 L 474.1 537.3 L 481.0 538.0 L 487.9 538.6 L 494.8 539.2 L 501.7 539.9 L 508.6 540.5 L 515.5 541.1 L 522.4 541.6 L 529.3 542.2 L 536.2 542.8 L 543.1 543.3 L 550.0 543.9 L 556.9 544.4 L 563.8 544.9 L 570.7 545.4 L 577.6 545.9 L 584.5 546.4 L 591.4 546.9 L 598.3 547.4 L 605.2 547.8 L 612.1 548.3 L 619.0 548.7 L 625.9 549.2 L 632.8 549.6 L 639.7 550.0 L 646.6 550.4 L 653.5 550.8 L 660.4 551.2 L 667.3 551.6 L 674.2 552.0 L 681.1 552.4 L 688.0 552.8 L 694.9 553.1 L 701.8 553.5 L 708.7 553.8 L 715.6 554.2 L 722.5 554.5 L 729.4 554.8 L 736.3 555.2 L 743.2 555.5 L 750.1 555.8 L 757.0 556.1 L 763.9 556.4 L 770.8 556.7 L 777.7 557.0 L 784.6 557.2 L 791.5 557.5 L 798.4 557.8 L 805.3 558.1 L 812.2 558.3 L 819.1 558.6 L 826.0 558.8" fill="none" stroke="#5b21b6" stroke-width="3.0" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="685.9" y1="552.6" x2="685.9" y2="572.0" stroke="#5b21b6" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="4 4"/>
+<circle cx="685.9" cy="552.6" r="5.0" fill="#5b21b6" stroke="#ffffff" stroke-width="2.0"/>
+<text x="685.9" y="590.0" font-size="11.5" text-anchor="middle" font-weight="700" fill="#5b21b6">어두울 때 = 길다</text>
+<text x="436.0" y="488.0" font-size="12.0" text-anchor="start" font-weight="700" fill="#b45309">밝을수록 가파르게 떨어진다</text>
+<rect x="40.0" y="638.0" width="940.0" height="90.0" rx="8.0" fill="#f1f5f9" stroke="none" stroke-width="0.0"/>
+<line x1="40.0" y1="642.0" x2="40.0" y2="724.0" stroke="#7c3aed" stroke-width="3.0" stroke-linecap="round"/>
+<text x="59.0" y="662.0" font-size="13.0" text-anchor="start" font-weight="700" fill="#7c3aed">핵심</text>
+<text x="59.0" y="679.0" font-size="12.5" text-anchor="start" font-weight="400" fill="#1e293b">전기가 1.1V 아래로 내려가는 순간을 칩 안의 비교기가 알아채고 스톱워치를 멈춘다.</text>
+<text x="59.0" y="696.0" font-size="12.5" text-anchor="start" font-weight="400" fill="#1e293b">빛이 밝으면 시간이 짧고 어두우면 길다. 그래서 이 시간 하나로 밝기를 숫자로 바꿀 수 있다.</text>
+<text x="59.0" y="713.0" font-size="12.5" text-anchor="start" font-weight="400" fill="#1e293b">액체가 빛을 많이 삼킬수록 검출 LED 에 닿는 빛이 줄고, 시간은 길어진다.</text>
+</svg>
