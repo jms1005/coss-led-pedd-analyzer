@@ -52,6 +52,14 @@ def esc(s):
   return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
 
+def text_width(s, size):
+  """글자 폭 어림값. 한글은 글자 크기와 거의 같고 영문·숫자는 그 절반이다."""
+  w = 0.0
+  for c in s:
+    w += size * (1.0 if ord(c) > 0x1100 else 0.55)
+  return w
+
+
 # ------------------------------ 시트 ------------------------------
 
 class Sheet(object):

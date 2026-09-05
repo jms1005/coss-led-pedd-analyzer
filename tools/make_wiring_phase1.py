@@ -24,7 +24,7 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from build_drawings_lib import (
-  Sheet, PW, PH, MARGIN, INK, MUTE, GREEN, TINT,
+  Sheet, PW, PH, MARGIN, INK, MUTE, GREEN, TINT, text_width,
 )
 import make_wiring_drawings as W
 
@@ -51,14 +51,6 @@ CHECKS = [
   ("검출", "검출 LED 애노드(+)  ⚠", "5 G", W.C_DET),
   ("검출", "5 J", "아래 − 줄", W.C_GND),
 ]
-
-
-def text_width(s, size):
-  """글자 폭 어림값. 한글은 글자 크기와 거의 같고 영문·숫자는 그 절반이다."""
-  w = 0.0
-  for c in s:
-    w += size * (1.0 if ord(c) > 0x1100 else 0.55)
-  return w
 
 
 def draw_phase1_wiring(sh, bb):
