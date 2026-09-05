@@ -9,6 +9,19 @@
 | `flow1.svg` | 발광 LED 회로 — USB에서 출발해 GND로 돌아오는 한 바퀴 |
 | `flow2.svg` | 검출 LED — 충전과 방전 2단계, 그리고 전압이 1.1V로 떨어지는 곡선 |
 | `flow3.svg` | 빛과 정보의 흐름 — 발광 → 액체 → 검출 → 판정 → 화면 |
+| `png/flow1~3.png` | 위 3장의 2배 배율 PNG |
+
+## SVG 와 PNG 를 둘 다 두는 이유
+
+| 형식 | 쓰는 곳 |
+|---|---|
+| PNG | `docs/쉬운_설명.md`, GitHub 웹 |
+| SVG | 인쇄, 발표 슬라이드, Word/PowerPoint 삽입 |
+
+GitHub 는 마크다운 안의 SVG 를 보안 필터를 거쳐 보여주는데, 이때 글꼴이
+보는 사람 컴퓨터의 기본 글꼴로 바뀌어 글자 간격이 달라질 수 있습니다.
+그래서 **문서는 PNG 를 참조**하고, SVG 는 배율이 중요한 인쇄·슬라이드용으로
+남겨 둡니다.
 
 ## 배선도(`figures/wiring`)와 다른 점
 
@@ -24,11 +37,12 @@
 ## 만들기
 
 ```sh
-python tools/make_flow_drawings.py
+sh tools/make_flow_png.sh              # SVG 3장 + PNG 3장 (권장)
+python tools/make_flow_drawings.py     # SVG 만 다시
 ```
 
-`figures/flow/flow1~3.svg` 를 덮어씁니다. **SVG 를 직접 고치지 마세요.**
-다음 실행 때 사라집니다.
+PNG 렌더링에는 Chrome 이 필요합니다 (`render_figures.sh` 와 같은 방식).
+**생성물을 직접 고치지 마세요.** 다음 실행 때 사라집니다.
 
 ## 핀 번호를 바꾸려면
 

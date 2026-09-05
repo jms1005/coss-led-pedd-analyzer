@@ -17,6 +17,10 @@ build_drawings_lib 의 Sheet(A4 틀) 는 쓰지 않고 색과 글꼴만 공유�
 
 실행:  python tools/make_flow_drawings.py
 출력:  figures/flow/flow1.svg ... flow3.svg
+
+문서(docs/쉬운_설명.md)가 참조하는 것은 SVG 가 아니라 PNG 다. GitHub 가
+마크다운 안의 SVG 를 보여줄 때 글꼴이 바뀔 수 있기 때문이다. PNG 까지
+만들려면 `sh tools/make_flow_png.sh` 를 쓴다 (이 스크립트를 먼저 실행한다).
 """
 
 import io
@@ -327,8 +331,8 @@ def sheet2():
          color=MUTE)
 
   y = PY + 150
-  pin_box(cv, AX + 22, y - 24, 74, 48, "D7", "5V 로 민다", C_DET)
-  cv.flow_arrows([(AX + 96, y), (AX + 170, y)], C_DET, 3.4)
+  pin_box(cv, AX + 22, y - 24, 92, 48, "D7", "5V 로 민다", C_DET)
+  cv.flow_arrows([(AX + 114, y), (AX + 170, y)], C_DET, 3.4)
 
   cv.led(AX + 176, y, C_DET, flip=True, size=24)
   cv.txt(AX + 188, y + 42, "검출 LED (거꾸로)", 12.5, anchor="middle",
@@ -344,7 +348,7 @@ def sheet2():
 
   # 고이는 전하 표시
   for i in range(4):
-    cv.txt(AX + 112 + i * 15, y - 18, "+", 15, weight="700", color=C_DET)
+    cv.txt(AX + 122 + i * 12, y - 18, "+", 15, weight="700", color=C_DET)
 
   cv.line(AX + 197, y, AX + 252, y, MUTE, 2.0, dash="5 4")
   cv.line(AX + 252, y, AX + 252, y + 26, MUTE, 2.0, dash="5 4")
@@ -362,9 +366,9 @@ def sheet2():
   cv.txt(BX + 130, PY + 30, "빛이 전기를 빼내간다 — 이 시간을 잰다", 12.5,
          color=MUTE)
 
-  pin_box(cv, BX + 22, y - 24, 74, 48, "D7", "입력 = 문 닫음", MUTE,
+  pin_box(cv, BX + 22, y - 24, 92, 48, "D7", "입력 = 문 닫음", MUTE,
           dash="5 4")
-  cv.line(BX + 96, y, BX + 170, y, MUTE, 2.0, dash="5 4")
+  cv.line(BX + 114, y, BX + 170, y, MUTE, 2.0, dash="5 4")
 
   cv.led(BX + 176, y, C_DET, flip=True, size=24)
   cv.txt(BX + 188, y + 42, "검출 LED (거꾸로)", 12.5, anchor="middle",
