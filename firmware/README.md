@@ -53,14 +53,19 @@ firmware/
 
 **프로젝트 파일은 이미 준비되어 있습니다.** `firmware/PEDD.atsln`을 더블클릭하면
 blink · phase1 · phase2 · phase4 네 프로젝트가 한 번에 열리고, 아래 설정이 모두
-들어가 있는 상태입니다. 빌드 검증도 마쳤습니다(2026-09-03).
+들어가 있는 상태입니다. 빌드 검증도 마쳤습니다(2026-09-05, Debug 구성 4개 전부).
+
+> 아래 수치는 Microchip Studio 의 Debug 빌드 기준입니다. 명령줄에서
+> `avr-gcc` 를 직접 부르면 Studio 가 붙이는 `-ffunction-sections
+> -fdata-sections -Wl,--gc-sections` 가 빠져 더 크게 나옵니다.
+> 표를 갱신할 때는 반드시 Studio 빌드 출력의 값을 쓰세요.
 
 | 프로젝트 | 폴더 | Flash | SRAM |
 |---|---|---:|---:|
 | blink | `01_blink` | 176 B (0.5%) | 0 B (0.0%) |
 | phase1 | `02_phase1` | 1,430 B (4.4%) | 89 B (4.3%) |
 | phase2 | `03_phase2` | 1,360 B (4.2%) | 121 B (5.9%) |
-| **phase4** | `04_phase4` | **6,634 B (20.2%)** | **90 B (4.4%)** |
+| **phase4** | `04_phase4` | **6,672 B (20.4%)** | **90 B (4.4%)** |
 
 빌드하려면 Solution Explorer에서 원하는 프로젝트를 우클릭 →
 `Set as StartUp Project` → `F7`. 결과물은 `<폴더>\Debug\<이름>.hex` 입니다.
