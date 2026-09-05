@@ -6,6 +6,10 @@ LED를 **발광 소자이자 광검출 소자로 동시에 사용**하는 PEDD(P
 Emitter–Detector Diode) 방식으로 액체 시료를 판별한다. 포토다이오드나 전용
 광센서 없이 LED 4개만으로 광학 분석기를 구성해 원가를 낮추는 것이 목표다.
 
+> 처음 보는 분은 [**쉬운 설명**](docs/쉬운_설명.md)부터 읽으세요.
+> 전자공학을 몰라도 되도록, 전기가 어디서 시작해 어떻게 흐르는지 그림으로
+> 설명합니다.
+
 ## 동작 원리
 
 검출용 LED를 역방향 바이어스로 충전한 뒤 방전 시간을 측정한다. 빛이 많이
@@ -77,6 +81,7 @@ sh tools/run_host_tests.sh
 
 | 문서 | 내용 |
 |---|---|
+| [`docs/쉬운_설명.md`](docs/쉬운_설명.md) | **비전공자용 소개** — 동작 원리와 전기 흐름을 그림으로 |
 | [`firmware/README.md`](firmware/README.md) | 툴체인 설정, 배선표, 자주 막히는 지점 |
 | [`docs/superpowers/specs/2026-09-03-phase4-design.md`](docs/superpowers/specs/2026-09-03-phase4-design.md) | Phase 4 설계 근거, 정수 연산 오버플로우 분석 |
 | [`구매목록.md`](구매목록.md) | 부품 선정 근거 (검출 LED 색상이 중요) |
