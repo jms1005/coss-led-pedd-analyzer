@@ -14,6 +14,37 @@
  *
  * 화면 문구는 전부 PSTR() 로 감싸 Flash 에 둔다. AVR 은 일반 문자열
  * 리터럴을 부팅 시 SRAM 으로 복사하는데, 문구가 많아 2KB 를 금방 잠식한다.
+ *
+ * ---- 처음 읽는 사람을 위한 요약 ----
+ *
+ * 이 파일은 부품들을 조립해 하나의 기계로 만드는 자리다. 실제 계산은
+ * 전부 common/ 의 모듈이 한다.
+ *
+ *   pedd.c      빛을 시간으로 재는 일
+ *   classify.c  시간을 지문으로 바꾸고 이름을 고르는 일
+ *   store.c     배운 것을 전원 꺼도 남기는 일
+ *   ssd1306.c   화면에 글자 찍는 일
+ *   button.c    버튼 눌림을 짧게/길게로 구분하는 일
+ *
+ * main() 은 이들을 초기화한 뒤 무한 루프를 돈다. 루프는 20ms 마다 버튼을
+ * 한 번 확인하고, 지금 어떤 화면(상태)에 있느냐에 따라 다르게 반응한다.
+ * 이런 구조를 상태 기계(state machine)라고 한다. 상태는 5개다.
+ *
+ *              짧게(학습됨)                     짧게
+ *   ST_IDLE ---------------> 측정 -> ST_RESULT ------> ST_IDLE
+ *      |                          \                      ^
+ *      | 길게                      -> ST_ERROR ----------+
+ *      v                                                 |
+ *   ST_LEARN_PROMPT --- 3종 다 재면 --> ST_SAVED --------+
+ *      |  (짧게: 한 종 측정, 길게: 취소)
+ *      +--------------------- 취소 ----------------------+
+ *
+ * 상태를 이렇게 나눈 이유는, 버튼이 하나뿐이라 "지금 무엇을 하는 중인가"에
+ * 따라 같은 누름이 다른 뜻이 되어야 하기 때문이다. ST_IDLE 의 짧게는
+ * 측정 시작이지만, ST_RESULT 의 짧게는 대기 화면으로 돌아가기다.
+ *
+ * 화면과 UART 로 결과를 동시에 내보낸다. OLED 가 없거나 배선이 틀려도
+ * UART 로깅은 계속된다 (ssd1306.c 가 실패를 조용히 넘기도록 되어 있다).
  */
 
 #include <avr/io.h>
@@ -28,8 +59,21 @@
 #include "ssd1306.h"
 #include "button.h"
 
+/*
+ * 한 채널을 몇 번 재서 평균낼지.
+ * 측정은 3회 — 사용자를 오래 기다리게 하지 않는 선.
+ * 학습은 8회 — 이때 만든 중심점이 이후 모든 판정의 기준이 되므로, 시간을
+ * 더 쓰더라도 흔들림을 줄이는 편이 낫다.
+ */
 #define MEASURE_REPEAT        3
 #define LEARN_REPEAT          8
+
+/*
+ * 이보다 멀면 셋 중 무엇도 아니라고 본다(UNKNOWN).
+ * 제곱거리 기준이라 실제 거리로는 sqrt(1600) = 40 이다. 지문 합이 1000 인
+ * 척도에서 40 이면 대략 4% 어긋남까지 같은 액체로 인정한다는 뜻이다.
+ * 실측 데이터를 모은 뒤 조정할 값이다.
+ */
 #define DEFAULT_THRESHOLD_D2  1600UL
 
 #define TIMING_DDR   DDRB
@@ -164,7 +208,16 @@ static void run_scan(uint8_t repeat) {
   g_fp = classify_fingerprint(g_ticks[0], g_ticks[1], g_ticks[2], g_ticks[3]);
 }
 
-/* 화면 폭에 맞춘 우측 정렬 숫자. buf 는 width+1 바이트 이상이어야 한다. */
+/*
+ * 화면 폭에 맞춘 우측 정렬 숫자. buf 는 width+1 바이트 이상이어야 한다.
+ *
+ * sprintf() 를 쓰지 않고 직접 만든 이유는 크기 때문이다. sprintf 를 한 번
+ * 부르는 순간 표준 입출력 라이브러리가 통째로 링크되어 Flash 를 수 KB
+ * 잡아먹는다. 대회 채점에 메모리 사용량이 들어가므로 이 정도 함수는
+ * 손으로 쓰는 편이 낫다. (uart.c 의 uart_put_u32 도 같은 이유다)
+ *
+ * 나머지 연산으로 낮은 자리부터 뽑히므로 버퍼 뒤에서 앞으로 채운다.
+ */
 static void fmt_u32(char *buf, uint8_t width, uint32_t v) {
   uint8_t i = width;
 
@@ -308,7 +361,9 @@ static void screen_saved(void) {
 
 int main(void) {
   state_t  state = ST_IDLE;
-  uint8_t  learn_idx = 0;
+  uint8_t  learn_idx = 0;   /* 지금 몇 번째 액체를 배우는 중인가 (0~2) */
+  /* 학습 중 모은 지문. 3종을 다 채운 뒤에야 g_centroids 로 옮긴다.
+     중간에 취소하면 이 배열만 버려지고 기존 학습은 그대로 남는다. */
   uint16_t learn_acc[CLASSIFY_CLASSES][CLASSIFY_CHANNELS];
 
   TIMING_DDR |= (uint8_t)(1 << TIMING_BIT);
@@ -316,16 +371,23 @@ int main(void) {
   pedd_init();
   button_init();
   ssd1306_init();   /* 실패해도 계속 진행한다. UART 로깅은 살아 있어야 한다. */
-  sei();
+  sei();            /* 전역 인터럽트 허용. pedd.c 의 캡처 ISR 이 이때부터 동작한다. */
 
   log_uart_header();
 
+  /* 지난번에 배운 것이 EEPROM 에 남아 있으면 그대로 이어서 쓴다.
+     없거나 깨졌으면 g_trained 가 0 이 되어 화면에 NOT TRAINED 가 뜬다. */
   g_trained = store_load(g_centroids, &g_threshold);
   if (!g_trained) {
     g_threshold = DEFAULT_THRESHOLD_D2;
   }
   screen_idle();
 
+  /*
+   * 메인 루프. 20ms 마다 버튼을 한 번 보고, 현재 상태에 맞게 반응한다.
+   * 측정이나 화면 갱신은 이 루프 안에서 그때그때 끝내므로 별도의 작업
+   * 큐나 타이머가 없다. 파일 첫머리의 상태 전이 그림과 함께 읽으면 된다.
+   */
   for (;;) {
     button_event_t ev = button_poll();
     _delay_ms(BUTTON_POLL_MS);
@@ -387,6 +449,8 @@ int main(void) {
           }
           learn_idx++;
 
+          /* 3종을 다 모았을 때만 실제 중심점에 반영하고 EEPROM 에 쓴다.
+             중간에 그만두면 아무것도 바뀌지 않는다. */
           if (learn_idx >= CLASSIFY_CLASSES) {
             uint8_t c;
             for (c = 0; c < CLASSIFY_CLASSES; c++) {
