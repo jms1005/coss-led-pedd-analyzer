@@ -40,10 +40,14 @@ firmware/          펌웨어 (Microchip Studio 솔루션)
   03_phase2/         RGB 다파장 스캔
   04_phase4/         최종 시스템 (버튼 + OLED + 온칩 분류)
 tests/             호스트 단위 테스트
-tools/             폰트 생성 · 테스트 러너 · 분석 스크립트
-figures/           블록도 · 흐름도 · 회로도
-docs/superpowers/  설계 스펙 및 구현 계획
+tools/             도면 생성 · 문서 빌드 · 테스트 러너 · 분석 스크립트
+figures/           블록도 · 흐름도 · 회로도 · 배선도 · 제작도면
+docs/              제작 가이드 · 측정 프로토콜 · 설명 문서
+  superpowers/       설계 스펙 및 구현 계획
 data/              측정 데이터 (실험 후 채움)
+제출물/            대회 제출용 산출물
+공모전자료/        주최측 배포 안내문 (참고용)
+backup/            계획서 원본 스냅샷 (insert_figures.py 가 사용)
 ```
 
 ## 메모리 사용량
@@ -82,6 +86,10 @@ sh tools/run_host_tests.sh
 | 문서 | 내용 |
 |---|---|
 | [`docs/쉬운_설명.md`](docs/쉬운_설명.md) | **비전공자용 소개** — 동작 원리와 전기 흐름을 그림으로 |
+| [`docs/판별_로직_설명.md`](docs/판별_로직_설명.md) | `classify.c` 판별 흐름을 말로 설명하기 위한 정리 |
 | [`firmware/README.md`](firmware/README.md) | 툴체인 설정, 배선표, 자주 막히는 지점 |
 | [`docs/superpowers/specs/2026-09-03-phase4-design.md`](docs/superpowers/specs/2026-09-03-phase4-design.md) | Phase 4 설계 근거, 정수 연산 오버플로우 분석 |
+| [`docs/측정_프로토콜.md`](docs/측정_프로토콜.md) | 실측 절차와 판정 기준 |
+| [`docs/실수_방지_체크리스트.md`](docs/실수_방지_체크리스트.md) | 배선·브링업에서 자주 나는 실수와 예방 절차 |
+| [`docs/차광챔버_제작.md`](docs/차광챔버_제작.md) | 차광 챔버 · 큐벳 선정과 제작 |
 | [`구매목록.md`](구매목록.md) | 부품 선정 근거 (검출 LED 색상이 중요) |
