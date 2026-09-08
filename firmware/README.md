@@ -56,16 +56,28 @@ blink · phase1 · phase2 · phase4 네 프로젝트가 한 번에 열리고, �
 들어가 있는 상태입니다. 빌드 검증도 마쳤습니다(2026-09-05, Debug 구성 4개 전부).
 
 > 아래 수치는 Microchip Studio 의 Debug 빌드 기준입니다. 명령줄에서
-> `avr-gcc` 를 직접 부르면 Studio 가 붙이는 `-ffunction-sections
+> `avr-gcc` 를 그냥 부르면 Studio 가 붙이는 `-ffunction-sections
 > -fdata-sections -Wl,--gc-sections` 가 빠져 더 크게 나옵니다.
-> 표를 갱신할 때는 반드시 Studio 빌드 출력의 값을 쓰세요.
+>
+> **플래그를 맞추면 명령줄에서도 같은 값이 나옵니다** (2026-09-08 확인 —
+> 네 프로젝트 모두 Studio 값과 일치). Studio 를 띄우기 번거로울 때 씁니다.
+>
+> ```sh
+> AVRBIN="/c/Program Files (x86)/Atmel/Studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin"
+> CF="-x c -funsigned-char -funsigned-bitfields -DDEBUG -DF_CPU=16000000UL -Os \
+>     -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 \
+>     -Wall -Wextra -mmcu=atmega328p -std=gnu99"
+> "$AVRBIN/avr-gcc.exe" $CF -Icommon -Wl,--gc-sections -mmcu=atmega328p -o out.elf \
+>     04_phase4/main.c common/{pedd,uart,classify,store,i2c,ssd1306,button}.c
+> "$AVRBIN/avr-size.exe" --format=avr --mcu=atmega328p out.elf
+> ```
 
 | 프로젝트 | 폴더 | Flash | SRAM |
 |---|---|---:|---:|
 | blink | `01_blink` | 176 B (0.5%) | 0 B (0.0%) |
 | phase1 | `02_phase1` | 1,430 B (4.4%) | 89 B (4.3%) |
 | phase2 | `03_phase2` | 1,360 B (4.2%) | 121 B (5.9%) |
-| **phase4** | `04_phase4` | **6,672 B (20.4%)** | **90 B (4.4%)** |
+| **phase4** | `04_phase4` | **6,690 B (20.4%)** | **90 B (4.4%)** |
 
 빌드하려면 Solution Explorer에서 원하는 프로젝트를 우클릭 →
 `Set as StartUp Project` → `F7`. 결과물은 `<폴더>\Debug\<이름>.hex` 입니다.
@@ -233,10 +245,16 @@ UART 로깅은 계속됩니다.** 실험 중 디스플레이 문제로 데이터
 > 번호입니다. 서로 다른 것입니다.** 예를 들어 D2는 녹색 LED를 가리키고,
 > 핀 2에는 스위치가 붙습니다. 혼동해서 녹색 LED를 핀 2에 꽂지 마세요.
 
-> ⚠️ **D4만 극성이 반대입니다.** D1~D3은 핀 → 애노드(긴 다리)로 연결하지만,
-> D4는 **핀 7 → 캐소드(짧은 다리, 몸통이 깎인 쪽)** 로 연결합니다.
+> ⚠️ **D4만 극성이 반대입니다.** D1~D3은 핀 → 애노드로 연결하지만,
+> D4는 **핀 7 → 캐소드** 로 연결합니다.
 > 반대로 꽂으면 순방향이 되어 전하가 축적되지 않으므로 측정이 성립하지
 > 않습니다. 이때 값은 **`0~1 tick` 으로 고정**됩니다. TIMEOUT 이 아닙니다.
+>
+> **캐소드는 다리 길이로 찾지 마세요.** 브링업에서 다리 길이만 보고 두 번
+> 반대로 꽂았습니다. **투명 렌즈 안을 들여다보아 큰 컵(반사컵)이 보이는
+> 쪽**이 캐소드입니다. 다리를 잘라도 이 단서는 남습니다. 꽂은 뒤에는 값으로
+> 확정합니다 — `0~1 tick` 이면 **그대로 180° 돌려 꽂으면** 됩니다.
+> 상세는 [../docs/실수_방지_체크리스트.md](../docs/실수_방지_체크리스트.md) 2절.
 
 > ⚠️ **거꾸로 꽂으면 소자가 상할 수 있습니다.** 검출 LED만 전류 제한 저항
 > 없이 핀에 직결되어 있어서, 뒤집힌 상태에서는 충전 펄스마다 정격을 넘는
