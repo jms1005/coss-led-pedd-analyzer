@@ -86,7 +86,7 @@ sh tools/run_host_tests.sh
 | 문서 | 내용 |
 |---|---|
 | [`docs/쉬운_설명.md`](docs/쉬운_설명.md) | **비전공자용 소개** — 동작 원리와 전기 흐름을 그림으로 |
-| [`docs/페이즈별_회로_동작.md`](docs/페이즈별_회로_동작.md) | Phase 1~4에서 발광·검출 LED가 겪는 일과 나오는 값 |
+| [`docs/페이즈별_회로_동작.md`](docs/페이즈별_회로_동작.md) | Phase 1~4에서 발광·검출 LED가 겪는 일과 나오는 값 ([PDF](docs/페이즈별_회로_동작.pdf)) |
 | [`docs/판별_로직_설명.md`](docs/판별_로직_설명.md) | `classify.c` 판별 흐름을 말로 설명하기 위한 정리 |
 | [`firmware/README.md`](firmware/README.md) | 툴체인 설정, 배선표, 자주 막히는 지점 |
 | [`docs/superpowers/specs/2026-09-03-phase4-design.md`](docs/superpowers/specs/2026-09-03-phase4-design.md) | Phase 4 설계 근거, 정수 연산 오버플로우 분석 |
