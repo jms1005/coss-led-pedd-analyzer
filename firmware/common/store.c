@@ -118,7 +118,16 @@ void store_save(const uint16_t centroids[CLASSIFY_CLASSES][CLASSIFY_CHANNELS],
       addr = (uint16_t)(addr + 2);
     }
   }
-  ee_write16(STORE_ADDR_THRESHOLD, (uint16_t)threshold_d2);
+  /*
+   * 임계값은 EEPROM 배치(스펙 8절)상 2바이트다. 그런데 d2 는 uint32 이고
+   * 이론상 최대 3,000,000 까지 나온다(1000^2 x 3채널). 그대로 잘라 쓰면
+   * 예를 들어 70000 이 4464 로 뒤집혀 "전부 UNKNOWN" 이 되는데, 원인이
+   * 저장 단계에 있어 추적이 아주 어렵다.
+   * 넘치면 상한에 붙여 둔다. 65535 는 거리로 약 256 이고, 지문 합이 1000
+   * 인 척도에서 사실상 "무엇이든 받아들임" 이라 의도와 어긋나지 않는다.
+   */
+  ee_write16(STORE_ADDR_THRESHOLD,
+             (threshold_d2 > 0xFFFFUL) ? 0xFFFFu : (uint16_t)threshold_d2);
 
   /*
    * 체크섬은 반드시 마지막에 쓴다.

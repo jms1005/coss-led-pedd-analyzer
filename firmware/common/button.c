@@ -69,12 +69,16 @@ button_event_t button_poll(void) {
    * 길게가 이미 발동했다면 짧게로 또 세지 않고 조용히 정리만 한다.
    */
   if (g_held > 0) {
-    uint8_t  was_long = g_long_fired;
-    uint16_t held = g_held;
+    uint8_t was_long = g_long_fired;
     g_held = 0;
     g_long_fired = 0;
-    /* 1틱(20ms) 미만은 채터링으로 간주해 버린다 */
-    if (!was_long && held >= 1) {
+    /*
+     * 채터링은 별도 조건으로 거르지 않는다. 폴링 간격 자체가 20ms 라서,
+     * 접점이 튀는 1~2ms 동안 일어난 일은 애초에 이 함수가 보지 못한다.
+     * 여기까지 왔다는 것은 "폴링 시점에 눌려 있는 것을 최소 한 번 봤고
+     * 지금은 떼어져 있다" 는 뜻이므로 그대로 짧게 누름으로 친다.
+     */
+    if (!was_long) {
       return BTN_SHORT;
     }
   }

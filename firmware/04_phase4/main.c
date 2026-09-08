@@ -138,7 +138,24 @@ static classify_result_t g_res;
 /* 진행 표시 위치 (문자 단위). DARK R G B 순 */
 static const uint8_t SCAN_COL[4] = { 1, 7, 12, 17 };
 
-/* 채널 하나를 repeat회 측정해 평균 틱을 낸다. 전부 타임아웃이면 0을 반환한다. */
+/*
+ * 채널 하나를 repeat회 측정해 평균 틱을 낸다. 전부 타임아웃이면 0을 반환한다.
+ *
+ * [주의 — 일부만 타임아웃일 때] 성공한 회차만 평균낸다. 타임아웃은 "2초
+ * 안에 방전이 안 끝났다" 는 뜻이라 성공한 회차(보통 수 ms)와 같이 평균낼
+ * 수 있는 값이 아니므로 버리는 쪽을 택했다.
+ *
+ * 다만 이 선택에는 편향이 있다. 3회 중 1회가 타임아웃이면 남은 2회는
+ * "그나마 빨리 끝난" 회차들이므로, 평균이 실제보다 **밝은 쪽으로 치우친다.**
+ * 게다가 g_timeout_ch 는 채널 전체가 실패했을 때만 서므로 화면에도
+ * 흔적이 남지 않는다.
+ *
+ * 지금은 실측 데이터가 없어 이 상황이 얼마나 자주 나는지 모른다. 그래서
+ * 동작을 바꾸지 않고 사실만 적어 둔다. 브링업에서 부분 타임아웃이 실제로
+ * 관측되면 그때 (a) 한 번이라도 타임아웃이면 채널 실패로 볼지,
+ * (b) 타임아웃 횟수를 UART 로 함께 내보낼지 정한다.
+ * 판단 근거는 Phase 1 의 재현성(CV) 데이터다.
+ */
 static uint32_t measure_avg(pedd_channel_t ch, uint8_t repeat) {
   uint32_t sum = 0;
   uint8_t  ok  = 0;
@@ -265,44 +282,51 @@ static void log_uart(void) {
   uart_newline();
 }
 
+/*
+ * 시료 이름은 한 줄을 통째로 쓴다.
+ * "RESULT:" 뒤(9열)에 붙이면 화면 21자 중 12자만 남아 가장 긴 이름인
+ * "DISTILLED WATER"(15자)가 "DISTILLED WA" 로 잘린다. ssd1306.c 가 화면
+ * 밖을 조용히 버리므로 오류 없이 잘린 채로 표시되어 알아채기 어렵다.
+ * 비어 있던 8번째 줄(page 7)을 쓰면 이름을 줄이지 않고 전부 담을 수 있다.
+ */
 static void screen_result(void) {
   char buf[8];
 
   ssd1306_clear();
   ssd1306_puts_p(0, 0, PSTR("RESULT:"));
   if (g_res.cls < 0) {
-    ssd1306_puts_p(0, 9, PSTR("UNKNOWN"));
+    ssd1306_puts_p(1, 0, PSTR("UNKNOWN"));
   } else {
-    ssd1306_puts(0, 9, class_name((uint8_t)g_res.cls));
+    ssd1306_puts(1, 0, class_name((uint8_t)g_res.cls));
   }
-  ssd1306_puts_p(1, 0, PSTR("---------------------"));
+  ssd1306_puts_p(2, 0, PSTR("---------------------"));
 
-  ssd1306_puts_p(2, 0, PSTR("R"));
+  ssd1306_puts_p(3, 0, PSTR("R"));
   fmt_u32(buf, 7, pedd_ticks_to_us(g_ticks[1]));
-  ssd1306_puts(2, 3, buf);
-  ssd1306_puts_p(2, 11, PSTR("US"));
-
-  ssd1306_puts_p(3, 0, PSTR("G"));
-  fmt_u32(buf, 7, pedd_ticks_to_us(g_ticks[2]));
   ssd1306_puts(3, 3, buf);
   ssd1306_puts_p(3, 11, PSTR("US"));
 
-  ssd1306_puts_p(4, 0, PSTR("B"));
-  fmt_u32(buf, 7, pedd_ticks_to_us(g_ticks[3]));
+  ssd1306_puts_p(4, 0, PSTR("G"));
+  fmt_u32(buf, 7, pedd_ticks_to_us(g_ticks[2]));
   ssd1306_puts(4, 3, buf);
   ssd1306_puts_p(4, 11, PSTR("US"));
 
-  ssd1306_puts_p(5, 0, PSTR("DARK"));
-  fmt_u32(buf, 7, pedd_ticks_to_us(g_ticks[0]));
-  ssd1306_puts(5, 5, buf);
-  ssd1306_puts_p(5, 13, PSTR("US"));
+  ssd1306_puts_p(5, 0, PSTR("B"));
+  fmt_u32(buf, 7, pedd_ticks_to_us(g_ticks[3]));
+  ssd1306_puts(5, 3, buf);
+  ssd1306_puts_p(5, 11, PSTR("US"));
 
-  ssd1306_puts_p(6, 0, PSTR("DIST"));
-  fmt_u32(buf, 5, g_res.dist);
+  ssd1306_puts_p(6, 0, PSTR("DARK"));
+  fmt_u32(buf, 7, pedd_ticks_to_us(g_ticks[0]));
   ssd1306_puts(6, 5, buf);
-  ssd1306_puts_p(6, 11, PSTR("THR"));
+  ssd1306_puts_p(6, 13, PSTR("US"));
+
+  ssd1306_puts_p(7, 0, PSTR("DIST"));
+  fmt_u32(buf, 5, g_res.dist);
+  ssd1306_puts(7, 5, buf);
+  ssd1306_puts_p(7, 11, PSTR("THR"));
   fmt_u32(buf, 5, classify_isqrt(g_threshold));
-  ssd1306_puts(6, 15, buf);
+  ssd1306_puts(7, 15, buf);
 }
 
 static void screen_idle(void) {
