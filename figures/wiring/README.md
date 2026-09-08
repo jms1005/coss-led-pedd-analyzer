@@ -1,7 +1,11 @@
 # 배선도 사용법
 
-부품이 도착한 뒤 브레드보드에 배선할 때 보는 A4 4장입니다.
+부품이 도착한 뒤 브레드보드에 배선할 때 보는 도면입니다.
 **핀 배정의 출처는 펌웨어**이며, 도면은 그것을 그림으로 옮긴 것입니다.
+
+## 두 종류가 있습니다
+
+### ① 전체 통합본 — `docs/배선도.pdf` (A4 4장)
 
 | 장 | 내용 |
 |---|---|
@@ -10,12 +14,32 @@
 | 3 | 연결 순서 6단계 |
 | 4 | 연결 확인표 26칸 + 문제 생겼을 때 볼 곳 |
 
+### ② 단계별 — 지금 하는 단계만 인쇄해서 봅니다
+
+| 파일 | 장수 | 확인표 | 들어 있는 것 |
+|---|:--:|:--:|---|
+| `docs/배선도_Phase1.pdf` | 1 | 11칸 | 적색 1채널 + 검출 LED |
+| `docs/배선도_Phase2.pdf` | 2 | 21칸 | + 녹·청 채널 |
+| `docs/배선도_Phase4.pdf` | 2 | 26칸 | + 버튼 · OLED |
+
+단계별 도면은 **통합본을 베낀 것이 아니라 같은 코드에서 골라 낸 것**입니다.
+`make_wiring_phase1.py` · `make_wiring_phases.py` 가 `make_wiring_drawings`
+에서 열 번호(`CH`, `DET_K`, `SW_C1`…)와 확인표(`CHECKS`)를 **import 해서**
+씁니다. 그래서 한쪽만 고쳐서 어긋나는 일이 생기지 않습니다.
+
+> Phase 3 은 전용 도면이 없습니다. 배선이 Phase 2 와 같고, LED 개체만
+> 바꿔가며 재는 단계이기 때문입니다.
+
 ## 만들기
 
 ```
-sh tools/make_wiring_pdf.sh            # SVG 4장 + docs/배선도.pdf 까지
-python tools/make_wiring_drawings.py   # SVG 만 다시
+sh tools/make_wiring_pdf.sh            # 통합본: SVG 4장 + docs/배선도.pdf
+sh tools/make_wiring_phase1_pdf.sh     # Phase 1: SVG + docs/배선도_Phase1.pdf
+sh tools/make_wiring_phases_pdf.sh     # Phase 2·4: SVG 4장 + PDF 2개
+python tools/make_wiring_drawings.py   # 통합본 SVG 만 다시
 ```
+
+**열 번호나 핀 배정을 바꾸면 넷을 모두 다시 만드세요.**
 
 ## 제작 도면과 다른 점 — 실척이 아닙니다
 

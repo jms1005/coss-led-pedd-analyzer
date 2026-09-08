@@ -52,6 +52,19 @@ def esc(s):
   return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
 
+def text_width(s, size):
+  """글자 폭 어림값. 한글은 글자 크기와 거의 같고 영문·숫자는 그 절반이다.
+
+  SVG 에는 텍스트 폭을 재는 수단이 없어서, 글상자 크기를 글자 수로 잡으면
+  한글이 섞였을 때 넘친다. 단계별 배선도(make_wiring_phases.py)가 표 칸
+  너비를 정하는 데 쓴다.
+  """
+  w = 0.0
+  for c in s:
+    w += size * (1.0 if ord(c) > 0x1100 else 0.55)
+  return w
+
+
 # ------------------------------ 시트 ------------------------------
 
 class Sheet(object):
