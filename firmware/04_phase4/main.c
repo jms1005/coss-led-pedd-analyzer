@@ -265,44 +265,51 @@ static void log_uart(void) {
   uart_newline();
 }
 
+/*
+ * 시료 이름은 한 줄을 통째로 쓴다.
+ * "RESULT:" 뒤(9열)에 붙이면 화면 21자 중 12자만 남아 가장 긴 이름인
+ * "DISTILLED WATER"(15자)가 "DISTILLED WA" 로 잘린다. ssd1306.c 가 화면
+ * 밖을 조용히 버리므로 오류 없이 잘린 채로 표시되어 알아채기 어렵다.
+ * 비어 있던 8번째 줄(page 7)을 쓰면 이름을 줄이지 않고 전부 담을 수 있다.
+ */
 static void screen_result(void) {
   char buf[8];
 
   ssd1306_clear();
   ssd1306_puts_p(0, 0, PSTR("RESULT:"));
   if (g_res.cls < 0) {
-    ssd1306_puts_p(0, 9, PSTR("UNKNOWN"));
+    ssd1306_puts_p(1, 0, PSTR("UNKNOWN"));
   } else {
-    ssd1306_puts(0, 9, class_name((uint8_t)g_res.cls));
+    ssd1306_puts(1, 0, class_name((uint8_t)g_res.cls));
   }
-  ssd1306_puts_p(1, 0, PSTR("---------------------"));
+  ssd1306_puts_p(2, 0, PSTR("---------------------"));
 
-  ssd1306_puts_p(2, 0, PSTR("R"));
+  ssd1306_puts_p(3, 0, PSTR("R"));
   fmt_u32(buf, 7, pedd_ticks_to_us(g_ticks[1]));
-  ssd1306_puts(2, 3, buf);
-  ssd1306_puts_p(2, 11, PSTR("US"));
-
-  ssd1306_puts_p(3, 0, PSTR("G"));
-  fmt_u32(buf, 7, pedd_ticks_to_us(g_ticks[2]));
   ssd1306_puts(3, 3, buf);
   ssd1306_puts_p(3, 11, PSTR("US"));
 
-  ssd1306_puts_p(4, 0, PSTR("B"));
-  fmt_u32(buf, 7, pedd_ticks_to_us(g_ticks[3]));
+  ssd1306_puts_p(4, 0, PSTR("G"));
+  fmt_u32(buf, 7, pedd_ticks_to_us(g_ticks[2]));
   ssd1306_puts(4, 3, buf);
   ssd1306_puts_p(4, 11, PSTR("US"));
 
-  ssd1306_puts_p(5, 0, PSTR("DARK"));
-  fmt_u32(buf, 7, pedd_ticks_to_us(g_ticks[0]));
-  ssd1306_puts(5, 5, buf);
-  ssd1306_puts_p(5, 13, PSTR("US"));
+  ssd1306_puts_p(5, 0, PSTR("B"));
+  fmt_u32(buf, 7, pedd_ticks_to_us(g_ticks[3]));
+  ssd1306_puts(5, 3, buf);
+  ssd1306_puts_p(5, 11, PSTR("US"));
 
-  ssd1306_puts_p(6, 0, PSTR("DIST"));
-  fmt_u32(buf, 5, g_res.dist);
+  ssd1306_puts_p(6, 0, PSTR("DARK"));
+  fmt_u32(buf, 7, pedd_ticks_to_us(g_ticks[0]));
   ssd1306_puts(6, 5, buf);
-  ssd1306_puts_p(6, 11, PSTR("THR"));
+  ssd1306_puts_p(6, 13, PSTR("US"));
+
+  ssd1306_puts_p(7, 0, PSTR("DIST"));
+  fmt_u32(buf, 5, g_res.dist);
+  ssd1306_puts(7, 5, buf);
+  ssd1306_puts_p(7, 11, PSTR("THR"));
   fmt_u32(buf, 5, classify_isqrt(g_threshold));
-  ssd1306_puts(6, 15, buf);
+  ssd1306_puts(7, 15, buf);
 }
 
 static void screen_idle(void) {
