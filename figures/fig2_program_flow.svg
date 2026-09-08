@@ -19,7 +19,7 @@
   <!-- EEPROM 로드 -->
   <rect x="200" y="206" width="300" height="52" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/>
   <text x="350" y="228" text-anchor="middle" font-size="13" font-weight="600" fill="#1e3a8a">EEPROM에서 기준 중심점 로드</text>
-  <text x="350" y="247" text-anchor="middle" font-size="11.5" fill="#1d4ed8">시료군 수 × 3채널 × 4바이트</text>
+  <text x="350" y="247" text-anchor="middle" font-size="11.5" fill="#1d4ed8">3클래스 × 3채널 × 2바이트 = 18B</text>
 
   <!-- 버튼 대기 -->
   <path d="M 350 286 L 500 322 L 350 358 L 200 322 Z" fill="#fef3c7" stroke="#d97706" stroke-width="1.8"/>
