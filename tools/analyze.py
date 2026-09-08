@@ -197,9 +197,20 @@ def main(paths):
     print("-" * 74)
 
     cv_fail = 0
+    cv_unjudged = 0
     for name in sorted(samples):
         for ch in sorted(samples[name]):
             s = samples[name][ch]
+            # 1회 측정은 표준편차가 정의되지 않는다. sd=0 이 나오므로 그냥
+            # 비교하면 CV 0% 로 "통과" 가 찍히는데, 재현성을 전혀 확인하지
+            # 않은 것이라 통과로 세면 안 된다. 별도로 표시하고 종합 판정에서
+            # 미달로 취급한다.
+            if s["n"] < 2:
+                cv_unjudged += 1
+                print("%-14s %-6s %4d %12.1f %10s %8s  %s"
+                      % (name, ch, s["n"], us(s["mean"]), "-", "-",
+                         "판정 불가 (2회 이상 필요)"))
+                continue
             ok = s["cv"] <= CV_THRESHOLD
             if not ok:
                 cv_fail += 1
@@ -322,16 +333,21 @@ def main(paths):
     if not found_outlier:
         print("    없음")
 
-    # ---- 4. Phase 1 종합 판정 ----
+    # ---- 5. Phase 1 종합 판정 ----
     print()
     print("=" * 74)
     print("5. 종합 판정")
     print("=" * 74)
     print("  [Phase 1 — 계획서 4.1.4절]")
-    c1 = (cv_fail == 0)
+    c1 = (cv_fail == 0 and cv_unjudged == 0)
     c2 = (separated_pairs >= 1)
-    print("  조건 1. 재현성 CV <= %.0f%%          : %s"
-          % (CV_THRESHOLD, "통과" if c1 else "미달 (%d개 채널)" % cv_fail))
+    if cv_fail:
+        cv_msg = "미달 (%d개 채널)" % cv_fail
+    elif cv_unjudged:
+        cv_msg = "판정 불가 (%d개 채널이 1회 측정)" % cv_unjudged
+    else:
+        cv_msg = "통과"
+    print("  조건 1. 재현성 CV <= %.0f%%          : %s" % (CV_THRESHOLD, cv_msg))
     print("  조건 2. 시료 2종 이상 구분           : %s"
           % ("통과" if c2 else "미달"))
     print("  조건 3. Overflow / Timeout 정상 동작 : 로그를 직접 확인할 것")
